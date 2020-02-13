@@ -9,3 +9,16 @@ $bg-color: #116771;
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  color: $font-color;
+  width: 100vw;
+  height: 100vh;
+  background: $active-color url("../../src/assets/img/pigispa-bg.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

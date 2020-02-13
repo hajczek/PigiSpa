@@ -1,1 +1,1 @@
-*{padding:0;margin:0;-webkit-box-sizing:border-box;box-sizing:border-box}body{color:#fff}
+*{padding:0;margin:0;-webkit-box-sizing:border-box;box-sizing:border-box}body{color:#fff;width:100vw;height:100vh;background:#7ff2ee url("../../src/assets/img/pigispa-bg.jpg") no-repeat center center fixed;background-size:cover;height:100vh;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}

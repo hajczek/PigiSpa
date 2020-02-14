@@ -78,6 +78,50 @@ body {
         font-weight: bold;
       }
     }
+
+    .registration-box {
+      display: flex;
+      flex-direction: column;
+      width: 425px;
+      justify-self: center;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 200px;
+      right: 260px;
+
+      h2 {
+        font-size: 50px;
+        margin-bottom: 65px;
+        font-weight: normal;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+      }
+
+      #register-form {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        input {
+          width: 356px;
+          height: 47px;
+          border: none;
+          text-align: center;
+          font-size: 25px;
+          margin-bottom: 25px;
+        }
+
+        button {
+          width: 356px;
+          height: 65px;
+          color: $font-color;
+          background-color: $bg-color;
+          border: none;
+          font-size: 30px;
+        }
+      }
+    }
   }
 
   footer {

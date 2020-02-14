@@ -14,8 +14,8 @@ body {
   color: $font-color;
   width: 100vw;
   height: 100vh;
-  // background: $active-color url("../../src/assets/img/pigispa-bg.jpg") no-repeat
-  //   fixed;
+  background: $active-color url("../src/assets/img/pigispa-bg.jpg") no-repeat
+    fixed;
   background-position: 0 -100px;
   background-size: cover;
   height: 100vh;
@@ -34,7 +34,7 @@ body {
     padding: 0 70px;
     align-items: center;
 
-    #logo {
+    #logo img {
       width: 149px;
       height: auto;
 

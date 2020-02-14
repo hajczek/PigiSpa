@@ -179,8 +179,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   r.r(t);
   var n = r(0),
       o = r.p + "pigiSpaLogo.png",
-      u = new Image();
-  u.src = o, document.querySelector("#logo").appendChild(u), console.log(Object(n.registration)());
+      u = r.p + "pigiSpa-logo-footer.png",
+      i = new Image();
+  i.src = o, document.querySelector("#logo").appendChild(i);
+  var l = new Image();
+  l.src = u, document.querySelector("#logo-small").appendChild(l), console.log(Object(n.registration)());
 }]);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -210,7 +213,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52625" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52783" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

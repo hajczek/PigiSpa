@@ -13,7 +13,9 @@
   "devDependencies": {
     "json-server": "^0.15.1",
     "node-sass": "^4.13.1",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",

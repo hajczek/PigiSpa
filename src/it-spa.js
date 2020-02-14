@@ -1,5 +1,3 @@
-// import "bootstrap/dist/css/bootstrap.css";
-// import "./it-spa.scss";
-// import $ from 'jquery';
+import { registration } from "./views/registration.js";
 
-// const main = $('main');
+console.log(registration());

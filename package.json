@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start:db": "json-server --watch database.json",
-    "start:app": "parcel ./index.html --open"
+    "start:app": "parcel ./index.html --open",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "Iwona Kolanowska",

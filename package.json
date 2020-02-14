@@ -7,7 +7,8 @@
     "start:db": "json-server --watch database.json",
     "start:app": "parcel ./index.html --open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development"
   },
   "keywords": [],
   "author": "Iwona Kolanowska",

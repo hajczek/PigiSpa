@@ -8,7 +8,7 @@
     "start:app": "parcel ./index.html --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Iwona Kolanowska",
   "license": "ISC",
   "devDependencies": {
     "json-server": "^0.15.1",

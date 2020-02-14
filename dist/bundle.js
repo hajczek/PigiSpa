@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/assets/img/pigiSpaLogo.png":
+/*!****************************************!*\
+  !*** ./src/assets/img/pigiSpaLogo.png ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected character '�' (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\");\n\n//# sourceURL=webpack:///./src/assets/img/pigiSpaLogo.png?");
+
+/***/ }),
+
 /***/ "./src/it-spa.js":
 /*!***********************!*\
   !*** ./src/it-spa.js ***!
@@ -94,7 +105,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_registration_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./views/registration.js */ \"./src/views/registration.js\");\n/* harmony import */ var _views_registration_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_registration_js__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconsole.log(Object(_views_registration_js__WEBPACK_IMPORTED_MODULE_0__[\"registration\"])());\n\n\n//# sourceURL=webpack:///./src/it-spa.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_registration_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./views/registration.js */ \"./src/views/registration.js\");\n/* harmony import */ var _views_registration_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_registration_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_img_pigiSpaLogo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/img/pigiSpaLogo.png */ \"./src/assets/img/pigiSpaLogo.png\");\n/* harmony import */ var _assets_img_pigiSpaLogo_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_img_pigiSpaLogo_png__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nlet logo = new Image();\nlogo.src = _assets_img_pigiSpaLogo_png__WEBPACK_IMPORTED_MODULE_1___default.a;\ndocument.querySelector(\"#logo\").appendChild(logo);\n\nconsole.log(Object(_views_registration_js__WEBPACK_IMPORTED_MODULE_0__[\"registration\"])());\n\n\n//# sourceURL=webpack:///./src/it-spa.js?");
 
 /***/ }),
 

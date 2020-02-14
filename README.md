@@ -73,4 +73,4 @@ Strony, którymi możesz się inspirować:
 ## PROJEKT GRAFICZNY
 
 Przygotowany w ramach realizacji projektu.
-[Link do projektu: ](https://xd.adobe.com/view/6a135f37-4cfd-407b-4024-50b342af33af-1c22/?fullscreen)
+[Link do projektu &raquo;](https://xd.adobe.com/view/6a135f37-4cfd-407b-4024-50b342af33af-1c22/?fullscreen)

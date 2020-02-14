@@ -15,7 +15,8 @@ body {
   width: 100vw;
   height: 100vh;
   background: $active-color url("../../src/assets/img/pigispa-bg.jpg") no-repeat
-    top center fixed;
+    fixed;
+  background-position: 0 -100px;
   background-size: cover;
   height: 100vh;
   overflow: hidden;
@@ -56,6 +57,46 @@ body {
         &:active {
           color: $active-color;
         }
+      }
+    }
+  }
+
+  section {
+    width: 100%;
+
+    .slogan {
+      font-size: 45px;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      bottom: 150px;
+      font-style: italic;
+      text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+
+      .pink {
+        color: $edit-color;
+        font-weight: bold;
+      }
+    }
+  }
+
+  footer {
+    width: 100vw;
+    height: 68px;
+    background-color: $bg-color;
+    opacity: 0.9;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.9;
+    display: flex;
+    padding: 0 70px;
+    align-items: center;
+
+    a img {
+      width: 200px;
+
+      &:hover {
+        opacity: 0.7;
       }
     }
   }

@@ -15,10 +15,48 @@ body {
   width: 100vw;
   height: 100vh;
   background: $active-color url("../../src/assets/img/pigispa-bg.jpg") no-repeat
-    center center fixed;
+    top center fixed;
   background-size: cover;
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  font-family: "Segoe UI", sans-serif;
+
+  header {
+    width: 100%;
+    height: 120px;
+    background-color: $bg-color;
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px;
+    align-items: center;
+
+    #logo {
+      width: 149px;
+      height: auto;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    nav {
+      font-size: 28px;
+      a {
+        color: $font-color;
+        text-decoration: none;
+        padding: 0 20px;
+
+        &:hover {
+          color: $active-color;
+        }
+
+        &:active {
+          color: $active-color;
+        }
+      }
+    }
+  }
 }

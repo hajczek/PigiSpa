@@ -164,6 +164,32 @@ body {
         font-size: 40px;
       }
     }
+
+    .basket-box {
+      display: flex;
+      flex-direction: column;
+      width: 425px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      position: absolute;
+      right: 0;
+      top: 120px;
+      text-align: center;
+      height: calc(100% - 188px);
+      background-color: $font-color;
+
+      h2 {
+        color: $edit-color;
+        font-size: 30px;
+        padding-top: 45px;
+        padding-bottom: 45px;
+      }
+
+      p {
+        color: $input-text-color;
+        font-size: 25px;
+      }
+    }
   }
 
   footer {

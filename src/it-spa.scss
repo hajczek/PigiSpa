@@ -3,6 +3,8 @@ $input-text-color: #829294;
 $edit-color: #e654f6;
 $active-color: #7ff2ee;
 $bg-color: #116771;
+$slogan-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+$text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
 
 * {
   padding: 0;
@@ -71,7 +73,7 @@ body {
       position: absolute;
       bottom: 150px;
       font-style: italic;
-      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+      text-shadow: $slogan-shadow;
 
       .pink {
         color: $edit-color;
@@ -97,7 +99,7 @@ body {
       font-size: 50px;
       margin-bottom: 65px;
       font-weight: normal;
-      text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+      text-shadow: $text-shadow;
       text-align: center;
     }
 
@@ -124,6 +126,20 @@ body {
         border: none;
         font-size: 30px;
       }
+    }
+
+    .welcome-box {
+      display: flex;
+      flex-direction: column;
+      width: 425px;
+      justify-self: center;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 200px;
+      right: 260px;
+      font-size: 50px;
+      text-shadow: $text-shadow;
     }
   }
 

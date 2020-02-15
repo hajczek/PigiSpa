@@ -128,18 +128,41 @@ body {
       }
     }
 
-    .welcome-box {
+    .welcome-box-after-register {
       display: flex;
       flex-direction: column;
-      width: 425px;
+      width: 470px;
+      justify-self: center;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 350px;
+      right: 220px;
+      font-size: 40px;
+      text-shadow: $text-shadow;
+    }
+
+    .welcome-box-after-login {
+      display: flex;
+      flex-direction: column;
+      width: 460px;
       justify-self: center;
       margin: 0 auto;
       flex-wrap: wrap;
       position: absolute;
       top: 200px;
-      right: 260px;
-      font-size: 50px;
+      left: 70px;
       text-shadow: $text-shadow;
+
+      h2 {
+        font-size: 50px;
+        margin-bottom: 55px;
+        font-weight: normal;
+      }
+
+      p {
+        font-size: 40px;
+      }
     }
   }
 

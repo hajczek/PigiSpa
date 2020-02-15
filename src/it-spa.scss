@@ -144,7 +144,8 @@ body {
       text-shadow: $text-shadow;
     }
 
-    .welcome-box-after-login {
+    .welcome-box-after-login,
+    .thanks-box-after-payment {
       display: flex;
       flex-direction: column;
       width: 460px;
@@ -160,10 +161,12 @@ body {
         font-size: 50px;
         margin-bottom: 55px;
         font-weight: normal;
+        text-transform: none;
+        color: $font-color;
       }
 
       p {
-        font-size: 40px;
+        font-size: 35px;
       }
     }
 
@@ -194,7 +197,8 @@ body {
         font-size: 25px;
       }
 
-      #basket-content-box {
+      #basket-content-box,
+      #basket-bought-content-box {
         ol {
           width: 90%;
           margin-left: 5%;

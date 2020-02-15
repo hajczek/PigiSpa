@@ -2,6 +2,7 @@ $font-color: #fff;
 $input-text-color: #829294;
 $edit-color: #e654f6;
 $active-color: #7ff2ee;
+$title-color: #baf8f6;
 $bg-color: #116771;
 $slogan-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
 $text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
@@ -28,7 +29,7 @@ body {
 
   header {
     width: 100%;
-    height: 120px;
+    height: 100px;
     background-color: $bg-color;
     opacity: 0.9;
     display: flex;
@@ -173,21 +174,56 @@ body {
       flex-wrap: wrap;
       position: absolute;
       right: 0;
-      top: 120px;
+      top: 100px;
       text-align: center;
-      height: calc(100% - 188px);
+      height: calc(100% - 168px);
       background-color: $font-color;
 
       h2 {
         color: $edit-color;
         font-size: 30px;
         padding-top: 45px;
-        padding-bottom: 45px;
+        padding-bottom: 25px;
+        font-weight: bold;
+        margin-bottom: 0;
       }
 
       p {
         color: $input-text-color;
         font-size: 25px;
+      }
+    }
+
+    .treamtments-box {
+      display: flex;
+      flex-direction: column;
+      width: 600px;
+      flex-wrap: wrap;
+      position: absolute;
+      left: 70px;
+      top: 200px;
+      background-color: $bg-color;
+      opacity: 0.9;
+      padding: 50px 70px 70px 90px;
+    }
+
+    h2 {
+      font-size: 40px;
+      margin-bottom: 45px;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: $title-color;
+    }
+
+    ol {
+      font-size: 28px;
+      padding-left: 25px;
+      text-align: left;
+      line-height: 1.6;
+
+      li:hover {
+        cursor: pointer;
+        opacity: 0.7;
       }
     }
   }

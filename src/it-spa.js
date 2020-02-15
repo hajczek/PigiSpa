@@ -1,4 +1,3 @@
-import { registration } from "./views/registration.js";
 import PigiLogo from "./assets/img/pigiSpaLogo.png";
 import PigiLogoSmall from "./assets/img/pigiSpa-logo-footer.png";
 
@@ -11,5 +10,3 @@ document.querySelector("#logo").appendChild(logo);
 const logoFooter = new Image();
 logoFooter.src = PigiLogoSmall;
 document.querySelector("#logo-small").appendChild(logoFooter);
-
-console.log(registration());

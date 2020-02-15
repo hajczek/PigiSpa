@@ -1,6 +1,7 @@
 $font-color: #fff;
 $input-text-color: #829294;
 $edit-color: #e654f6;
+$button-color: #f504d5;
 $active-color: #7ff2ee;
 $title-color: #baf8f6;
 $bg-color: #116771;
@@ -178,6 +179,7 @@ body {
       text-align: center;
       height: calc(100% - 168px);
       background-color: $font-color;
+      color: $input-text-color;
 
       h2 {
         color: $edit-color;
@@ -189,8 +191,93 @@ body {
       }
 
       p {
-        color: $input-text-color;
         font-size: 25px;
+      }
+
+      #basket-content-box {
+        ol {
+          width: 90%;
+          margin-left: 5%;
+          li {
+            font-size: 18px;
+            width: 100%;
+            position: relative;
+            line-height: 2.2;
+
+            &:hover {
+              opacity: 1;
+            }
+
+            .quant {
+              color: $edit-color;
+              margin-left: 3px;
+
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+
+            .price {
+              position: absolute;
+              top: 0;
+              right: 40px;
+              font-weight: bold;
+            }
+
+            .remove {
+              display: inline-block;
+              flex-direction: row;
+              justify-content: flex-end;
+              background: transparent url("../src/assets/img/trash-pink.png")
+                top center no-repeat;
+              background-size: cover;
+              width: 20px;
+              height: 24px;
+              position: absolute;
+              top: 4px;
+              right: 5px;
+
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+
+            .term {
+              color: $edit-color;
+
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+
+        .summary-text {
+          text-transform: uppercase;
+          margin-top: 60px;
+          font-weight: bold;
+          font-size: 20px;
+
+          span {
+            font-size: 30px;
+          }
+        }
+
+        button {
+          background-color: $button-color;
+          color: $font-color;
+          font-size: 40px;
+          font-weight: bold;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          border: 0;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
       }
     }
 

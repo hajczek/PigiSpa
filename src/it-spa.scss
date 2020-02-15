@@ -196,7 +196,8 @@ body {
 
     .treamtments-box,
     .rooms-box,
-    .treamtment-box {
+    .treamtment-box,
+    .room-box {
       display: flex;
       flex-direction: column;
       width: 600px;
@@ -236,6 +237,19 @@ body {
 
       span {
         font-weight: bold;
+      }
+
+      input {
+        padding: 5px;
+        font-size: 20px;
+        color: $input-text-color;
+        border: none;
+
+        margin-top: 10px;
+      }
+
+      #room-to {
+        margin-left: 16px;
       }
     }
 

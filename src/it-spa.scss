@@ -107,6 +107,20 @@ body {
       text-transform: none;
     }
 
+    /* For info about not the same password */
+    #info-pass {
+      text-align: center;
+      width: 85%;
+      color: #f504d5;
+      font-size: 1.4rem;
+      font-weight: bold;
+      position: relative;
+      top: -30px;
+      background-color: transparent;
+      padding: 10px;
+      margin: 0 auto;
+    }
+
     .form {
       margin: 0 auto;
       display: flex;
@@ -130,7 +144,7 @@ body {
         font-size: 30px;
       }
 
-      /* Checking strong of password */
+      /* Checking strength of password */
       .visualInfo {
         margin-bottom: 10px;
         text-shadow: $text-shadow;
@@ -147,16 +161,8 @@ body {
         height: 20px;
       }
 
-      .weak {
-        background-color: $font-color;
-        display: inline-block;
-      }
-
-      .average {
-        background-color: $font-color;
-        display: inline-block;
-      }
-
+      .weak,
+      .average,
       .strong {
         background-color: $font-color;
         display: inline-block;
@@ -164,9 +170,12 @@ body {
 
       .legend {
         display: flex;
-        font-size: 1em;
+        justify-content: center;
+        align-content: center;
+        font-size: 1.1em;
         margin-bottom: 30px;
-        text-shadow: $text-shadow;
+        color: $bg-color;
+        font-weight: bold;
       }
 
       .legend span {
@@ -175,7 +184,7 @@ body {
       }
 
       .weakCol {
-        background-color: #f57648;
+        background-color: #f504d5;
       }
 
       .averageCol {

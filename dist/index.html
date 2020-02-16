@@ -35,15 +35,27 @@
       </p> -->
 
       <!-- REGISTRATION FORM -->
-      <!-- <div class="registration-box">
+      <div class="registration-box">
         <h2>Wypełnij formularz</h2>
         <form class="form" id="register-form">
-          <input type="email" name="email" placeholder="Wpisz email">
-          <input type="password" name="pass" placeholder="Wpisz hasło">
-          <input type="password" name="pass-check" placeholder="Ponownie wpisz hasło">
+          <input type="email" name="email" id="email" placeholder="Wpisz email">
+          <input type="password" name="pass" id="pass" placeholder="Wpisz hasło">
+          <input type="password" name="pass-check" id="pass-repeat" placeholder="Ponownie wpisz hasło">
+
+          <p class="visualInfo">Siła hasła:
+            <span class="weak"></span>
+            <span class="average"></span>
+            <span class="strong"></span>
+          </p>
+          <p class="legend">
+            <span class="weakCol"></span>- słaba
+            <span class="averageCol"></span>- średnia
+            <span class="strongCol"></span>- silna
+          </p>
+
           <button id="register-btn">Zarejestruj mnie</button>
         </form>
-      </div> -->
+      </div>
 
       <!-- LOGIN FORM -->
       <!-- <div class="login-box">
@@ -61,12 +73,12 @@
       </div> -->
 
       <!-- WELCOME TEXT AFTER LOGIN -->
-      <div class="box-after-login">
-        <!-- <div class="welcome-box-after-login">
+      <!-- <div class="box-after-login">
+        <div class="welcome-box-after-login">
           <h2>Witaj w PigiSpa!</h2>
           <p>Wybierz ulubione zabiegi i zarezerwuj pokój w dogodnym terminie.
             Nasze świnki z PigiSpa już na Ciebie czekają ;)</p>
-        </div> -->
+        </div>
 
         <div class="thanks-box-after-payment">
           <h2>Czekamy na Ciebie w PigiSpa!</h2>
@@ -75,10 +87,10 @@
 
         <div class="basket-box">
           <h2>TWÓJ KOSZYK</h2>
-          <!-- <p>Załaduj coś do koszyka!</p> -->
+          <p>Załaduj coś do koszyka!</p> -->
 
-          <!-- BASKET CONTENT -->
-          <!-- <div id="basket-content-box">
+      <!-- BASKET CONTENT -->
+      <!-- <div id="basket-content-box">
             <ol>
               <li id="poz_1">Biczowanie kablem od myszy x <span class="quant">1</span> - <span class="price">70
                   zł</span>
@@ -98,8 +110,8 @@
             <button id="pay">Kupuję i płacę</button>
           </div> -->
 
-          <!-- BASKET CONTENT AFTER PAYMANT -->
-          <div id="basket-bought-content-box">
+      <!-- BASKET CONTENT AFTER PAYMANT -->
+      <!-- <div id="basket-bought-content-box">
             <ol>
               <li>Biczowanie kablem od myszy x <span class="quant_bought">1</span></li>
               <li>Peeling odłamkami płyty CD x <span class="quant_bought">1</span></li>
@@ -108,13 +120,10 @@
                 do <span id="term_to_bought">25-05-2020</span>
               </li>
             </ol>
-
             <p class="summary-text">To wszystko za jedyne<br> <span id="all-cost">840 zł</span></p>
-          </div>
-
-
-        </div>
-      </div>
+          </div> -->
+      <!-- </div>
+      </div> -->
 
       <!-- TREATMENTS LIST -->
       <!-- <div class="treamtments-box">

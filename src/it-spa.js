@@ -188,7 +188,20 @@ function addTreatmentToBasket(e) {
   e.preventDefault();
 
   /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku*/
-  console.log("Added treatment to basket");
+  // Display name of treatment
+  const treatmentName = document.getElementById("title").innerHTML;
+  console.log(treatmentName);
+  // Display price of treatment
+  const treatmentPrice = parseInt(
+    document.getElementById("treat-price").innerHTML
+  );
+  console.log(treatmentPrice);
+  // Display number of treatment
+  const treatmentNum = document.getElementById("treatment-num").value;
+  console.log(treatmentNum);
+  // Calculate cost of treatment
+  let treatmentCost = treatmentPrice * treatmentNum;
+  console.log(treatmentCost);
 }
 
 /* FOR ADD POSITION FROM BOX TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON ROOM BOX */

@@ -195,33 +195,41 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       i.style.display = "none";
     }, 3e3), console.log(c.value), console.log(d.value), console.log(i.value === d.value));
   });
-  var f = document.getElementById("email-login"),
-      y = document.getElementById("pass-login"),
+  var y = document.getElementById("email-login"),
+      f = document.getElementById("pass-login"),
       E = document.getElementById("login-btn");
   E && E.addEventListener("click", function (e) {
-    e.preventDefault(), "" === f.value && "" === y.value ? (i.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.", i.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
+    e.preventDefault(), "" === y.value && "" === f.value ? (i.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.", i.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
       i.style.display = "none";
     }, 3e3)) : console.log("Zalogowano");
   });
-  var b = document.getElementById("treatments");
-  b && b.addEventListener("click", function (e) {
+  var I = document.getElementById("treatments");
+  I && I.addEventListener("click", function (e) {
     e.preventDefault(), console.log("Kliknięto w pozycję Zabiegi");
   });
-  var I = document.getElementById("treatments-list");
-  I && I.addEventListener("click", function (e) {
+  var b = document.getElementById("treatments-list");
+  b && b.addEventListener("click", function (e) {
     e.preventDefault(), console.log(e.target.childNodes.item(0).nodeValue);
   });
-  var k = document.getElementById("rooms");
-  k && k.addEventListener("click", function (e) {
+  var B = document.getElementById("rooms");
+  B && B.addEventListener("click", function (e) {
     e.preventDefault(), console.log("Kliknięto w pozycję Pokoje");
   });
-  var B = document.getElementById("rooms-list");
-  B && B.addEventListener("click", function (e) {
+  var k = document.getElementById("rooms-list");
+  k && k.addEventListener("click", function (e) {
     e.preventDefault(), console.log(e.target.childNodes.item(0).nodeValue);
   });
   var w = document.getElementById("add-treatment");
   w && w.addEventListener("click", function (e) {
-    e.preventDefault(), console.log("Added treatment to basket");
+    e.preventDefault();
+    var t = document.getElementById("title").innerHTML;
+    console.log(t);
+    var n = parseInt(document.getElementById("treat-price").innerHTML);
+    console.log(n);
+    var o = document.getElementById("treatment-num").value;
+    console.log(o);
+    var l = n * o;
+    console.log(l);
   });
   var L = document.getElementById("add-room");
   L && L.addEventListener("click", function (e) {

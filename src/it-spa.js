@@ -104,6 +104,39 @@ function logIn(e) {
   } else {
     console.log("Zalogowano");
     /* Tutaj ma nastąpić sprawdzenie, czy podany login i hasło są w bazie */
-    /* Tutaj ma nastąpić przekierowanie do strony z wiadomością powitalną po zalogowaniu */
+    /* Tutaj ma nastąpić przekierowanie do strony z wiadomością powitalną po zalogowaniu i widokiem pustego koszyka */
   }
+}
+
+/* FOR DISPLAY LIST OF TREATMENTS AFTER CLICK IN MENU POSITION 'Zabiegi' */
+
+// Handle for button in menu 'Zabiegi'
+let treatmentsMenuBtn = document.getElementById("treatments");
+// Add event when link in menu 'Zabiegi' is clicked
+treatmentsMenuBtn
+  ? treatmentsMenuBtn.addEventListener("click", displayTreatmentsList)
+  : false;
+
+function displayTreatmentsList(e) {
+  e.preventDefault();
+
+  /* Tutaj trzeba wykonać iterację po elementach z bazy z tablicy 'treatments' i wyświetlić nazwy wszyskich zabiegów w postaci listy w boxie */
+  console.log("Kliknięto w pozycję Zabiegi");
+}
+
+/* FOR OPEN PAGE WITH TREATMENT DESCRIPTION AFTER CLICK NAME TITLE OF TREATMENT ON LIST */
+
+// Handle for list with treatments
+const treatmentsList = document.getElementById("treatments-list");
+// Add event when one position on list is clicked
+treatmentsList
+  ? treatmentsList.addEventListener("click", openTreatmentBox)
+  : false;
+
+function openTreatmentBox(e) {
+  e.preventDefault();
+
+  /* Tutaj ma nastąpić przekierowanie na stronę z opisem klikniętej usługi */
+  /* 'e.target.childNodes.item(0).nodeValue' to 'name' usługi w bazie - trzeba ją wykorzystać przy generowaniu boxa z opisem usługi */
+  console.log(e.target.childNodes.item(0).nodeValue);
 }

@@ -215,17 +215,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   I && I.addEventListener("click", function (e) {
     e.preventDefault(), console.log("Kliknięto w pozycję Pokoje");
   });
-  var w = document.getElementById("rooms-list");
-  w && w.addEventListener("click", function (e) {
+  var B = document.getElementById("rooms-list");
+  B && B.addEventListener("click", function (e) {
     e.preventDefault(), console.log(e.target.childNodes.item(0).nodeValue);
   });
-  var B = document.getElementById("add-treatment");
-  B && B.addEventListener("click", function (e) {
+  var w = document.getElementById("add-treatment");
+  w && w.addEventListener("click", function (e) {
     e.preventDefault(), console.log("Added treatment to basket");
   });
   var L = document.getElementById("add-room");
   L && L.addEventListener("click", function (e) {
-    e.preventDefault(), console.log("Added room to basket");
+    e.preventDefault(), console.log("Added room to basket"), console.log(document.getElementById("title").innerHTML), console.log(document.getElementById("room-from").value), console.log(document.getElementById("room-to").value);
   });
 }]);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -256,7 +256,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62083" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62747" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

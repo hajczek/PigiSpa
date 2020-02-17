@@ -203,5 +203,11 @@ function addRoomToBasket(e) {
   e.preventDefault();
 
   /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku */
-  console.log("Added room to basket");
+
+  /* Display name of room */
+  console.log(document.getElementById("title").innerHTML);
+  /* Display term of arrival */
+  console.log(document.getElementById("room-from").value);
+  /* Display term of departure */
+  console.log(document.getElementById("room-to").value);
 }

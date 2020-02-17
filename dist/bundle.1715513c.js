@@ -121,77 +121,69 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 !function (e) {
-  var t = {};
+  var n = {};
 
-  function n(o) {
-    if (t[o]) return t[o].exports;
-    var r = t[o] = {
+  function t(o) {
+    if (n[o]) return n[o].exports;
+    var r = n[o] = {
       i: o,
       l: !1,
       exports: {}
     };
-    return e[o].call(r.exports, r, r.exports, n), r.l = !0, r.exports;
+    return e[o].call(r.exports, r, r.exports, t), r.l = !0, r.exports;
   }
 
-  n.m = e, n.c = t, n.d = function (e, t, o) {
-    n.o(e, t) || Object.defineProperty(e, t, {
+  t.m = e, t.c = n, t.d = function (e, n, o) {
+    t.o(e, n) || Object.defineProperty(e, n, {
       enumerable: !0,
       get: o
     });
-  }, n.r = function (e) {
+  }, t.r = function (e) {
     "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
       value: "Module"
     }), Object.defineProperty(e, "__esModule", {
       value: !0
     });
-  }, n.t = function (e, t) {
-    if (1 & t && (e = n(e)), 8 & t) return e;
-    if (4 & t && "object" == _typeof(e) && e && e.__esModule) return e;
+  }, t.t = function (e, n) {
+    if (1 & n && (e = t(e)), 8 & n) return e;
+    if (4 & n && "object" == _typeof(e) && e && e.__esModule) return e;
     var o = Object.create(null);
-    if (n.r(o), Object.defineProperty(o, "default", {
+    if (t.r(o), Object.defineProperty(o, "default", {
       enumerable: !0,
       value: e
-    }), 2 & t && "string" != typeof e) for (var r in e) {
-      n.d(o, r, function (t) {
-        return e[t];
+    }), 2 & n && "string" != typeof e) for (var r in e) {
+      t.d(o, r, function (n) {
+        return e[n];
       }.bind(null, r));
     }
     return o;
-  }, n.n = function (e) {
-    var t = e && e.__esModule ? function () {
+  }, t.n = function (e) {
+    var n = e && e.__esModule ? function () {
       return e.default;
     } : function () {
       return e;
     };
-    return n.d(t, "a", t), t;
-  }, n.o = function (e, t) {
-    return Object.prototype.hasOwnProperty.call(e, t);
-  }, n.p = "", n(n.s = 0);
-}([function (e, t, n) {
+    return t.d(n, "a", n), n;
+  }, t.o = function (e, n) {
+    return Object.prototype.hasOwnProperty.call(e, n);
+  }, t.p = "", t(t.s = 0);
+}([function (e, n, t) {
   "use strict";
 
-  n.r(t);
-  var o = n.p + "pigiSpaLogo.png",
-      r = n.p + "pigiSpa-logo-footer.png",
+  t.r(n);
+  var o = t.p + "pigiSpaLogo.png",
+      r = t.p + "pigiSpa-logo-footer.png",
       l = new Image();
   l.src = o, document.querySelector("#logo").appendChild(l);
   var u = new Image();
   u.src = r, document.querySelector("#logo-small").appendChild(u);
-  var a = document.getElementById("email"),
-      c = document.getElementById("pass"),
-      d = document.getElementById("pass-repeat"),
-      i = document.getElementById("info-pass"),
-      s = document.getElementById("register-btn"),
-      p = document.querySelector(".weak"),
-      g = document.querySelector(".average"),
-      f = document.querySelector(".strong");
-
-  function v(e) {
-    e.preventDefault(), "" !== a.value && "" !== c.value && (console.log("it work"), p.style.backgroundColor = "#f504d5"), /(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(c.value) && (g.style.backgroundColor = "yellow"), /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(c.value) && (f.style.backgroundColor = "greenyellow");
-  }
-
-  a.addEventListener("input", v), c.addEventListener("input", v), s.addEventListener("click", function (e) {
-    e.preventDefault(), "" !== a.value && pass.value === d.value ? (console.log("Zapisz dane w bazie"), a.value = "", pass.value = "", d.value = "") : (i.innerHTML = "Hasła są różne. Wprowadź do obu pól takie same hasła.", i.style.backgroundColor = "rgba(255, 255, 255, 0.5)", console.log(c.value), console.log(d.value), console.log(i.value === d.value));
+  var i = document.getElementById("info-pass"),
+      a = document.getElementById("email-login"),
+      c = document.getElementById("pass-login");
+  document.getElementById("login-btn").addEventListener("click", function (e) {
+    e.preventDefault(), "" === a.value && "" === c.value ? (i.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.", i.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
+      i.style.display = "none";
+    }, 3e3)) : console.log("Zalogowano");
   });
 }]);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -222,7 +214,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55662" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57904" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

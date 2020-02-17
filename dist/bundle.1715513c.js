@@ -180,7 +180,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var u = document.getElementById("email"),
       i = document.getElementById("pass"),
       c = document.getElementById("pass-repeat"),
-      d = document.getElementById("info-pass"),
+      d = document.getElementById("info-err"),
       s = document.getElementById("register-btn"),
       p = document.querySelector(".weak"),
       g = document.querySelector(".average"),
@@ -232,7 +232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58367" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58579" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

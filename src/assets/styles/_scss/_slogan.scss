@@ -1,0 +1,14 @@
+.slogan {
+  font-size: 45px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 150px;
+  font-style: italic;
+  text-shadow: $slogan-shadow;
+
+  .pink {
+    color: $edit-color;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,39 @@
+.welcome-box-after-register {
+  display: flex;
+  flex-direction: column;
+  width: 470px;
+  justify-self: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 350px;
+  right: 220px;
+  font-size: 40px;
+  text-shadow: $text-shadow;
+}
+
+.welcome-box-after-login,
+.thanks-box-after-payment {
+  display: flex;
+  flex-direction: column;
+  width: 460px;
+  justify-self: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 200px;
+  left: 70px;
+  text-shadow: $text-shadow;
+
+  h2 {
+    font-size: 50px;
+    margin-bottom: 55px;
+    font-weight: normal;
+    text-transform: none;
+    color: $font-color;
+  }
+
+  p {
+    font-size: 35px;
+  }
+}

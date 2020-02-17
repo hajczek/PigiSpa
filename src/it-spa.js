@@ -20,7 +20,7 @@ const pas = document.getElementById("pass");
 // Handle for input with repeat password
 const pasRepeat = document.getElementById("pass-repeat");
 // Handle for info about not the same password and repeat password
-const infoPass = document.getElementById("info-pass");
+const infoErr = document.getElementById("info-err");
 // Handle for register button
 const registerBtn = document.getElementById("register-btn");
 
@@ -70,16 +70,15 @@ function sendForm(e) {
     pass.value = "";
     pasRepeat.value = "";
   } else {
-    infoPass.innerHTML =
-      "Hasła są różne. Wprowadź do obu pól takie same hasła.";
-    infoPass.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+    infoErr.innerHTML = "Hasła są różne. Wprowadź do obu pól takie same hasła.";
+    infoErr.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
     // Hide box with info after 3 minutes
     setTimeout(() => {
-      infoPass.style.display = "none";
+      infoErr.style.display = "none";
     }, 3000);
     console.log(pas.value);
     console.log(pasRepeat.value);
-    console.log(infoPass.value === pasRepeat.value);
+    console.log(infoErr.value === pasRepeat.value);
   }
 }
 
@@ -96,11 +95,11 @@ loginBtn ? loginBtn.addEventListener("click", logIn) : false;
 function logIn(e) {
   e.preventDefault();
   if (emailLog.value === "" && passLog.value === "") {
-    infoPass.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.";
-    infoPass.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+    infoErr.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.";
+    infoErr.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
     // Hide box with info after 3 minutes
     setTimeout(() => {
-      infoPass.style.display = "none";
+      infoErr.style.display = "none";
     }, 3000);
   } else {
     console.log("Zalogowano");

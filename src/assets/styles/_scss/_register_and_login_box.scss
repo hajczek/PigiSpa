@@ -1,0 +1,23 @@
+.registration-box,
+.login-box {
+  display: flex;
+  flex-direction: column;
+  width: 425px;
+  justify-self: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 200px;
+  right: 260px;
+}
+
+.registration-box h2,
+.login-box h2 {
+  font-size: 50px;
+  margin-bottom: 65px;
+  font-weight: normal;
+  text-shadow: $text-shadow;
+  text-align: center;
+  color: $font-color;
+  text-transform: none;
+}

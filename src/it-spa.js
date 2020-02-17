@@ -125,7 +125,7 @@ function displayTreatmentsList(e) {
   console.log("Kliknięto w pozycję Zabiegi");
 }
 
-/* FOR OPEN PAGE WITH TREATMENT DESCRIPTION AFTER CLICK TITLE OF TREATMENT ON LIST */
+/* FOR DIPSPLAY BOX WITH TREATMENT DESCRIPTION AFTER CLICKED TITLE OF TREATMENT ON LIST */
 
 // Handle for list with treatments
 const treatmentsList = document.getElementById("treatments-list");
@@ -158,7 +158,7 @@ function displayRoomsList(e) {
   console.log("Kliknięto w pozycję Pokoje");
 }
 
-/* FOR OPEN PAGE WITH ROOM DESCRIPTION AFTER CLICK TITLE OF ROOM ON LIST */
+/* FOR DISPLAY BOX WITH ROOM DESCRIPTION AFTER CLICKED TITLE OF ROOM ON LIST */
 
 // Handle for list with rooms
 const roomsList = document.getElementById("rooms-list");
@@ -172,4 +172,20 @@ function openRoomBox(e) {
   /* 'e.target.childNodes.item(0).nodeValue' to 'name' pokoju w bazie - trzeba ją wykorzystać przy generowaniu boxa z opisem pokoju */
   /* Tutaj ma się też wyświetlić koszyk */
   console.log(e.target.childNodes.item(0).nodeValue);
+}
+
+/* FOR ADD TREATMENT TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON TREATMENT BOX */
+
+// Handle for button on treatment box
+const addTreatmentBtn = document.getElementById("add-treatment");
+// Add event after click this button
+addTreatmentBtn
+  ? addTreatmentBtn.addEventListener("click", addTreatmentToBasket)
+  : false;
+
+function addTreatmentToBasket(e) {
+  e.preventDefault();
+
+  /* Tutaj ma nastąpić dodanie usługi z boxa do koszyka */
+  console.log("Added treatment to basket");
 }

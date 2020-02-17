@@ -205,9 +205,21 @@ function addRoomToBasket(e) {
   /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku */
 
   /* Display name of room */
-  console.log(document.getElementById("title").innerHTML);
+  const roomName = document.getElementById("title").innerHTML;
+  console.log(roomName);
   /* Display term of arrival */
-  console.log(document.getElementById("room-from").value);
+  const roomFrom = new Date(document.getElementById("room-from").value);
+  console.log(roomFrom);
   /* Display term of departure */
-  console.log(document.getElementById("room-to").value);
+  const roomTo = new Date(document.getElementById("room-to").value);
+  console.log(roomTo);
+  /* Display price of room */
+  const roomPrice = parseInt(document.getElementById("room-price").innerHTML);
+  console.log(roomPrice);
+  /* Calculate number of days */
+  let numOfDays = parseInt((roomTo - roomFrom) / (24 * 3600 * 1000));
+  console.log(numOfDays);
+  /* Calculate cost of room */
+  let costOfRoom = numOfDays * roomPrice;
+  console.log(costOfRoom);
 }

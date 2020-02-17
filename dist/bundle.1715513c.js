@@ -215,6 +215,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   w && w.addEventListener("click", function (e) {
     e.preventDefault(), console.log("Kliknięto w pozycję Pokoje");
   });
+  var I = document.getElementById("rooms-list");
+  I && I.addEventListener("click", function (e) {
+    e.preventDefault(), console.log(e.target.childNodes.item(0).nodeValue);
+  });
 }]);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -244,7 +248,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61757" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61819" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

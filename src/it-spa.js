@@ -125,7 +125,7 @@ function displayTreatmentsList(e) {
   console.log("Kliknięto w pozycję Zabiegi");
 }
 
-/* FOR OPEN PAGE WITH TREATMENT DESCRIPTION AFTER CLICK NAME TITLE OF TREATMENT ON LIST */
+/* FOR OPEN PAGE WITH TREATMENT DESCRIPTION AFTER CLICK TITLE OF TREATMENT ON LIST */
 
 // Handle for list with treatments
 const treatmentsList = document.getElementById("treatments-list");
@@ -156,4 +156,20 @@ function displayRoomsList(e) {
   /* Tutaj trzeba wykonać iterację po elementach z bazy z tablicy 'rooms' i wyświetlić nazwy wszyskich pokojów w postaci listy w boxie */
   /* Tutaj ma się też wyświetlić koszyk */
   console.log("Kliknięto w pozycję Pokoje");
+}
+
+/* FOR OPEN PAGE WITH ROOM DESCRIPTION AFTER CLICK TITLE OF ROOM ON LIST */
+
+// Handle for list with rooms
+const roomsList = document.getElementById("rooms-list");
+// Add event when one position on list is clicked
+roomsList ? roomsList.addEventListener("click", openRoomBox) : false;
+
+function openRoomBox(e) {
+  e.preventDefault();
+
+  /* Tutaj ma nastąpić przekierowanie na stronę z opisem klikniętego pokoju */
+  /* 'e.target.childNodes.item(0).nodeValue' to 'name' pokoju w bazie - trzeba ją wykorzystać przy generowaniu boxa z opisem pokoju */
+  /* Tutaj ma się też wyświetlić koszyk */
+  console.log(e.target.childNodes.item(0).nodeValue);
 }

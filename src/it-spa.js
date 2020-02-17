@@ -174,11 +174,12 @@ function openRoomBox(e) {
   console.log(e.target.childNodes.item(0).nodeValue);
 }
 
-/* FOR ADD TREATMENT TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON TREATMENT BOX */
+/* FOR ADD POSITION FROM BOX TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON TREATMENT BOX */
 
 // Handle for button on treatment box
 const addTreatmentBtn = document.getElementById("add-treatment");
-// Add event after click this button
+
+// Add event after click button addTreatmentBtn
 addTreatmentBtn
   ? addTreatmentBtn.addEventListener("click", addTreatmentToBasket)
   : false;
@@ -186,6 +187,21 @@ addTreatmentBtn
 function addTreatmentToBasket(e) {
   e.preventDefault();
 
-  /* Tutaj ma nastąpić dodanie usługi z boxa do koszyka */
+  /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku*/
   console.log("Added treatment to basket");
+}
+
+/* FOR ADD POSITION FROM BOX TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON ROOM BOX */
+
+// Handle for button on room box
+const addRoomBtn = document.getElementById("add-room");
+
+// Add event after click this button addRoomBtn
+addRoomBtn ? addRoomBtn.addEventListener("click", addRoomToBasket) : false;
+
+function addRoomToBasket(e) {
+  e.preventDefault();
+
+  /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku */
+  console.log("Added room to basket");
 }

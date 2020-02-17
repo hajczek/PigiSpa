@@ -184,28 +184,36 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       s = document.getElementById("register-btn"),
       g = document.querySelector(".weak"),
       p = document.querySelector(".average"),
-      f = document.querySelector(".strong");
+      m = document.querySelector(".strong");
 
-  function m(e) {
-    e.preventDefault(), "" !== u.value && "" !== i.value && (console.log("it work"), g.style.backgroundColor = "#f504d5"), /(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(i.value) && (p.style.backgroundColor = "yellow"), /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(i.value) && (f.style.backgroundColor = "greenyellow");
+  function v(e) {
+    e.preventDefault(), "" !== u.value && "" !== i.value && (console.log("it work"), g.style.backgroundColor = "#f504d5"), /(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(i.value) && (p.style.backgroundColor = "yellow"), /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(i.value) && (m.style.backgroundColor = "greenyellow");
   }
 
-  u && u.addEventListener("input", m), i && i.addEventListener("input", m), s && s.addEventListener("click", function (e) {
+  u && u.addEventListener("input", v), i && i.addEventListener("input", v), s && s.addEventListener("click", function (e) {
     e.preventDefault(), "" !== u.value && pass.value === c.value ? (console.log("Zapisz dane w bazie"), u.value = "", pass.value = "", c.value = "") : (d.innerHTML = "Hasła są różne. Wprowadź do obu pól takie same hasła.", d.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
       d.style.display = "none";
     }, 3e3), console.log(i.value), console.log(c.value), console.log(d.value === c.value));
   });
-  var v = document.getElementById("email-login"),
+  var f = document.getElementById("email-login"),
       y = document.getElementById("pass-login"),
       b = document.getElementById("login-btn");
   b && b.addEventListener("click", function (e) {
-    e.preventDefault(), "" === v.value && "" === y.value ? (d.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.", d.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
+    e.preventDefault(), "" === f.value && "" === y.value ? (d.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.", d.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
       d.style.display = "none";
     }, 3e3)) : console.log("Zalogowano");
   });
-  var E = document.getElementById("treatments-list");
+  var E = document.getElementById("treatments");
   E && E.addEventListener("click", function (e) {
+    e.preventDefault(), console.log("Kliknięto w pozycję Zabiegi");
+  });
+  var k = document.getElementById("treatments-list");
+  k && k.addEventListener("click", function (e) {
     e.preventDefault(), console.log(e.target.childNodes.item(0).nodeValue);
+  });
+  var w = document.getElementById("rooms");
+  w && w.addEventListener("click", function (e) {
+    e.preventDefault(), console.log("Kliknięto w pozycję Pokoje");
   });
 }]);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -236,7 +244,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61326" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61757" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

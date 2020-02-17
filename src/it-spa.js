@@ -229,10 +229,12 @@ function addRoomToBasket(e) {
   /* Display price of room */
   const roomPrice = parseInt(document.getElementById("room-price").innerHTML);
   console.log(roomPrice);
+  /* Display num of rooms */
+  const roomNum = document.getElementById("room-num").value;
   /* Calculate number of days */
   let numOfDays = parseInt((roomTo - roomFrom) / (24 * 3600 * 1000));
   console.log(numOfDays);
   /* Calculate cost of room */
-  let costOfRoom = numOfDays * roomPrice;
+  let costOfRoom = numOfDays * roomPrice * roomNum;
   console.log(costOfRoom);
 }

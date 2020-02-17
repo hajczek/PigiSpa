@@ -182,12 +182,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       d = document.getElementById("pass-repeat"),
       i = document.getElementById("info-err"),
       s = document.getElementById("register-btn"),
-      g = document.querySelector(".weak"),
-      m = document.querySelector(".average"),
+      m = document.querySelector(".weak"),
+      g = document.querySelector(".average"),
       v = document.querySelector(".strong");
 
   function p(e) {
-    e.preventDefault(), "" !== u.value && "" !== c.value && (console.log("it work"), g.style.backgroundColor = "#f504d5"), /(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(c.value) && (m.style.backgroundColor = "yellow"), /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(c.value) && (v.style.backgroundColor = "greenyellow");
+    e.preventDefault(), "" !== u.value && "" !== c.value && (console.log("it work"), m.style.backgroundColor = "#f504d5"), /(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(c.value) && (g.style.backgroundColor = "yellow"), /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(c.value) && (v.style.backgroundColor = "greenyellow");
   }
 
   u && u.addEventListener("input", p), c && c.addEventListener("input", p), s && s.addEventListener("click", function (e) {
@@ -242,10 +242,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     console.log(o);
     var l = parseInt(document.getElementById("room-price").innerHTML);
     console.log(l);
-    var r = parseInt((o - n) / 864e5);
-    console.log(r);
-    var a = r * l;
+    var r = document.getElementById("room-num").value,
+        a = parseInt((o - n) / 864e5);
     console.log(a);
+    var u = a * l * r;
+    console.log(u);
   });
 }]);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

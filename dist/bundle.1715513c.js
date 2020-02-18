@@ -166,19 +166,21 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return n.d(t, "a", t), t;
   }, n.o = function (e, t) {
     return Object.prototype.hasOwnProperty.call(e, t);
-  }, n.p = "", n(n.s = 0);
-}([function (e, t, n) {
+  }, n.p = "", n(n.s = 1);
+}([function (e) {
+  e.exports = JSON.parse("{}");
+}, function (e, t, n) {
   "use strict";
 
   n.r(t);
   var o = n.p + "pigiSpaLogo.png",
       l = n.p + "pigiSpa-logo-footer.png",
-      r = new Image();
+      r = (n(0), new Image());
   r.src = o, document.querySelector("#logo").appendChild(r);
   var a = new Image();
   a.src = l, document.querySelector("#logo-small").appendChild(a);
-  var u = document.getElementById("email"),
-      c = document.getElementById("pass"),
+  var c = document.getElementById("email"),
+      u = document.getElementById("pass"),
       i = document.getElementById("pass-repeat"),
       d = document.getElementById("info-err"),
       s = document.getElementById("register-btn"),
@@ -187,19 +189,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       v = document.querySelector(".strong");
 
   function p(e) {
-    e.preventDefault(), "" !== u.value && "" !== c.value && (console.log("it work"), g.style.backgroundColor = "#f504d5"), /(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(c.value) && (m.style.backgroundColor = "yellow"), /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(c.value) && (v.style.backgroundColor = "greenyellow");
+    e.preventDefault(), "" !== c.value && "" !== u.value && (console.log("it work"), g.style.backgroundColor = "#f504d5"), /(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(u.value) && (m.style.backgroundColor = "yellow"), /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(u.value) && (v.style.backgroundColor = "greenyellow");
   }
 
-  u && u.addEventListener("input", p), c && c.addEventListener("input", p), s && s.addEventListener("click", function (e) {
-    e.preventDefault(), "" !== u.value && pass.value === i.value ? (console.log("Zapisz dane w bazie"), u.value = "", pass.value = "", i.value = "") : (d.innerHTML = "Hasła są różne. Wprowadź do obu pól takie same hasła.", d.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
+  c && c.addEventListener("input", p), u && u.addEventListener("input", p), s && s.addEventListener("click", function (e) {
+    e.preventDefault(), "" !== c.value && pass.value === i.value ? (console.log("Zapisz dane w bazie"), c.value = "", pass.value = "", i.value = "") : (d.innerHTML = "Hasła są różne. Wprowadź do obu pól takie same hasła.", d.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
       d.style.display = "none";
-    }, 3e3), console.log(c.value), console.log(i.value), console.log(d.value === i.value));
+    }, 3e3), console.log(u.value), console.log(i.value), console.log(d.value === i.value));
   });
-  var y = document.getElementById("email-login"),
-      f = document.getElementById("pass-login"),
+  var f = document.getElementById("email-login"),
+      y = document.getElementById("pass-login"),
       E = document.getElementById("login-btn");
   E && E.addEventListener("click", function (e) {
-    e.preventDefault(), "" === y.value && "" === f.value ? (d.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.", d.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
+    e.preventDefault(), "" === f.value && "" === y.value ? (d.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.", d.style.backgroundColor = "rgba(255, 255, 255, 0.5)", setTimeout(function () {
       d.style.display = "none";
     }, 3e3)) : console.log("Zalogowano");
   });
@@ -211,12 +213,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   b && b.addEventListener("click", function (e) {
     e.preventDefault(), console.log(e.target.childNodes.item(0).nodeValue);
   });
-  var L = document.getElementById("rooms");
-  L && L.addEventListener("click", function (e) {
+  var B = document.getElementById("rooms");
+  B && B.addEventListener("click", function (e) {
     e.preventDefault(), console.log("Kliknięto w pozycję Pokoje");
   });
-  var B = document.getElementById("rooms-list");
-  B && B.addEventListener("click", function (e) {
+  var L = document.getElementById("rooms-list");
+  L && L.addEventListener("click", function (e) {
     e.preventDefault(), console.log(e.target.childNodes.item(0).nodeValue);
   });
   var k = document.getElementById("add-treatment");
@@ -245,29 +247,33 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var r = document.getElementById("room-num").value,
         a = parseInt((o - n) / 864e5);
     console.log(a);
-    var u = a * l * r;
-    console.log(u);
+    var c = a * l * r;
+    console.log(c);
   });
-  var M = document.getElementById("basket-content");
-  M.addEventListener("click", function (e) {
+  var S = document.getElementById("basket-content");
+  S.addEventListener("click", function (e) {
     if (e.preventDefault(), "remove" === event.target.className) {
       e.target.parentElement.remove();
       var t = parseInt(e.target.previousSibling.previousElementSibling.innerHTML),
-          n = parseInt(S.innerHTML) - t;
-      S.innerHTML = n, "0" === S.innerHTML && (document.querySelector(".summary-text").innerHTML = "Załaduj coś do koszyka!");
+          n = parseInt(M.innerHTML) - t;
+      M.innerHTML = n, "0" === M.innerHTML && (document.querySelector(".summary-text").innerHTML = "Załaduj coś do koszyka!");
     }
   });
-  var S = document.getElementById("all-cost");
-  M.addEventListener("click", function (e) {
+  var M = document.getElementById("all-cost");
+  S.addEventListener("click", function (e) {
     if (e.preventDefault(), "quant" === event.target.className) {
       console.log(e.target.value);
-      var t = e.target.value,
-          n = parseInt(e.target.nextElementSibling.innerHTML),
-          o = t * n;
-      console.log(o), e.target.nextElementSibling.innerHTML = o;
+      var t = e.target.value * priceOfElement;
+      e.target.nextElementSibling.innerHTML = t;
     }
   }), document.getElementById("pay").addEventListener("click", function (e) {
     e.preventDefault(), console.log("Bought!");
+  }), fetch("./../database.json").then(function (e) {
+    return console.log(e), e.json();
+  }).then(function (e) {
+    console.log(e);
+  }).catch(function (e) {
+    console.log("Error Reading data " + e);
   });
 }]);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -298,7 +304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51435" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56782" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

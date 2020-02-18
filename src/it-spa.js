@@ -315,3 +315,31 @@ function buyAction(e) {
   /* Tutaj ma nastąpić wyświetlenie podsumowania koszyka i wyświetenie wiadomości pozakupowej */
   console.log("Bought!");
 }
+
+/* CONNECTION WITH DATA IN JSON FILE */
+function connectWithData() {
+  // fetch(dataJson, {
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Accept: "application/json"
+  //   }
+  // })
+  //   .then(resp => resp.json())
+  //   .then(json => console.log(json))
+  //   .catch(err => console.log(err));
+
+  fetch("./../database.json")
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+    .then(data => {
+      // Work with JSON data here
+      console.log(data);
+    })
+    .catch(err => {
+      // Do something for an error here
+      console.log("Error Reading data " + err);
+    });
+}
+connectWithData();

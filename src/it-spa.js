@@ -268,6 +268,11 @@ function removeFromBasket(e) {
     let newAllCostInBasket = actuallCostInBasket - elementPrice;
     // Put new cost in basket (after remove element) as an all cost in basket
     allCostInBasket.innerHTML = newAllCostInBasket;
+
+    if (allCostInBasket.innerHTML === "0") {
+      document.querySelector(".summary-text").innerHTML =
+        "Załaduj coś do koszyka!";
+    }
   }
 }
 

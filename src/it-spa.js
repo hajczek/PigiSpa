@@ -272,7 +272,33 @@ function removeFromBasket(e) {
     if (allCostInBasket.innerHTML === "0") {
       document.querySelector(".summary-text").innerHTML =
         "Załaduj coś do koszyka!";
+      /* Tutaj ma się wyświetlać slogan z kosza */
     }
+  }
+}
+
+/* FOR INPUT WITH 'quant' IN BASKET to change number of elements*/
+
+// Add event listener for every 'quant' element in each element on basket list
+inBasket.addEventListener("click", changeQuantOfElement);
+
+/* Function for change quantity of element */
+function changeQuantOfElement(e) {
+  e.preventDefault();
+
+  if (event.target.className === "quant") {
+    console.log(e.target.value);
+    /* Tutaj trzeba obliczyć nową cenę odpowiadającą ilości elementów - quant.value * priceOfElelemt */
+    let newQuantOfElement = e.target.value;
+
+    // Handle for actual price of element - tutaj trzeba pobrać cenę elementu z bazy
+    // let priceOfElement = ...
+
+    // Calculate a new price of element
+    let newPriceOfElement = newQuantOfElement * priceOfElement;
+    // Define element which display price of element on basket
+    let displayPrice = e.target.nextElementSibling;
+    displayPrice.innerHTML = newPriceOfElement;
   }
 }
 

@@ -182,12 +182,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       d = document.getElementById("pass-repeat"),
       i = document.getElementById("info-err"),
       s = document.getElementById("register-btn"),
-      m = document.querySelector(".weak"),
-      g = document.querySelector(".average"),
+      g = document.querySelector(".weak"),
+      m = document.querySelector(".average"),
       v = document.querySelector(".strong");
 
   function p(e) {
-    e.preventDefault(), "" !== u.value && "" !== c.value && (console.log("it work"), m.style.backgroundColor = "#f504d5"), /(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(c.value) && (g.style.backgroundColor = "yellow"), /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(c.value) && (v.style.backgroundColor = "greenyellow");
+    e.preventDefault(), "" !== u.value && "" !== c.value && (console.log("it work"), g.style.backgroundColor = "#f504d5"), /(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(c.value) && (m.style.backgroundColor = "yellow"), /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(c.value) && (v.style.backgroundColor = "greenyellow");
   }
 
   u && u.addEventListener("input", p), c && c.addEventListener("input", p), s && s.addEventListener("click", function (e) {
@@ -247,7 +247,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     console.log(a);
     var u = a * l * r;
     console.log(u);
-  }), document.getElementById("pay").addEventListener("click", function (e) {
+  }), document.getElementById("basket-content").addEventListener("click", function (e) {
+    if (e.preventDefault(), "remove" === event.target.className) {
+      console.log(event.target), e.target.parentElement.remove();
+      var t = parseInt(e.target.previousSibling.previousElementSibling.innerHTML),
+          n = parseInt(S.innerHTML),
+          o = n - t;
+      S.innerHTML = o, console.log(n);
+    }
+  });
+  var S = document.getElementById("all-cost");
+  document.getElementById("pay").addEventListener("click", function (e) {
     e.preventDefault(), console.log("Bought!");
   });
 }]);

@@ -239,7 +239,39 @@ function addRoomToBasket(e) {
   console.log(costOfRoom);
 }
 
-/* FOR CLICK BUTTON 'Kupuję i płacę' IN BASKET */
+/* FOR BUTTON 'remove' IN BASKET */
+
+// Handle for list of elements in basket
+const inBasket = document.getElementById("basket-content");
+// Add event listener for every 'remove' element in each element on basket list
+inBasket.addEventListener("click", removeFromBasket);
+
+// Handle for all cost of things in basket
+const allCostInBasket = document.getElementById("all-cost");
+
+// Function for remove element from basket after click trash button
+function removeFromBasket(e) {
+  e.preventDefault();
+
+  /* Remove element from basket list after trash btn of this element was clicked  */
+  if (event.target.className === "remove") {
+    e.target.parentElement.remove();
+
+    /* Subtract cost of remove element from all cost in basket */
+    // Handle for price of remove element
+    const elementPrice = parseInt(
+      e.target.previousSibling.previousElementSibling.innerHTML
+    );
+    // Handke for actual all cost in basket
+    let actuallCostInBasket = parseInt(allCostInBasket.innerHTML);
+    // Handle for new cost in basket, after remove element
+    let newAllCostInBasket = actuallCostInBasket - elementPrice;
+    // Put new cost in basket (after remove element) as an all cost in basket
+    allCostInBasket.innerHTML = newAllCostInBasket;
+  }
+}
+
+/* FOR BUTTON 'Kupuję i płacę' IN BASKET */
 
 // Hanlde for button in basket
 const buyBtn = document.getElementById("pay");

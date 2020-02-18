@@ -238,3 +238,17 @@ function addRoomToBasket(e) {
   let costOfRoom = numOfDays * roomPrice * roomNum;
   console.log(costOfRoom);
 }
+
+/* FOR CLICK BUTTON 'Kupuję i płacę' IN BASKET */
+
+// Hanlde for button in basket
+const buyBtn = document.getElementById("pay");
+// Added event handler to this button
+buyBtn.addEventListener("click", buyAction);
+
+// Function after click button buyBtn
+function buyAction(e) {
+  e.preventDefault();
+  /* Tutaj ma nastąpić wyświetlenie podsumowania koszyka i wyświetenie wiadomości pozakupowej */
+  console.log("Bought!");
+}

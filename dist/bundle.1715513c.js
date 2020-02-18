@@ -219,8 +219,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   k && k.addEventListener("click", function (e) {
     e.preventDefault(), console.log(e.target.childNodes.item(0).nodeValue);
   });
-  var w = document.getElementById("add-treatment");
-  w && w.addEventListener("click", function (e) {
+  var L = document.getElementById("add-treatment");
+  L && L.addEventListener("click", function (e) {
     e.preventDefault();
     var t = document.getElementById("title").innerHTML;
     console.log(t);
@@ -231,8 +231,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var l = n * o;
     console.log(l);
   });
-  var L = document.getElementById("add-room");
-  L && L.addEventListener("click", function (e) {
+  var w = document.getElementById("add-room");
+  w && w.addEventListener("click", function (e) {
     e.preventDefault();
     var t = document.getElementById("title").innerHTML;
     console.log(t);
@@ -247,6 +247,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     console.log(a);
     var u = a * l * r;
     console.log(u);
+  }), document.getElementById("pay").addEventListener("click", function (e) {
+    e.preventDefault(), console.log("Bought!");
   });
 }]);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

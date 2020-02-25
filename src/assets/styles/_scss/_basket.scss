@@ -94,14 +94,15 @@
     button {
       background-color: $button-color;
       color: $font-color;
-      font-size: 40px;
+      font-size: 30px;
       font-weight: bold;
       width: 100%;
       position: absolute;
       bottom: 0;
       right: 0;
-      border: 0;
+      border: none;
       padding: 20px 0;
+      outline: none;
 
       &:hover {
         cursor: pointer;

@@ -8,7 +8,7 @@
   position: absolute;
   top: 350px;
   right: 220px;
-  font-size: 40px;
+  font-size: $xs-size * 8;
   text-shadow: $text-shadow;
 }
 
@@ -26,14 +26,14 @@
   text-shadow: $text-shadow;
 
   h2 {
-    font-size: 50px;
-    margin-bottom: 55px;
+    font-size: $xs-size * 10;
+    margin-bottom: $xs-size * 11;
     font-weight: normal;
     text-transform: none;
     color: $font-color;
   }
 
   p {
-    font-size: 35px;
+    font-size: $xs-size * 7;
   }
 }

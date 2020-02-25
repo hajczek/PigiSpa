@@ -7,32 +7,32 @@
   width: 600px;
   flex-wrap: wrap;
   position: absolute;
-  left: 70px;
+  left: $xs-size * 14;
   top: 200px;
   background-color: $bg-color;
   opacity: 0.9;
   padding: 50px 70px 70px 90px;
 
   p {
-    font-size: 25px;
+    font-size: $xs-size * 5;
     line-height: 1.6;
-    margin-bottom: 40px;
+    margin-bottom: $xs-size * 8;
 
     span {
       font-weight: bold;
     }
 
     input {
-      padding: 5px;
-      font-size: 20px;
+      padding: $xs-size;
+      font-size: $xs-size * 4;
       color: $input-text-color;
       border: none;
 
-      margin-top: 10px;
+      margin-top: $xs-size * 2;
     }
 
     #room-to {
-      margin-left: 16px;
+      margin-left: $s-size;
     }
   }
 
@@ -40,8 +40,8 @@
     background-color: $font-color;
     color: $edit-color;
     font-weight: bold;
-    font-size: 30px;
-    padding: 20px;
+    font-size: $xs-size * 6;
+    padding: $xs-size * 4;
 
     &:hover {
       opacity: 0.7;

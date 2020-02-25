@@ -14,15 +14,15 @@
 
   h2 {
     color: $edit-color;
-    font-size: 30px;
-    padding-top: 45px;
-    padding-bottom: 25px;
+    font-size: $xs-size * 6;
+    padding-top: $xs-size * 9;
+    padding-bottom: $xs-size * 5;
     font-weight: bold;
     margin-bottom: 0;
   }
 
   p {
-    font-size: 25px;
+    font-size: $xs-size * 5;
   }
 
   #basket-content-box,
@@ -31,7 +31,7 @@
       width: 90%;
       margin-left: 5%;
       li {
-        font-size: 18px;
+        font-size: $m-size;
         width: 100%;
         position: relative;
         line-height: 2.2;
@@ -42,13 +42,10 @@
 
         .quant {
           color: $input-text-color;
-          width: 40px;
+          width: $xs-size * 8;
         }
 
         .price {
-          // position: absolute;
-          // top: 0;
-          // right: 40px;
           font-weight: bold;
         }
 
@@ -59,11 +56,11 @@
           background: transparent url("../src/assets/img/trash-pink.png") top
             center no-repeat;
           background-size: cover;
-          width: 20px;
-          height: 24px;
+          width: $xs-size * 4;
+          height: $l-size;
           position: absolute;
-          top: 4px;
-          right: 5px;
+          top: $xs-size;
+          right: $xs-size;
 
           &:hover {
             opacity: 0.7;
@@ -82,26 +79,26 @@
 
     .summary-text {
       text-transform: uppercase;
-      margin-top: 60px;
+      margin-top: $xs-size * 12;
       font-weight: bold;
-      font-size: 20px;
+      font-size: $xs-size * 4;
 
       span {
-        font-size: 30px;
+        font-size: $xs-size * 6;
       }
     }
 
     button {
       background-color: $button-color;
       color: $font-color;
-      font-size: 30px;
+      font-size: $xs-size * 6;
       font-weight: bold;
       width: 100%;
       position: absolute;
       bottom: 0;
       right: 0;
       border: none;
-      padding: 20px 0;
+      padding: $xs-size * 4 0;
       outline: none;
 
       &:hover {

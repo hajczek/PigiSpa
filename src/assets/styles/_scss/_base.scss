@@ -13,16 +13,16 @@ body {
   font-family: "Segoe UI", sans-serif;
 
   h2 {
-    font-size: 40px;
-    margin-bottom: 45px;
+    font-size: $xs-size * 8;
+    margin-bottom: $xs-size * 9;
     font-weight: normal;
     text-transform: uppercase;
     color: $title-color;
   }
 
   ol {
-    font-size: 28px;
-    padding-left: 25px;
+    font-size: $xl-size;
+    padding-left: $xs-size * 5;
     text-align: left;
     line-height: 1.6;
 
@@ -39,7 +39,7 @@ body {
     opacity: 0.9;
     display: flex;
     justify-content: space-between;
-    padding: 0 70px;
+    padding: 0 $xs-size * 14;
     align-items: center;
 
     #logo img {
@@ -52,11 +52,11 @@ body {
     }
 
     nav {
-      font-size: 24px;
+      font-size: $l-size;
       a {
         color: $font-color;
         text-decoration: none;
-        padding: 0 20px;
+        padding: 0 $xs-size * 4;
 
         &:hover {
           color: $active-color;

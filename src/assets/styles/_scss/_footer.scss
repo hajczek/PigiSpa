@@ -1,14 +1,13 @@
 footer {
-  width: 100vw;
-  height: 68px;
-  background-color: $bg-color;
-  opacity: 0.9;
-  position: absolute;
-  bottom: 0;
-  opacity: 0.9;
-  display: flex;
-  padding: 0 70px;
   align-items: center;
+  background-color: $bg-color;
+  bottom: 0;
+  display: flex;
+  height: 68px;
+  opacity: 0.9;
+  padding: 0 70px;
+  position: absolute;
+  width: 100vw;
 
   a img {
     width: 200px;

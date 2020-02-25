@@ -1,36 +1,36 @@
 .welcome-box-after-register {
   display: flex;
   flex-direction: column;
-  width: 470px;
+  flex-wrap: wrap;
+  font-size: $xs-size * 8;
   justify-self: center;
   margin: 0 auto;
-  flex-wrap: wrap;
   position: absolute;
-  top: 350px;
   right: 220px;
-  font-size: $xs-size * 8;
   text-shadow: $text-shadow;
+  top: 350px;
+  width: 470px;
 }
 
 .welcome-box-after-login,
 .thanks-box-after-payment {
   display: flex;
   flex-direction: column;
-  width: 460px;
-  justify-self: center;
-  margin: 0 auto;
   flex-wrap: wrap;
-  position: absolute;
-  top: 200px;
+  justify-self: center;
   left: 70px;
+  margin: 0 auto;
+  position: absolute;
   text-shadow: $text-shadow;
+  top: 200px;
+  width: 460px;
 
   h2 {
-    font-size: $xs-size * 10;
-    margin-bottom: $xs-size * 11;
-    font-weight: normal;
-    text-transform: none;
     color: $font-color;
+    font-size: $xs-size * 10;
+    font-weight: normal;
+    margin-bottom: $xs-size * 11;
+    text-transform: none;
   }
 
   p {

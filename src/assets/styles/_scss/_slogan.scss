@@ -1,11 +1,11 @@
 .slogan {
-  font-size: $xs-size * 9;
-  text-align: center;
-  width: 100%;
-  position: absolute;
   bottom: 150px;
+  font-size: $xs-size * 9;
   font-style: italic;
+  position: absolute;
+  text-align: center;
   text-shadow: $slogan-shadow;
+  width: 100%;
 
   .pink {
     color: $edit-color;

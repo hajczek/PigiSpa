@@ -1,24 +1,24 @@
 .basket-box {
-  display: flex;
-  flex-direction: column;
-  width: 425px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  position: absolute;
-  right: 0;
-  top: 100px;
-  text-align: center;
-  height: calc(100% - 168px);
   background-color: $font-color;
   color: $input-text-color;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(100% - 168px);
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 100px;
+  width: 425px;
 
   h2 {
     color: $edit-color;
     font-size: $xs-size * 6;
-    padding-top: $xs-size * 9;
-    padding-bottom: $xs-size * 5;
     font-weight: bold;
     margin-bottom: 0;
+    padding-bottom: $xs-size * 5;
+    padding-top: $xs-size * 9;
   }
 
   p {
@@ -28,13 +28,14 @@
   #basket-content-box,
   #basket-bought-content-box {
     ol {
-      width: 90%;
       margin-left: 5%;
+      width: 90%;
+
       li {
         font-size: $m-size;
-        width: 100%;
-        position: relative;
         line-height: 2.2;
+        position: relative;
+        width: 100%;
 
         &:hover {
           opacity: 1;
@@ -50,17 +51,17 @@
         }
 
         .remove {
-          display: inline-block;
-          flex-direction: row;
-          justify-content: flex-end;
           background: transparent url("../src/assets/img/trash-pink.png") top
             center no-repeat;
           background-size: cover;
-          width: $xs-size * 4;
+          display: inline-block;
+          flex-direction: row;
           height: $l-size;
+          justify-content: flex-end;
           position: absolute;
-          top: $xs-size;
           right: $xs-size;
+          top: $xs-size;
+          width: $xs-size * 4;
 
           &:hover {
             opacity: 0.7;
@@ -78,10 +79,10 @@
     }
 
     .summary-text {
-      text-transform: uppercase;
-      margin-top: $xs-size * 12;
-      font-weight: bold;
       font-size: $xs-size * 4;
+      font-weight: bold;
+      margin-top: $xs-size * 12;
+      text-transform: uppercase;
 
       span {
         font-size: $xs-size * 6;
@@ -90,16 +91,16 @@
 
     button {
       background-color: $button-color;
+      bottom: 0;
+      border: none;
       color: $font-color;
       font-size: $xs-size * 6;
       font-weight: bold;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      border: none;
-      padding: $xs-size * 4 0;
       outline: none;
+      padding: $xs-size * 4 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
 
       &:hover {
         cursor: pointer;

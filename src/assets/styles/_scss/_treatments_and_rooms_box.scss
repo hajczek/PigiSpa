@@ -2,16 +2,16 @@
 .rooms-box,
 .treamtment-box,
 .room-box {
+  background-color: $bg-color;
   display: flex;
   flex-direction: column;
-  width: 600px;
   flex-wrap: wrap;
-  position: absolute;
   left: $xs-size * 14;
-  top: 200px;
-  background-color: $bg-color;
   opacity: 0.9;
   padding: 50px 70px 70px 90px;
+  position: absolute;
+  top: 200px;
+  width: 600px;
 
   p {
     font-size: $xs-size * 5;
@@ -23,12 +23,11 @@
     }
 
     input {
-      padding: $xs-size;
-      font-size: $xs-size * 4;
-      color: $input-text-color;
       border: none;
-
+      color: $input-text-color;
+      font-size: $xs-size * 4;
       margin-top: $xs-size * 2;
+      padding: $xs-size;
     }
 
     #room-to {
@@ -39,13 +38,13 @@
   button {
     background-color: $font-color;
     color: $edit-color;
-    font-weight: bold;
     font-size: $xs-size * 6;
+    font-weight: bold;
     padding: $xs-size * 4;
 
     &:hover {
-      opacity: 0.7;
       cursor: pointer;
+      opacity: 0.7;
     }
   }
 }

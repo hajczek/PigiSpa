@@ -1,13 +1,13 @@
 /* For info about not the same password */
 #info-err {
-  text-align: center;
-  width: 85%;
+  background-color: transparent;
   color: #f504d5;
   font-size: $xs-size * 4;
   font-weight: bold;
-  position: relative;
-  top: -30px;
-  background-color: transparent;
-  padding: 10px;
   margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  top: -30px;
+  width: 85%;
 }

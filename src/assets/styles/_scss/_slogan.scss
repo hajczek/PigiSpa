@@ -1,14 +1,24 @@
 .slogan {
-  bottom: 150px;
-  font-size: $xs-size * 9;
+  bottom: 100px;
+  font-size: $xs-size * 6;
   font-style: italic;
   position: absolute;
   text-align: center;
   text-shadow: $slogan-shadow;
-  width: 100%;
+  width: 90%;
+  margin-left: 5%;
 
   .pink {
     color: $edit-color;
     font-weight: bold;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .sloagn {
+    bottom: 150px;
+    font-size: $xs-size * 9;
+    width: 100%;
+    margin-left: 0;
   }
 }

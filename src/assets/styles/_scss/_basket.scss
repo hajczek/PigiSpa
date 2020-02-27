@@ -1,16 +1,16 @@
 .basket-box {
-  background-color: $font-color;
-  color: $input-text-color;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #666;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: calc(100% - 168px);
+  height: 100%;
   margin: 0 auto;
   position: absolute;
   right: 0;
   text-align: center;
-  top: 100px;
-  width: 425px;
+  top: 70px;
+  width: 100%;
 
   h2 {
     color: $edit-color;
@@ -107,5 +107,15 @@
         opacity: 0.7;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .basket-box {
+    background-color: $font-color;
+    color: $input-text-color;
+    height: calc(100% - 168px);
+    top: 100px;
+    width: 425px;
   }
 }

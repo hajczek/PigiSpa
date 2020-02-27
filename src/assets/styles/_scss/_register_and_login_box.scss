@@ -6,18 +6,33 @@
   justify-self: center;
   margin: 0 auto;
   position: absolute;
-  right: 260px;
-  top: 200px;
-  width: 425px;
+  right: 5%;
+  top: 100px;
+  width: 90%;
 }
 
 .registration-box h2,
 .login-box h2 {
   color: $font-color;
-  font-size: $xs-size * 10;
+  font-size: $xs-size * 5;
   font-weight: normal;
-  margin-bottom: 65px;
+  margin-bottom: 50px;
   text-align: center;
   text-shadow: $text-shadow;
   text-transform: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .registration-box,
+  .login-box {
+    right: 260px;
+    top: 200px;
+    width: 425px;
+  }
+
+  .registration-box h2,
+  .login-box h2 {
+    font-size: $xs-size * 10;
+    margin-bottom: 65px;
+  }
 }

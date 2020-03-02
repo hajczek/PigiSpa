@@ -1,14 +1,25 @@
 // registration.js
 
 import $ from "jquery";
+import { header, footer, registrationForm } from "./index";
 
 export const registration = () => {
   const fragment = $(new DocumentFragment());
+  // const headerBox = header();
+  const box = $(`<div class="registration-box"></div`);
+  const title = $(`<h2>Wypełnij formularz</h2>`);
+  const error = $(`<div id="info-err"></div>`);
+  const form = registrationForm;
 
-  const h1 = $(`<h1>Zarejestruj się</h1>`);
-  const slogan = $(`<p>Wypełnij formularz rejestracji</p>`);
+  fragment
+    .append(header)
+    .append(box)
+    .append(footer);
 
-  fragment.append(h1).append(slogan);
+  box
+    .append(title)
+    .append(error)
+    .append(form);
 
   return fragment;
 };

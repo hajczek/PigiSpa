@@ -11,6 +11,10 @@ body {
   overflow: hidden;
   width: 100vw;
 
+  a:hover {
+    cursor: pointer;
+  }
+
   header {
     align-items: center;
     background-color: $bg-color;

@@ -5,6 +5,7 @@ export * from "./room";
 export * from "./treatments";
 export * from "./treatment";
 export * from "./login";
+export * from "./registration-form";
 export * from "./registration";
 export * from "./not-found";
 export * from "./header";

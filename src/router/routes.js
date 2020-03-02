@@ -37,7 +37,7 @@ export const routes = [
     name: "Room",
     path: "/room",
     component: room,
-    data: { display: "inline-block" }
+    data: { display: "none" }
   },
   {
     name: "Treatments",
@@ -49,7 +49,7 @@ export const routes = [
     name: "Treatment",
     path: "/treatment",
     component: treatment,
-    data: { display: "none" }
+    data: { display: "inline-block" }
   },
   {
     name: "Bookings",

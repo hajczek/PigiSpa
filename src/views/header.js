@@ -12,7 +12,6 @@ export const header = () => {
     .append(logoPigiSpa)
     .find("nav")
     .append(nav);
-  console.log(nav);
 
   return header;
 };

@@ -3,6 +3,7 @@ import $ from "jquery";
 
 // Complete information about route element
 export const navItem = route => {
+  // Define value for css style of each a element
   let styleKey;
   let styleVal;
   for (let key in route.data) {

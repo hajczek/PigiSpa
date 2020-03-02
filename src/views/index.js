@@ -9,3 +9,4 @@ export * from "./registration";
 export * from "./not-found";
 export * from "./header";
 export * from "./logo";
+export * from "./footer";

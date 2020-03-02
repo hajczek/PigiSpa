@@ -1,7 +1,7 @@
 // home.js
 
 import $ from "jquery";
-import { header } from "./header";
+import { header, footer } from "./index";
 
 export const home = () => {
   const fragment = $(new DocumentFragment());
@@ -11,7 +11,10 @@ export const home = () => {
     `<p class="slogan"><span class="pink">PigiSpa</span> zaprasza przepracowanych Front-End Developerów na zabiegi SPA!</p>`
   );
 
-  fragment.append(html).append(slogan);
+  fragment
+    .append(html)
+    .append(slogan)
+    .append(footer);
 
   return fragment;
 };

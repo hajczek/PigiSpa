@@ -1,7 +1,7 @@
 // registration.js
 
 import $ from "jquery";
-import { header, footer, registrationForm } from "./index";
+import { header, footer, registrationForm } from "../index";
 
 export const registration = () => {
   const fragment = $(new DocumentFragment());

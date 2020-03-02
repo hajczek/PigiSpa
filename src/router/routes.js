@@ -14,19 +14,19 @@ import {
 // Routes in project
 
 export const routes = [
+  { name: "Home", path: "/", component: home, data: { display: "none" } },
   {
     name: "After Register",
     path: "/after-register",
     component: afterRegister,
-    data: { display: "inline-block" }
+    data: { display: "none" }
   },
   {
     name: "After Login",
     path: "/after-login",
     component: afterLogin,
-    data: { display: "inline-block" }
+    data: { display: "none" }
   },
-  { name: "Home", path: "/", component: home, data: { display: "none" } },
   {
     name: "Rooms",
     path: "/rooms",
@@ -37,13 +37,13 @@ export const routes = [
     name: "Room",
     path: "/room",
     component: room,
-    data: { display: "none" }
+    data: { display: "inline-block" }
   },
   {
     name: "Treatments",
     path: "/treatments",
     component: treatments,
-    data: { visibility: "visible" }
+    data: { visibility: "hidden" }
   },
   {
     name: "Treatment",

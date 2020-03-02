@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/it-spa.min.css">
+  <base href="/" target="_self">
+  <title>Pigi SPA</title>
+</head>
+
+<body>
+  <main>
+    <header>
+      <!-- LOGO -->
+      <a href="./" id="logo">
+      </a>
+      <!-- MENU -->
+      <nav>
+        <a href="#" id="login">Logowanie</a> | <a href="#" id="register">Rejestracja</a>
+      </nav>
+
+      <!-- USER MENU -->
+      <nav id="user-menu">
+        <a href="#" id="treatments">Zabiegi</a> | <a href="#" id="rooms">Pokoje</a>
+      </nav>
+    </header>
+
+    <!-- SECTION FOR CONTENT -->
+    <section>
+
+      <!-- WELCOME SLOGAN -->
+      <!-- <p class="slogan">
+        <span class="pink">PigiSpa</span> zaprasza przepracowanych Front-End Developerów na zabiegi SPA!
+      </p> -->
+
+      <!-- REGISTRATION FORM -->
+      <!-- <div class="registration-box">
+        <h2>Wypełnij formularz</h2>
+        <div id="info-err"></div>
+        <form class="form" id="register-form">
+          <input type="email" name="email" id="email" placeholder="Wpisz email">
+          <input type="password" name="pass" id="pass" placeholder="Wpisz hasło">
+          <input type="password" name="pass-check" id="pass-repeat" placeholder="Ponownie wpisz hasło">
+
+          <p class="visualInfo">Siła hasła:
+            <span class="weak"></span>
+            <span class="average"></span>
+            <span class="strong"></span>
+          </p>
+          <p class="legend">
+            <span class="weakCol"></span> słaba
+            <span class="averageCol"></span> średnia
+            <span class="strongCol"></span> silna
+          </p>
+
+          <button id="register-btn">Zarejestruj mnie</button>
+        </form>
+      </div> -->
+
+      <!-- LOGIN FORM -->
+      <!-- <div class="login-box">
+        <h2>Zaloguj się</h2>
+        <div id="info-err"></div>
+        <form class="form" id="login-form">
+          <input type="email" name="email-login" id="email-login" placeholder="Wpisz email">
+          <input type="password" name="pass-login" id="pass-login" placeholder="Wpisz hasło">
+          <button id="login-btn">Zaloguj mnie</button>
+        </form>
+      </div> -->
+
+      <!-- WELCOME TEXT AFTER REGISTRATION -->
+      <!-- <div class="welcome-box-after-register">
+        <p>Zostałeś zarejestrowany.<br>Logując się uzyskasz dostęp do usług <b>PigiSPa</b> :)</p>
+      </div> -->
+
+      <!-- WELCOME TEXT AFTER LOGIN -->
+      <!-- <div class="box-after-login">
+        <div class="welcome-box-after-login">
+          <h2>Witaj w PigiSpa!</h2>
+          <p>Wybierz ulubione zabiegi i zarezerwuj pokój w dogodnym terminie.
+            Nasze świnki z PigiSpa już na Ciebie czekają ;)</p>
+        </div>
+      </div> -->
+
+      <!-- THANKS BOX AFTER PAYMENT -->
+      <!-- <div class="thanks-box-after-payment">
+        <h2>Dziękujemy za rezerwację!</h2>
+        <p>Czekamy na Ciebie w PigiSpa! Nie zapomnij kąpielówek ;)</p>
+      </div> -->
+
+      <!-- BASKET BOX -->
+      <!-- <div class="basket-box">
+        <h2>TWÓJ KOSZYK</h2> -->
+      <!-- <p id="slogan-basket">Załaduj coś do koszyka!</p> -->
+
+      <!-- BASKET CONTENT -->
+      <!-- <div id="basket-content-box">
+          <ol id="basket-content">
+            <li id="poz_1">Biczowanie kablem od myszy<br>Il. szt.: <input class="quant" type="number" value="1" min="1"
+                max="100">,
+              cena: <span class="price">70</span> zł
+              <span class="remove"></span></li>
+            <li id="poz_2">Peeling odłamkami płyty CD<br>Il. szt.: <input class="quant" type="number" value="1" min="1"
+                max="100">, cena: <span class="price">50</span> zł
+              <span class="remove"></span></li>
+            <li id="poz_3">Pokój binarny<br>Il. szt.: <input class="quant" type="number" value="1" min="1" max="100">,
+              cena: <span class="price">240</span> zł
+              <span class="remove"></span><br>
+              od <span class="term" id="term_from">22-05-2020</span><br>
+              do <span class="term" id="term_to">25-05-2020</span>
+            </li>
+          </ol>
+
+          <p class="summary-text">Razem do zapłaty: <span id="all-cost">840</span> zł</p>
+
+          <button id="pay">Kupuję i płacę</button>
+        </div> -->
+
+      <!-- BASKET CONTENT AFTER PAYMANT -->
+      <!-- <div id="basket-bought-content-box">
+          <ol>
+            <li>Biczowanie kablem od myszy x <span class="quant_bought">1</span></li>
+            <li>Peeling odłamkami płyty CD x <span class="quant_bought">1</span></li>
+            <li>Pokój binarny x <span class="quant_bought">3</span><br>
+              od <span id="term_from_bought">22-05-2020</span><br>
+              do <span id="term_to_bought">25-05-2020</span>
+            </li>
+          </ol>
+          <p class="summary-text">To wszystko za jedyne<br> <span id="all-cost">840 zł</span></p>
+        </div> -->
+      <!-- </div>
+      </div> -->
+
+      <!-- TREATMENTS LIST -->
+      <!-- <div class="treamtments-box">
+        <h2>Dostępne zabiegi:</h2>
+        <ol id="treatments-list">
+          <li id="treat_1">Masaż rozgrzanym monitorem<span> &raquo;</span></li>
+          <li id="treat_2">Biczowanie kablem od myszy<span> &raquo;</span></li>
+          <li id="treat_3">Peeling odłamkami płyty CD<span> &raquo;</span></li>
+          <li id="treat_4">Pedicure woskiem z USB<span> &raquo;</span></li>
+          <li id="treat_5">Manicure analogowo-cyfrowy<span> &raquo;</span></li>
+          <li id="treat_6">Kąpiel w gorącej kawie<span> &raquo;</span></li>
+          <li id="treat_7">Depilacja dyskiem twardym<span> &raquo;</span></li>
+        </ol>
+      </div> -->
+
+      <!-- TREATMENT BOX -->
+      <!-- <div class="treamtment-box">
+        <h2 id="title">Masaż rozgrzanym monitorem</h2>
+        <p>Zabieg obejmuje obszar: <span id="treat-area">back</span><br>
+          Czas trwania zabiegu: <span id="treat-time">30</span> min.<br>
+          Cena zabiegu: <span id="treat-price">80</span> zł<br>
+          Ilość zabiegów: <input id="treatment-num" type="number" min="1" max="10"></p>
+        <button id="add-treatment">Wrzuć do kosza!</button>
+      </div> -->
+
+      <!-- ROOMS LIST -->
+      <!-- <div class="rooms-box">
+        <h2>Dostępne pokoje:</h2>
+        <ol id="rooms-list">
+          <li id="room_1">Pokój unarny<span> &raquo;</span></li>
+          <li id="room_2">Pokój binarny<span> &raquo;</span></li>
+          <li id="room_3">Pokój trójkowy<span> &raquo;</span></li>
+          <li id="room_4">Pokój czwórkowy<span> &raquo;</span></li>
+        </ol>
+      </div> -->
+
+      <!-- ROOM BOX -->
+      <!-- <div class="room-box">
+        <h2 id="title">Pokój unarny</h2>
+        <p>Ilość łóżek: <span id="beds-quantity">back</span><br>
+          Ilość osób: <span id="persons-quantity">1</span><br>
+          Cena pokoju: <span id="room-price">80</span> zł<br>
+          Data przyjazdu: <input id="room-from" type="date"><br>
+          Data wyjazdu: <input id="room-to" type="date"><br>
+          Ilość pokoi: <input id="room-num" type="number" min="1" max="10"></p>
+        <button id="add-room">Wrzuć do kosza!</button>
+      </div> -->
+
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <!-- <footer>
+    <a href="./" id="logo-small">
+    </a>
+  </footer> -->
+  <script src="dist/bundle.js"></script>
+</body>

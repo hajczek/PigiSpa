@@ -1,5 +1,5 @@
 import { Router, routes } from "./router";
-import { nav } from "./navigation/nav";
+// import { nav } from "./navigation/nav";
 import $ from "jquery";
 // import PigiLogo from "./assets/img/pigiSpaLogo.png";
 // import PigiLogoSmall from "./assets/img/pigiSpa-logo-footer.png";
@@ -10,7 +10,7 @@ const main = $("main");
 const router = new Router(routes);
 
 // Display navigation before body of app
-main.before(nav);
+// main.before(nav);
 
 // Element main is our outlet for our views
 router.mount(main);

@@ -12,12 +12,12 @@ export const nav = () => {
   // );
 
   // Navbar from lesson
-  const navBar = $(`<nav><ul></ul></nav>`);
+  const navBar = $(`<nav></nav>`);
 
   // Add li elements to ul element - route take from navItem component
   const navBarItems = routes.map(route => navItem(route));
 
-  navBar.find("ul").append(navBarItems);
+  navBar.append(navBarItems);
 
   // Main code
   // let ul = document.getElementsByTagName("ul");

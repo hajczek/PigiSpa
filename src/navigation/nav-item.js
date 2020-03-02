@@ -3,7 +3,6 @@ import $ from "jquery";
 
 // Complete information about route element
 export const navItem = route => {
-  const li = $(`<li></li>`);
   const a = $(`<a>${route.name}</a>`);
 
   a.on("click", event => {
@@ -13,7 +12,5 @@ export const navItem = route => {
     a.trigger("routechange", { path: route.path });
   });
 
-  li.append(a);
-
-  return li;
+  return a;
 };

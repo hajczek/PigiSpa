@@ -15,6 +15,7 @@ body {
     align-items: center;
     background-color: $bg-color;
     display: flex;
+    flex-direction: row-reverse;
     height: 70px;
     justify-content: space-between;
     opacity: 0.9;

@@ -12,18 +12,43 @@ import {
 // Routes in project
 
 export const routes = [
-  { name: "Home", path: "/", component: home, data: {} },
-  { name: "Rooms", path: "/rooms", component: rooms, data: {} },
-  { name: "Room", path: "/room", component: room, data: {} },
-  { name: "Treatments", path: "/treatments", component: treatments, data: {} },
-  { name: "Treatment", path: "/treatment", component: treatment, data: {} },
-  { name: "Bookings", path: "/bookings", component: bookings, data: {} },
-  { name: "Login", path: "/login", component: login, data: {} },
+  { name: "Home", path: "/", component: home, data: { display: "none" } },
+  {
+    name: "Rooms",
+    path: "/rooms",
+    component: rooms,
+    data: { visibility: "hidden" }
+  },
+  { name: "Room", path: "/room", component: room, data: { display: "none" } },
+  {
+    name: "Treatments",
+    path: "/treatments",
+    component: treatments,
+    data: { visibility: "hidden" }
+  },
+  {
+    name: "Treatment",
+    path: "/treatment",
+    component: treatment,
+    data: { display: "none" }
+  },
+  {
+    name: "Bookings",
+    path: "/bookings",
+    component: bookings,
+    data: { display: "none" }
+  },
+  {
+    name: "Logowanie",
+    path: "/login",
+    component: login,
+    data: { visibility: "visible" }
+  },
   {
     name: "Rejestracja",
     path: "/registration",
     component: registration,
-    data: {}
+    data: { visibility: "visible" }
   }
 ];
 

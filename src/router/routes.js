@@ -18,13 +18,13 @@ export const routes = [
     name: "After Register",
     path: "/after-register",
     component: afterRegister,
-    data: { display: "block" }
+    data: { display: "inline-block" }
   },
   {
     name: "After Login",
     path: "/after-login",
     component: afterLogin,
-    data: { display: "block" }
+    data: { display: "inline-block" }
   },
   { name: "Home", path: "/", component: home, data: { display: "none" } },
   {
@@ -33,12 +33,17 @@ export const routes = [
     component: rooms,
     data: { visibility: "hidden" }
   },
-  { name: "Room", path: "/room", component: room, data: { display: "none" } },
+  {
+    name: "Room",
+    path: "/room",
+    component: room,
+    data: { display: "none" }
+  },
   {
     name: "Treatments",
     path: "/treatments",
     component: treatments,
-    data: { visibility: "hidden" }
+    data: { visibility: "visible" }
   },
   {
     name: "Treatment",

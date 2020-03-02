@@ -1,12 +1,11 @@
-// rooms.js
-
+// bookings.js
 import $ from "jquery";
 
-export const rooms = () => {
+export const bookings = () => {
   const fragment = $(new DocumentFragment());
 
-  const h1 = $(`<h1>Pokoje</h1>`);
-  const slogan = $(`<p>Nasze pokoje</p>`);
+  const h1 = $(`<h1>Bookings</h1>`);
+  const slogan = $(`<p>Zabukuj coś ...</p>`);
 
   fragment.append(h1).append(slogan);
 

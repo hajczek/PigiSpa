@@ -48,7 +48,6 @@
       font-size: $xs-size * 4;
       margin-top: $xs-size * 2;
       padding: $xs-size;
-      width: 100%;
     }
 
     #room-to {
@@ -95,12 +94,8 @@
       margin-bottom: $xs-size * 8;
     }
 
-    input {
-      width: auto;
-
-      #room-to {
-        margin-left: $s-size;
-      }
+    input #room-to {
+      margin-left: $s-size;
     }
 
     button {

@@ -1,345 +1,364 @@
-import PigiLogo from "./assets/img/pigiSpaLogo.png";
-import PigiLogoSmall from "./assets/img/pigiSpa-logo-footer.png";
+import { Router, routes } from "./router";
+import { nav } from "./navigation/nav";
+import $ from "jquery";
+// import PigiLogo from "./assets/img/pigiSpaLogo.png";
+// import PigiLogoSmall from "./assets/img/pigiSpa-logo-footer.png";
 
-// Create logo in header
-const logo = new Image();
-logo.src = PigiLogo;
-document.querySelector("#logo").appendChild(logo);
+// Code for Router
 
-// Create logo in footer
-const logoFooter = new Image();
-logoFooter.src = PigiLogoSmall;
-document.querySelector("#logo-small").appendChild(logoFooter);
+const main = $("main");
+const router = new Router(routes);
 
-// FOR REGISTER FORM
+// Display navigation before body of app
+main.before(nav);
 
-// Handle for register form
-const email = document.getElementById("email");
-// Handle for input with password
-const pas = document.getElementById("pass");
-// Handle for input with repeat password
-const pasRepeat = document.getElementById("pass-repeat");
-// Handle for info about not the same password and repeat password
-const infoErr = document.getElementById("info-err");
-// Handle for register button
-const registerBtn = document.getElementById("register-btn");
+// Element main is our outlet for our views
+router.mount(main);
 
-// Handle for sign the strongest of password
-const weak = document.querySelector(".weak");
-const average = document.querySelector(".average");
-const strong = document.querySelector(".strong");
+// For special paths in browser
+router.init();
 
-// Add event when text is put on input fields
-email ? email.addEventListener("input", registerUser) : false;
-pas ? pas.addEventListener("input", registerUser) : false;
+/********** MAIN CODE ***************/
 
-function registerUser(e) {
-  e.preventDefault();
-  // Check if inputs are not empty
-  if (email.value !== "" && pas.value !== "") {
-    // Set color for weaknes password
-    console.log("it work");
-    weak.style.backgroundColor = "#f504d5";
-  }
+// // Create logo in header
+// const logo = new Image();
+// logo.src = PigiLogo;
+// document.querySelector("#logo").appendChild(logo);
 
-  // Check if password has length 8 and one capital letter
-  if (/(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(pas.value)) {
-    // If yes, set color for average password
-    average.style.backgroundColor = "yellow";
-  }
+// // Create logo in footer
+// const logoFooter = new Image();
+// logoFooter.src = PigiLogoSmall;
+// document.querySelector("#logo-small").appendChild(logoFooter);
 
-  // Check if password has length 12 and one capital letter and one digit
-  if (/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(pas.value)) {
-    // If yes, set color for strong password
-    strong.style.backgroundColor = "greenyellow";
-  }
-}
+// // FOR REGISTER FORM
 
-// Add event when button exist and is clicked
-registerBtn ? registerBtn.addEventListener("click", sendForm) : false;
+// // Handle for register form
+// const email = document.getElementById("email");
+// // Handle for input with password
+// const pas = document.getElementById("pass");
+// // Handle for input with repeat password
+// const pasRepeat = document.getElementById("pass-repeat");
+// // Handle for info about not the same password and repeat password
+// const infoErr = document.getElementById("info-err");
+// // Handle for register button
+// const registerBtn = document.getElementById("register-btn");
 
-function sendForm(e) {
-  e.preventDefault();
-  // Check if password and repeat-password are the same
-  if (email.value !== "" && pass.value === pasRepeat.value) {
-    console.log("Zapisz dane w bazie");
-    /* Tutaj ma nastąpić przekierowanie na stronę z wiadomością po zarejeestrowaniu */
-    /* Tutaj ma też nastąpić zapis danych zarejestrowanego użytkownika do bazy */
-    // Clear input fields value
-    email.value = "";
-    pass.value = "";
-    pasRepeat.value = "";
-  } else {
-    infoErr.innerHTML = "Hasła są różne. Wprowadź do obu pól takie same hasła.";
-    infoErr.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
-    // Hide box with info after 3 minutes
-    setTimeout(() => {
-      infoErr.style.display = "none";
-    }, 3000);
-    console.log(pas.value);
-    console.log(pasRepeat.value);
-    console.log(infoErr.value === pasRepeat.value);
-  }
-}
+// // Handle for sign the strongest of password
+// const weak = document.querySelector(".weak");
+// const average = document.querySelector(".average");
+// const strong = document.querySelector(".strong");
 
-/* FOR LOGIN FORM */
-// Handle for input with login email
-const emailLog = document.getElementById("email-login");
-// Handle for input with login password
-const passLog = document.getElementById("pass-login");
-// Handle for login button
-const loginBtn = document.getElementById("login-btn");
-// Add event when button exist and is clicked
-loginBtn ? loginBtn.addEventListener("click", logIn) : false;
+// // Add event when text is put on input fields
+// email ? email.addEventListener("input", registerUser) : false;
+// pas ? pas.addEventListener("input", registerUser) : false;
 
-function logIn(e) {
-  e.preventDefault();
-  if (emailLog.value === "" && passLog.value === "") {
-    infoErr.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.";
-    infoErr.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
-    // Hide box with info after 3 minutes
-    setTimeout(() => {
-      infoErr.style.display = "none";
-    }, 3000);
-  } else {
-    console.log("Zalogowano");
-    /* Tutaj ma nastąpić sprawdzenie, czy podany login i hasło są w bazie */
-    /* Tutaj ma nastąpić przekierowanie do strony z wiadomością powitalną po zalogowaniu i widokiem pustego koszyka */
-  }
-}
+// function registerUser(e) {
+//   e.preventDefault();
+//   // Check if inputs are not empty
+//   if (email.value !== "" && pas.value !== "") {
+//     // Set color for weaknes password
+//     console.log("it work");
+//     weak.style.backgroundColor = "#f504d5";
+//   }
 
-/* FOR DISPLAY LIST OF TREATMENTS AFTER CLICK IN MENU POSITION 'Zabiegi' */
+//   // Check if password has length 8 and one capital letter
+//   if (/(?=.*?[A-Z])(?=.*?[a-z]).{8,}/.test(pas.value)) {
+//     // If yes, set color for average password
+//     average.style.backgroundColor = "yellow";
+//   }
 
-// Handle for button in menu 'Zabiegi'
-let treatmentsMenuBtn = document.getElementById("treatments");
-// Add event when link in menu 'Zabiegi' is clicked
-treatmentsMenuBtn
-  ? treatmentsMenuBtn.addEventListener("click", displayTreatmentsList)
-  : false;
+//   // Check if password has length 12 and one capital letter and one digit
+//   if (/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{12,}/.test(pas.value)) {
+//     // If yes, set color for strong password
+//     strong.style.backgroundColor = "greenyellow";
+//   }
+// }
 
-function displayTreatmentsList(e) {
-  e.preventDefault();
+// // Add event when button exist and is clicked
+// registerBtn ? registerBtn.addEventListener("click", sendForm) : false;
 
-  /* Tutaj trzeba wykonać iterację po elementach z bazy z tablicy 'treatments' i wyświetlić nazwy wszyskich zabiegów w postaci listy w boxie */
-  /* Tutaj ma się też wyświetlić koszyk */
-  console.log("Kliknięto w pozycję Zabiegi");
-}
+// function sendForm(e) {
+//   e.preventDefault();
+//   // Check if password and repeat-password are the same
+//   if (email.value !== "" && pass.value === pasRepeat.value) {
+//     console.log("Zapisz dane w bazie");
+//     /* Tutaj ma nastąpić przekierowanie na stronę z wiadomością po zarejeestrowaniu */
+//     /* Tutaj ma też nastąpić zapis danych zarejestrowanego użytkownika do bazy */
+//     // Clear input fields value
+//     email.value = "";
+//     pass.value = "";
+//     pasRepeat.value = "";
+//   } else {
+//     infoErr.innerHTML = "Hasła są różne. Wprowadź do obu pól takie same hasła.";
+//     infoErr.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+//     // Hide box with info after 3 minutes
+//     setTimeout(() => {
+//       infoErr.style.display = "none";
+//     }, 3000);
+//     console.log(pas.value);
+//     console.log(pasRepeat.value);
+//     console.log(infoErr.value === pasRepeat.value);
+//   }
+// }
 
-/* FOR DIPSPLAY BOX WITH TREATMENT DESCRIPTION AFTER CLICKED TITLE OF TREATMENT ON LIST */
+// /* FOR LOGIN FORM */
+// // Handle for input with login email
+// const emailLog = document.getElementById("email-login");
+// // Handle for input with login password
+// const passLog = document.getElementById("pass-login");
+// // Handle for login button
+// const loginBtn = document.getElementById("login-btn");
+// // Add event when button exist and is clicked
+// loginBtn ? loginBtn.addEventListener("click", logIn) : false;
 
-// Handle for list with treatments
-const treatmentsList = document.getElementById("treatments-list");
-// Add event when one position on list is clicked
-treatmentsList
-  ? treatmentsList.addEventListener("click", openTreatmentBox)
-  : false;
+// function logIn(e) {
+//   e.preventDefault();
+//   if (emailLog.value === "" && passLog.value === "") {
+//     infoErr.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.";
+//     infoErr.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+//     // Hide box with info after 3 minutes
+//     setTimeout(() => {
+//       infoErr.style.display = "none";
+//     }, 3000);
+//   } else {
+//     console.log("Zalogowano");
+//     /* Tutaj ma nastąpić sprawdzenie, czy podany login i hasło są w bazie */
+//     /* Tutaj ma nastąpić przekierowanie do strony z wiadomością powitalną po zalogowaniu i widokiem pustego koszyka */
+//   }
+// }
 
-function openTreatmentBox(e) {
-  e.preventDefault();
+// /* FOR DISPLAY LIST OF TREATMENTS AFTER CLICK IN MENU POSITION 'Zabiegi' */
 
-  /* Tutaj ma nastąpić przekierowanie na stronę z opisem klikniętej usługi */
-  /* 'e.target.childNodes.item(0).nodeValue' to 'name' usługi w bazie - trzeba ją wykorzystać przy generowaniu boxa z opisem usługi */
-  /* Tutaj ma się też wyświetlić koszyk */
-  console.log(e.target.childNodes.item(0).nodeValue);
-}
+// // Handle for button in menu 'Zabiegi'
+// let treatmentsMenuBtn = document.getElementById("treatments");
+// // Add event when link in menu 'Zabiegi' is clicked
+// treatmentsMenuBtn
+//   ? treatmentsMenuBtn.addEventListener("click", displayTreatmentsList)
+//   : false;
 
-/* FOR DISPLAY LIST OF ROOMS AFTER CLICK IN MENU POSITION 'Pokoje' */
+// function displayTreatmentsList(e) {
+//   e.preventDefault();
 
-// Handle for button in menu 'Pokoje'
-let roomsMenuBtn = document.getElementById("rooms");
-// Add event when link in menu 'Pokoje' is clicked
-roomsMenuBtn ? roomsMenuBtn.addEventListener("click", displayRoomsList) : false;
+//   /* Tutaj trzeba wykonać iterację po elementach z bazy z tablicy 'treatments' i wyświetlić nazwy wszyskich zabiegów w postaci listy w boxie */
+//   /* Tutaj ma się też wyświetlić koszyk */
+//   console.log("Kliknięto w pozycję Zabiegi");
+// }
 
-function displayRoomsList(e) {
-  e.preventDefault();
+// /* FOR DIPSPLAY BOX WITH TREATMENT DESCRIPTION AFTER CLICKED TITLE OF TREATMENT ON LIST */
 
-  /* Tutaj trzeba wykonać iterację po elementach z bazy z tablicy 'rooms' i wyświetlić nazwy wszyskich pokojów w postaci listy w boxie */
-  /* Tutaj ma się też wyświetlić koszyk */
-  console.log("Kliknięto w pozycję Pokoje");
-}
+// // Handle for list with treatments
+// const treatmentsList = document.getElementById("treatments-list");
+// // Add event when one position on list is clicked
+// treatmentsList
+//   ? treatmentsList.addEventListener("click", openTreatmentBox)
+//   : false;
 
-/* FOR DISPLAY BOX WITH ROOM DESCRIPTION AFTER CLICKED TITLE OF ROOM ON LIST */
+// function openTreatmentBox(e) {
+//   e.preventDefault();
 
-// Handle for list with rooms
-const roomsList = document.getElementById("rooms-list");
-// Add event when one position on list is clicked
-roomsList ? roomsList.addEventListener("click", openRoomBox) : false;
+//   /* Tutaj ma nastąpić przekierowanie na stronę z opisem klikniętej usługi */
+//   /* 'e.target.childNodes.item(0).nodeValue' to 'name' usługi w bazie - trzeba ją wykorzystać przy generowaniu boxa z opisem usługi */
+//   /* Tutaj ma się też wyświetlić koszyk */
+//   console.log(e.target.childNodes.item(0).nodeValue);
+// }
 
-function openRoomBox(e) {
-  e.preventDefault();
+// /* FOR DISPLAY LIST OF ROOMS AFTER CLICK IN MENU POSITION 'Pokoje' */
 
-  /* Tutaj ma nastąpić przekierowanie na stronę z opisem klikniętego pokoju */
-  /* 'e.target.childNodes.item(0).nodeValue' to 'name' pokoju w bazie - trzeba ją wykorzystać przy generowaniu boxa z opisem pokoju */
-  /* Tutaj ma się też wyświetlić koszyk */
-  console.log(e.target.childNodes.item(0).nodeValue);
-}
+// // Handle for button in menu 'Pokoje'
+// let roomsMenuBtn = document.getElementById("rooms");
+// // Add event when link in menu 'Pokoje' is clicked
+// roomsMenuBtn ? roomsMenuBtn.addEventListener("click", displayRoomsList) : false;
 
-/* FOR ADD POSITION FROM BOX TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON TREATMENT BOX */
+// function displayRoomsList(e) {
+//   e.preventDefault();
 
-// Handle for button on treatment box
-const addTreatmentBtn = document.getElementById("add-treatment");
+//   /* Tutaj trzeba wykonać iterację po elementach z bazy z tablicy 'rooms' i wyświetlić nazwy wszyskich pokojów w postaci listy w boxie */
+//   /* Tutaj ma się też wyświetlić koszyk */
+//   console.log("Kliknięto w pozycję Pokoje");
+// }
 
-// Add event after click button addTreatmentBtn
-addTreatmentBtn
-  ? addTreatmentBtn.addEventListener("click", addTreatmentToBasket)
-  : false;
+// /* FOR DISPLAY BOX WITH ROOM DESCRIPTION AFTER CLICKED TITLE OF ROOM ON LIST */
 
-function addTreatmentToBasket(e) {
-  e.preventDefault();
+// // Handle for list with rooms
+// const roomsList = document.getElementById("rooms-list");
+// // Add event when one position on list is clicked
+// roomsList ? roomsList.addEventListener("click", openRoomBox) : false;
 
-  /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku*/
-  // Display name of treatment
-  const treatmentName = document.getElementById("title").innerHTML;
-  console.log(treatmentName);
-  // Display price of treatment
-  const treatmentPrice = parseInt(
-    document.getElementById("treat-price").innerHTML
-  );
-  console.log(treatmentPrice);
-  // Display number of treatment
-  const treatmentNum = document.getElementById("treatment-num").value;
-  console.log(treatmentNum);
-  // Calculate cost of treatment
-  let treatmentCost = treatmentPrice * treatmentNum;
-  console.log(treatmentCost);
-}
+// function openRoomBox(e) {
+//   e.preventDefault();
 
-/* FOR ADD POSITION FROM BOX TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON ROOM BOX */
+//   /* Tutaj ma nastąpić przekierowanie na stronę z opisem klikniętego pokoju */
+//   /* 'e.target.childNodes.item(0).nodeValue' to 'name' pokoju w bazie - trzeba ją wykorzystać przy generowaniu boxa z opisem pokoju */
+//   /* Tutaj ma się też wyświetlić koszyk */
+//   console.log(e.target.childNodes.item(0).nodeValue);
+// }
 
-// Handle for button on room box
-const addRoomBtn = document.getElementById("add-room");
+// /* FOR ADD POSITION FROM BOX TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON TREATMENT BOX */
 
-// Add event after click this button addRoomBtn
-addRoomBtn ? addRoomBtn.addEventListener("click", addRoomToBasket) : false;
+// // Handle for button on treatment box
+// const addTreatmentBtn = document.getElementById("add-treatment");
 
-function addRoomToBasket(e) {
-  e.preventDefault();
+// // Add event after click button addTreatmentBtn
+// addTreatmentBtn
+//   ? addTreatmentBtn.addEventListener("click", addTreatmentToBasket)
+//   : false;
 
-  /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku */
+// function addTreatmentToBasket(e) {
+//   e.preventDefault();
 
-  /* Display name of room */
-  const roomName = document.getElementById("title").innerHTML;
-  console.log(roomName);
-  /* Display term of arrival */
-  const roomFrom = new Date(document.getElementById("room-from").value);
-  console.log(roomFrom);
-  /* Display term of departure */
-  const roomTo = new Date(document.getElementById("room-to").value);
-  console.log(roomTo);
-  /* Display price of room */
-  const roomPrice = parseInt(document.getElementById("room-price").innerHTML);
-  console.log(roomPrice);
-  /* Display num of rooms */
-  const roomNum = document.getElementById("room-num").value;
-  /* Calculate number of days */
-  let numOfDays = parseInt((roomTo - roomFrom) / (24 * 3600 * 1000));
-  console.log(numOfDays);
-  /* Calculate cost of room */
-  let costOfRoom = numOfDays * roomPrice * roomNum;
-  console.log(costOfRoom);
-}
+//   /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku*/
+//   // Display name of treatment
+//   const treatmentName = document.getElementById("title").innerHTML;
+//   console.log(treatmentName);
+//   // Display price of treatment
+//   const treatmentPrice = parseInt(
+//     document.getElementById("treat-price").innerHTML
+//   );
+//   console.log(treatmentPrice);
+//   // Display number of treatment
+//   const treatmentNum = document.getElementById("treatment-num").value;
+//   console.log(treatmentNum);
+//   // Calculate cost of treatment
+//   let treatmentCost = treatmentPrice * treatmentNum;
+//   console.log(treatmentCost);
+// }
 
-/* FOR BUTTON 'remove' IN BASKET */
+// /* FOR ADD POSITION FROM BOX TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON ROOM BOX */
 
-// Handle for list of elements in basket
-const inBasket = document.getElementById("basket-content");
-// Add event listener for every 'remove' element in each element on basket list
-inBasket.addEventListener("click", removeFromBasket);
+// // Handle for button on room box
+// const addRoomBtn = document.getElementById("add-room");
 
-// Handle for all cost of things in basket
-const allCostInBasket = document.getElementById("all-cost");
+// // Add event after click this button addRoomBtn
+// addRoomBtn ? addRoomBtn.addEventListener("click", addRoomToBasket) : false;
 
-// Function for remove element from basket after click trash button
-function removeFromBasket(e) {
-  e.preventDefault();
+// function addRoomToBasket(e) {
+//   e.preventDefault();
 
-  /* Remove element from basket list after trash btn of this element was clicked  */
-  if (event.target.className === "remove") {
-    e.target.parentElement.remove();
+//   /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku */
 
-    /* Subtract cost of remove element from all cost in basket */
-    // Handle for price of remove element
-    const elementPrice = parseInt(
-      e.target.previousSibling.previousElementSibling.innerHTML
-    );
-    // Handke for actual all cost in basket
-    let actuallCostInBasket = parseInt(allCostInBasket.innerHTML);
-    // Handle for new cost in basket, after remove element
-    let newAllCostInBasket = actuallCostInBasket - elementPrice;
-    // Put new cost in basket (after remove element) as an all cost in basket
-    allCostInBasket.innerHTML = newAllCostInBasket;
+//   /* Display name of room */
+//   const roomName = document.getElementById("title").innerHTML;
+//   console.log(roomName);
+//   /* Display term of arrival */
+//   const roomFrom = new Date(document.getElementById("room-from").value);
+//   console.log(roomFrom);
+//   /* Display term of departure */
+//   const roomTo = new Date(document.getElementById("room-to").value);
+//   console.log(roomTo);
+//   /* Display price of room */
+//   const roomPrice = parseInt(document.getElementById("room-price").innerHTML);
+//   console.log(roomPrice);
+//   /* Display num of rooms */
+//   const roomNum = document.getElementById("room-num").value;
+//   /* Calculate number of days */
+//   let numOfDays = parseInt((roomTo - roomFrom) / (24 * 3600 * 1000));
+//   console.log(numOfDays);
+//   /* Calculate cost of room */
+//   let costOfRoom = numOfDays * roomPrice * roomNum;
+//   console.log(costOfRoom);
+// }
 
-    if (allCostInBasket.innerHTML === "0") {
-      document.querySelector(".summary-text").innerHTML =
-        "Załaduj coś do koszyka!";
-      /* Tutaj ma się wyświetlać slogan z kosza */
-    }
-  }
-}
+// /* FOR BUTTON 'remove' IN BASKET */
 
-/* FOR INPUT WITH 'quant' IN BASKET to change number of elements*/
+// // Handle for list of elements in basket
+// const inBasket = document.getElementById("basket-content");
+// // Add event listener for every 'remove' element in each element on basket list
+// inBasket.addEventListener("click", removeFromBasket);
 
-// Add event listener for every 'quant' element in each element on basket list
-inBasket.addEventListener("click", changeQuantOfElement);
+// // Handle for all cost of things in basket
+// const allCostInBasket = document.getElementById("all-cost");
 
-/* Function for change quantity of element */
-function changeQuantOfElement(e) {
-  e.preventDefault();
+// // Function for remove element from basket after click trash button
+// function removeFromBasket(e) {
+//   e.preventDefault();
 
-  if (event.target.className === "quant") {
-    console.log(e.target.value);
-    /* Tutaj trzeba obliczyć nową cenę odpowiadającą ilości elementów - quant.value * priceOfElelemt */
-    let newQuantOfElement = e.target.value;
+//   /* Remove element from basket list after trash btn of this element was clicked  */
+//   if (event.target.className === "remove") {
+//     e.target.parentElement.remove();
 
-    // Handle for actual price of element - tutaj trzeba pobrać cenę elementu z bazy
-    // let priceOfElement = ...
+//     /* Subtract cost of remove element from all cost in basket */
+//     // Handle for price of remove element
+//     const elementPrice = parseInt(
+//       e.target.previousSibling.previousElementSibling.innerHTML
+//     );
+//     // Handke for actual all cost in basket
+//     let actuallCostInBasket = parseInt(allCostInBasket.innerHTML);
+//     // Handle for new cost in basket, after remove element
+//     let newAllCostInBasket = actuallCostInBasket - elementPrice;
+//     // Put new cost in basket (after remove element) as an all cost in basket
+//     allCostInBasket.innerHTML = newAllCostInBasket;
 
-    // Calculate a new price of element
-    let newPriceOfElement = newQuantOfElement * priceOfElement;
-    // Define element which display price of element on basket
-    let displayPrice = e.target.nextElementSibling;
-    displayPrice.innerHTML = newPriceOfElement;
-  }
-}
+//     if (allCostInBasket.innerHTML === "0") {
+//       document.querySelector(".summary-text").innerHTML =
+//         "Załaduj coś do koszyka!";
+//       /* Tutaj ma się wyświetlać slogan z kosza */
+//     }
+//   }
+// }
 
-/* FOR BUTTON 'Kupuję i płacę' IN BASKET */
+// /* FOR INPUT WITH 'quant' IN BASKET to change number of elements*/
 
-// Hanlde for button in basket
-const buyBtn = document.getElementById("pay");
-// Added event handler to this button
-buyBtn.addEventListener("click", buyAction);
+// // Add event listener for every 'quant' element in each element on basket list
+// inBasket.addEventListener("click", changeQuantOfElement);
 
-// Function after click button buyBtn
-function buyAction(e) {
-  e.preventDefault();
-  /* Tutaj ma nastąpić wyświetlenie podsumowania koszyka i wyświetenie wiadomości pozakupowej */
-  console.log("Bought!");
-}
+// /* Function for change quantity of element */
+// function changeQuantOfElement(e) {
+//   e.preventDefault();
 
-/* CONNECTION WITH DATA IN JSON FILE */
-function connectWithData() {
-  // fetch(dataJson, {
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     Accept: "application/json"
-  //   }
-  // })
-  //   .then(resp => resp.json())
-  //   .then(json => console.log(json))
-  //   .catch(err => console.log(err));
+//   if (event.target.className === "quant") {
+//     console.log(e.target.value);
+//     /* Tutaj trzeba obliczyć nową cenę odpowiadającą ilości elementów - quant.value * priceOfElelemt */
+//     let newQuantOfElement = e.target.value;
 
-  fetch("./../database.json")
-    .then(response => {
-      console.log(response);
-      return response.json();
-    })
-    .then(data => {
-      // Work with JSON data here
-      console.log(data);
-    })
-    .catch(err => {
-      // Do something for an error here
-      console.log("Error Reading data " + err);
-    });
-}
-connectWithData();
+//     // Handle for actual price of element - tutaj trzeba pobrać cenę elementu z bazy
+//     // let priceOfElement = ...
+
+//     // Calculate a new price of element
+//     let newPriceOfElement = newQuantOfElement * priceOfElement;
+//     // Define element which display price of element on basket
+//     let displayPrice = e.target.nextElementSibling;
+//     displayPrice.innerHTML = newPriceOfElement;
+//   }
+// }
+
+// /* FOR BUTTON 'Kupuję i płacę' IN BASKET */
+
+// // Hanlde for button in basket
+// const buyBtn = document.getElementById("pay");
+// // Added event handler to this button
+// buyBtn.addEventListener("click", buyAction);
+
+// // Function after click button buyBtn
+// function buyAction(e) {
+//   e.preventDefault();
+//   /* Tutaj ma nastąpić wyświetlenie podsumowania koszyka i wyświetenie wiadomości pozakupowej */
+//   console.log("Bought!");
+// }
+
+// /* CONNECTION WITH DATA IN JSON FILE */
+// function connectWithData() {
+//   // fetch(dataJson, {
+//   //   headers: {
+//   //     "Content-Type": "application/json",
+//   //     Accept: "application/json"
+//   //   }
+//   // })
+//   //   .then(resp => resp.json())
+//   //   .then(json => console.log(json))
+//   //   .catch(err => console.log(err));
+
+//   fetch("./../database.json")
+//     .then(response => {
+//       console.log(response);
+//       return response.json();
+//     })
+//     .then(data => {
+//       // Work with JSON data here
+//       console.log(data);
+//     })
+//     .catch(err => {
+//       // Do something for an error here
+//       console.log("Error Reading data " + err);
+//     });
+// }
+// connectWithData();

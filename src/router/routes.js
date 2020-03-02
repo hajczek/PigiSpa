@@ -28,28 +28,28 @@ export const routes = [
     data: { display: "none" }
   },
   {
-    name: "Rooms",
+    name: "Pokoje",
     path: "/rooms",
     component: rooms,
     data: { visibility: "hidden" }
   },
   {
-    name: "Room",
+    name: "Pok",
     path: "/room",
     component: room,
     data: { display: "none" }
   },
   {
-    name: "Treatments",
+    name: "Zabiegi",
     path: "/treatments",
     component: treatments,
-    data: { visibility: "hidden" }
+    data: { visibility: "visible" }
   },
   {
-    name: "Treatment",
+    name: "Zabieg",
     path: "/treatment",
     component: treatment,
-    data: { display: "inline-block" }
+    data: { display: "none" }
   },
   {
     name: "Bookings",

@@ -1,8 +1,18 @@
 // registration-form.js
 
 import $ from "jquery";
+import {
+  regForm,
+  email,
+  pas,
+  registerUser,
+  sendForm
+} from "./../../common/index";
 
 export const registrationForm = () => {
+  email.on("input", registerUser());
+  pas.on("input", registerUser());
+
   const fragment = $(new DocumentFragment());
 
   const form = $(`<form class="form" id="register-form"></form>`);
@@ -19,7 +29,9 @@ export const registrationForm = () => {
 <span class="averageCol"></span> średnia
 <span class="strongCol"></span> silna
 </p>`);
-  const button = $(`<button id="register-btn">Zarejestruj mnie</button>`);
+  const button = $(
+    `<button onClick="${sendForm()}" id="register-btn">Zarejestruj mnie</button>`
+  );
 
   fragment.append(form);
   form

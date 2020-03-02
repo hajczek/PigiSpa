@@ -3,7 +3,14 @@ import $ from "jquery";
 
 // Complete information about route element
 export const navItem = route => {
-  const a = $(`<a>${route.name}</a>`);
+  let styleKey;
+  let styleVal;
+  for (let key in route.data) {
+    styleKey = key;
+    styleVal = route.data[key];
+  }
+
+  const a = $(`<a style="${styleKey}: ${styleVal}">${route.name}</a>`);
 
   a.on("click", event => {
     // We don't want refresh page!!!

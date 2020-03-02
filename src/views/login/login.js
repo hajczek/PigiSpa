@@ -1,7 +1,7 @@
 // login.js
 
 import $ from "jquery";
-import { header, footer, loginForm } from "./index";
+import { header, footer, loginForm } from "../index";
 
 export const login = () => {
   const fragment = $(new DocumentFragment());

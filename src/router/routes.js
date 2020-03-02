@@ -6,12 +6,26 @@ import {
   treatments,
   treatment,
   login,
-  registration
+  registration,
+  afterRegister,
+  afterLogin
 } from "../views";
 
 // Routes in project
 
 export const routes = [
+  {
+    name: "After Register",
+    path: "/after-register",
+    component: afterRegister,
+    data: { display: "block" }
+  },
+  {
+    name: "After Login",
+    path: "/after-login",
+    component: afterLogin,
+    data: { display: "block" }
+  },
   { name: "Home", path: "/", component: home, data: { display: "none" } },
   {
     name: "Rooms",

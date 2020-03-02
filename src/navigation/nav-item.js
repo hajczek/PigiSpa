@@ -16,7 +16,7 @@ export const navItem = route => {
   a.on("click", event => {
     // We don't want refresh page!!!
     event.preventDefault();
-    // emition of event
+    // emision of event
     a.trigger("routechange", { path: route.path });
   });
 

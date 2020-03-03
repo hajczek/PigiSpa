@@ -19,55 +19,55 @@ export const routes = [
     name: "After Register",
     path: "/after-register",
     component: afterRegister,
-    data: { display: "none" }
+    data: {}
   },
   {
     name: "After Login",
     path: "/after-login",
     component: afterLogin,
-    data: { display: "none" }
+    data: {}
   },
   {
     name: "Pokoje",
     path: "/rooms",
     component: rooms,
-    data: { visibility: "hidden" }
+    data: { "data-type": "user" }
   },
   {
-    name: "Pok",
+    name: "Pokój",
     path: "/room",
     component: room,
-    data: { display: "none" }
+    data: {}
   },
   {
     name: "Zabiegi",
     path: "/treatments",
     component: treatments,
-    data: { visibility: "visible" }
+    data: { "data-type": "user" }
   },
   {
     name: "Zabieg",
     path: "/treatment",
     component: treatment,
-    data: { display: "none" }
+    data: {}
   },
   {
     name: "Bookings",
     path: "/bookings",
     component: bookings,
-    data: { display: "none" }
+    data: {}
   },
   {
     name: "Logowanie",
     path: "/login",
     component: login,
-    data: { visibility: "visible" }
+    data: { "data-type": "all" }
   },
   {
     name: "Rejestracja",
     path: "/registration",
     component: registration,
-    data: { visibility: "visible" }
+    data: { "data-type": "all" }
   }
 ];
 

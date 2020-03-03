@@ -6,10 +6,10 @@ import { header, footer } from "./index";
 export const treatments = () => {
   const fragment = $(new DocumentFragment());
 
-  fetch("http://localhost:3000/treatments")
-    .then(response => response.json())
-    .then(treatments => console.log(treatments))
-    .catch(error => console.log("Error ..."));
+  // fetch("http://localhost:3000/treatments")
+  //   .then(response => response.json())
+  //   .then(treatments => console.log(treatments))
+  //   .catch(error => console.log("Error ...", error));
 
   const box = $(`<div class="treamtments-box"></div>`);
   const title = $(`<h2>Dostępne zabiegi:</h2>`);

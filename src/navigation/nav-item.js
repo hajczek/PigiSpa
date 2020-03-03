@@ -3,22 +3,35 @@ import $ from "jquery";
 
 // Complete information about route element
 export const navItem = route => {
-  // Define value for css style of each a element
-  let styleKey;
+  // Check value of data/data-type of all elements
   let styleVal;
   for (let key in route.data) {
-    styleKey = key;
     styleVal = route.data[key];
   }
 
-  const a = $(`<a style="${styleKey}: ${styleVal}">${route.name}</a>`);
+  if (!$(`#welcome-text`).length && styleVal === "all") {
+    const li = $(`<li></li>`);
+    const a = $(`<a>${route.name}</a>`);
 
-  a.on("click", event => {
-    // We don't want refresh page!!!
-    event.preventDefault();
-    // emision of event
-    a.trigger("routechange", { path: route.path });
-  });
+    a.on("click", event => {
+      // We don't want refresh page!!!
+      // event.preventDefault();
+      // emision of event
+      a.trigger("routechange", { path: route.path });
+    });
+    li.append(a);
+    return li;
+  } else if ($(`#welcome-text`).length && styleVal === "user") {
+    const li = $(`<li></li>`);
+    const a = $(`<a>${route.name}</a>`);
 
-  return a;
+    a.on("click", event => {
+      // We don't want refresh page!!!
+      // event.preventDefault();
+      // emision of event
+      a.trigger("routechange", { path: route.path });
+    });
+    li.append(a);
+    return li;
+  }
 };

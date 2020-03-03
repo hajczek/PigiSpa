@@ -1,8 +1,6 @@
-// header.js
-
 import $ from "jquery";
 import { logo } from "./logo";
-import { nav } from "./../navigation/nav";
+import { nav } from "./../navigation/index";
 
 export const header = () => {
   // const fragment = $(new DocumentFragment());

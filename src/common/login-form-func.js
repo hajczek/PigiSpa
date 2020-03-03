@@ -29,6 +29,12 @@ export const activateLoginForm = () => {
       $("main")
         .find("header")
         .after(afterLogin);
+
+      // Display on header welcome text with user name
+      $(`nav`).after(
+        `<p id="welcome-text">Panel użytkownika: <span>UserName</span></p>`
+      );
+      // Display menu for user
     }
 
     e.preventDefault();

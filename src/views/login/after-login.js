@@ -1,7 +1,6 @@
 // after-login.js
 
 import $ from "jquery";
-import { header, footer } from "../index";
 
 export const afterLogin = () => {
   const fragment = $(new DocumentFragment());

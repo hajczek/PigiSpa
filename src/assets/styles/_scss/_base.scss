@@ -35,19 +35,36 @@ body {
       }
     }
 
+    #welcome-text {
+      font-size: $xs-size * 4;
+
+      span {
+        font-weight: bold;
+        color: $active-color;
+      }
+    }
+
     nav {
       font-size: $xs-size * 4;
-      a {
-        color: $font-color;
-        padding: 0 $xs-size * 4;
-        text-decoration: none;
+      ul {
+        display: flex;
 
-        &:hover {
-          color: $active-color;
-        }
+        li {
+          list-style-type: none;
 
-        &:active {
-          color: $active-color;
+          a {
+            color: $font-color;
+            padding: 0 $xs-size * 4;
+            text-decoration: none;
+
+            &:hover {
+              color: $active-color;
+            }
+
+            &:active {
+              color: $active-color;
+            }
+          }
         }
       }
     }

@@ -7,7 +7,7 @@ export const registration = () => {
   const fragment = $(new DocumentFragment());
   // const headerBox = header();
   const box = $(`<div class="registration-box"></div`);
-  const title = $(`<h2>Wypełnij formularz</h2>`);
+  const title = $(`<h2>Zarejestruj się</h2>`);
   const error = $(`<div id="info-err"></div>`);
   const form = registrationForm;
 

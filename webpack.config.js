@@ -2,9 +2,13 @@ const path = require("path");
 
 module.exports = {
   entry: "./src/it-spa.js",
+  mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
+  },
+  devServer: {
+    contentBase: "./dist"
   },
   module: {
     rules: [

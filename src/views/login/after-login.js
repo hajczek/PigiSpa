@@ -14,11 +14,7 @@ export const afterLogin = () => {
 </div>`
   );
 
-  fragment
-    .append(header)
-    .append(box)
-    .append(footer);
-
+  fragment.append(box);
   box.append(boxWelcome);
   boxWelcome.append(title).append(text);
 

@@ -1,6 +1,6 @@
 import { Router, routes } from "./router";
 import $ from "jquery";
-import { activateRegisterForm } from "./common/index";
+import { activateRegisterForm, activateLoginForm } from "./common/index";
 
 // Code for Router
 
@@ -13,35 +13,13 @@ router.mount(main);
 // For special paths in browser
 router.init();
 
+// Functionality for register form
 activateRegisterForm();
 
+// Functionality for login form
+activateLoginForm();
+
 /********** MAIN CODE ***************/
-
-// /* FOR LOGIN FORM */
-// // Handle for input with login email
-// const emailLog = document.getElementById("email-login");
-// // Handle for input with login password
-// const passLog = document.getElementById("pass-login");
-// // Handle for login button
-// const loginBtn = document.getElementById("login-btn");
-// // Add event when button exist and is clicked
-// loginBtn ? loginBtn.addEventListener("click", logIn) : false;
-
-// function logIn(e) {
-//   e.preventDefault();
-//   if (emailLog.value === "" && passLog.value === "") {
-//     infoErr.innerHTML = "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.";
-//     infoErr.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
-//     // Hide box with info after 3 minutes
-//     setTimeout(() => {
-//       infoErr.style.display = "none";
-//     }, 3000);
-//   } else {
-//     console.log("Zalogowano");
-//     /* Tutaj ma nastąpić sprawdzenie, czy podany login i hasło są w bazie */
-//     /* Tutaj ma nastąpić przekierowanie do strony z wiadomością powitalną po zalogowaniu i widokiem pustego koszyka */
-//   }
-// }
 
 // /* FOR DISPLAY LIST OF TREATMENTS AFTER CLICK IN MENU POSITION 'Zabiegi' */
 

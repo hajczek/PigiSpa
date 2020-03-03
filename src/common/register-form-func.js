@@ -1,5 +1,6 @@
 // Handle for register form
 import $ from "jquery";
+import { afterRegister } from "./../views/index";
 
 export const activateRegisterForm = () => {
   $("#email").change(registerUser);
@@ -51,9 +52,9 @@ export const activateRegisterForm = () => {
       // Hide form
       $(".registration-box").css("display", "none");
       // Diplay text after registration
-      $("main").find("header").after(`<div class="welcome-box-after-register">
-      <p>Zostałeś zarejestrowany.<br>Logując się uzyskasz dostęp do usług <b>PigiSPa</b> :)</p>
-    </div>`);
+      $("main")
+        .find("header")
+        .after(afterRegister);
     } else {
       $("#info-err").html(
         "Hasła są różne. Wprowadź do obu pól takie same hasła."

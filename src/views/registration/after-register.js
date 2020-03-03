@@ -1,7 +1,5 @@
 // after-register.js
-
 import $ from "jquery";
-import { header, footer } from "../index";
 
 export const afterRegister = () => {
   const fragment = $(new DocumentFragment());
@@ -10,11 +8,7 @@ export const afterRegister = () => {
     `<p>Zostałeś zarejestrowany.<br>Logując się uzyskasz dostęp do usług <b>PigiSPa</b> :)</p>`
   );
 
-  fragment
-    .append(header)
-    .append(box)
-    .append(footer);
-
+  fragment.append(box);
   box.append(text);
 
   return fragment;

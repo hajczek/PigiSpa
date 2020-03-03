@@ -1,13 +1,20 @@
 // not-found.js
 
 import $ from "jquery";
+import { header, footer } from "./index";
 
 export const notFound = () => {
   const fragment = $(new DocumentFragment());
 
-  const h1 = $(`<h1>Nie ma takiej strony</h1>`);
+  const html = header();
+  const slogan = $(
+    `<p class="slogan">Strona z takim adresem nie istnieje :(</p>`
+  );
 
-  fragment.append(h1);
+  fragment
+    .append(html)
+    .append(slogan)
+    .append(footer);
 
   return fragment;
 };

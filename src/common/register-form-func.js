@@ -43,6 +43,17 @@ export const activateRegisterForm = () => {
       $("#email").val("");
       $("#pass").val("");
       $("#pass-repeat").val("");
+      // Clear fields for checking strength of password
+      $("span.weak").css("background-color", "#fff");
+      $("span.average").css("background-color", "#fff");
+      $("span.strong").css("background-color", "#fff");
+
+      // Hide form
+      $(".registration-box").css("display", "none");
+      // Diplay text after registration
+      $("main").find("header").after(`<div class="welcome-box-after-register">
+      <p>Zostałeś zarejestrowany.<br>Logując się uzyskasz dostęp do usług <b>PigiSPa</b> :)</p>
+    </div>`);
     } else {
       $("#info-err").html(
         "Hasła są różne. Wprowadź do obu pól takie same hasła."

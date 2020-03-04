@@ -15,7 +15,7 @@ export const navItem = route => {
       if (styleVal === "all") {
         a.on("click", event => {
           // We don't want refresh page!!!
-          // event.preventDefault();
+          event.preventDefault();
           // emision of event
           a.trigger("routechange", {
             path: route.path
@@ -28,7 +28,7 @@ export const navItem = route => {
       if (styleVal === "user") {
         a.on("click", event => {
           // We don't want refresh page!!!
-          // event.preventDefault();
+          event.preventDefault();
           // emision of event
           a.trigger("routechange", {
             path: route.path

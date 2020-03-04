@@ -1,4 +1,4 @@
-.treamtments-box,
+.treatments-box,
 .rooms-box {
   background-color: $bg-color;
   display: flex;
@@ -33,7 +33,7 @@
 }
 
 @media only screen and (min-width: 800px) {
-  .treamtments-box,
+  .treatments-box,
   .rooms-box {
     left: $xs-size * 14;
     padding: 50px 70px 70px 90px;

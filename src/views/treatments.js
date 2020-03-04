@@ -1,12 +1,12 @@
 // treatments.js
 
 import $ from "jquery";
-import { header, treatmentBox, basket, footer } from "./index";
+import { header, basket, footer } from "./index";
 
 export const treatments = () => {
   const fragment = $(new DocumentFragment());
 
-  const box = $(`<div class="treamtments-box"></div>`);
+  const box = $(`<div class="treatments-box"></div>`);
   const title = $(`<h2>Dostępne zabiegi:</h2>`);
   const list = $(`<ol id="treatments-list"></ol>`);
   fragment
@@ -17,30 +17,39 @@ export const treatments = () => {
 
   box.append(title).append(list);
 
+  // Connect with database
   fetch("http://localhost:3000/treatments")
     .then(response => response.json())
     .then(treatments =>
+      // Prepare data with function map
       treatments.map(treatment => {
+        // Define li element for each treatment
         let li = `<li id="treat_${treatment.id}">${treatment.name}<span> &raquo;</span></li>`;
+        // Display list of treatments on page
         list.append(li);
 
+        // Action for click on link with treeatment
         $(`#treat_${treatment.id}`).on("click", () => {
+          // Remove existed box from page
+          $(`.treatment-box`).remove();
+          // Define box for treatment details
+          const boxDetails = $(`<div class="treatment-box"></div>`);
+          // Define all details about treatment which was clicked
           if (treatment.id) {
-            const boxDetails = $(`<div class="treamtment-box"></div>`);
             const title = $(`<h2 id="title">${treatment.name}</h2>`);
-            const details = `<p>Zabieg obejmuje obszar: <span id="treat-area">${treatment.area}</span><br>
+            const details = $(`<p>Zabieg obejmuje obszar: <span id="treat-area">${treatment.area}</span><br>
             Czas trwania zabiegu: <span id="treat-time">${treatment.time}</span> min.<br>
             Cena zabiegu: <span id="treat-price">${treatment.price}</span> zł<br>
-            Ilość zabiegów: <input id="treatment-num" type="number" min="1" max="10"></p>`;
+            Ilość zabiegów: <input id="treatment-num" type="number" min="1" max="10"></p>`);
             const button = $(
               `<button id="add-treatment">Wrzuć do kosza!</button>`
             );
-            box.after(boxDetails);
+            // Display all elements on page
             boxDetails
-              .empty()
               .append(title)
               .append(details)
               .append(button);
+            box.after(boxDetails);
           }
         });
       })

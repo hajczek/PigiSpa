@@ -15,9 +15,9 @@ export const registrationForm = () => {
   <span class="strong"></span>
 </p>`);
   const legend = $(`<p class="legend">
-<span class="weakCol"></span> słaba
-<span class="averageCol"></span> średnia
-<span class="strongCol"></span> silna
+<span class="weakCol"></span> słabe
+<span class="averageCol"></span> średnie
+<span class="strongCol"></span> silne
 </p>`);
   const button = $(`<button id="register-btn">Zarejestruj mnie</button>`);
 

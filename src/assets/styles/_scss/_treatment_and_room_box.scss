@@ -58,10 +58,11 @@
 @media only screen and (min-width: 800px) {
   .treatment-box,
   .room-box {
-    left: 700px;
-    padding: 50px 70px 70px 90px;
+    left: 600px;
+    padding: 50px 50px 50px 70px;
     top: 200px;
-    width: 600px;
+    width: 500px;
+    min-height: 460px;
 
     h2 {
       font-size: $xs-size * 8;
@@ -69,7 +70,7 @@
     }
 
     p {
-      font-size: $xs-size * 5;
+      font-size: $xl-size;
       line-height: 1.6;
       margin-bottom: $xs-size * 8;
     }

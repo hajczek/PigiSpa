@@ -36,9 +36,10 @@
   .treatments-box,
   .rooms-box {
     left: $xs-size * 14;
-    padding: 50px 70px 70px 90px;
+    padding: 50px 50px 50px 70px;
     top: 200px;
-    width: 600px;
+    width: 500px;
+    min-height: 460px;
 
     h2 {
       font-size: $xs-size * 8;

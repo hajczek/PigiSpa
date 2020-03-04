@@ -1,7 +1,7 @@
 // treatments.js
 
 import $ from "jquery";
-import { header, footer } from "./index";
+import { header, basket, footer } from "./index";
 
 export const treatments = () => {
   const fragment = $(new DocumentFragment());
@@ -12,6 +12,7 @@ export const treatments = () => {
   fragment
     .append(header)
     .append(box)
+    .append(basket)
     .append(footer);
 
   box.append(title).append(list);
@@ -21,7 +22,6 @@ export const treatments = () => {
     .then(treatments =>
       treatments.map(treatment => {
         let li = `<li id="treat_${treatment.id}">${treatment.name}<span> &raquo;</span></li>`;
-        console.log(li);
         list.append(li);
       })
     )

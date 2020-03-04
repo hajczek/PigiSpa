@@ -1,7 +1,7 @@
 // treatment.js
 
 import $ from "jquery";
-import { header, footer } from "./index";
+import { header, basket, footer } from "./index";
 
 export const treatment = () => {
   const fragment = $(new DocumentFragment());
@@ -17,6 +17,7 @@ export const treatment = () => {
   fragment
     .append(header)
     .append(box)
+    .append(basket)
     .append(footer);
 
   box

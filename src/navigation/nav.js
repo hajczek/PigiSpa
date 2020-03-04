@@ -10,7 +10,6 @@ export const nav = () => {
 
   // Add li elements to ul element - route take from navItem component
   const navBarItems = routes.map(route => navItem(route));
-
   navBar.append(navBarItems);
 
   fragment.append(navBar);

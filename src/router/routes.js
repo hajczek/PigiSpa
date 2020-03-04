@@ -14,7 +14,7 @@ import {
 // Routes in project
 
 export const routes = [
-  { name: "Home", path: "/", component: home, data: { display: "none" } },
+  { name: "Home", path: "/", component: home, data: {} },
   {
     name: "After Register",
     path: "/after-register",

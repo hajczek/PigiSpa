@@ -1,7 +1,7 @@
 // room.js
 
 import $ from "jquery";
-import { header, footer } from "./index";
+import { header, basket, footer } from "./index";
 
 export const room = () => {
   const fragment = $(new DocumentFragment());
@@ -19,6 +19,7 @@ export const room = () => {
   fragment
     .append(header)
     .append(box)
+    .append(basket)
     .append(footer);
 
   box

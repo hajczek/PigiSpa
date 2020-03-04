@@ -1,7 +1,5 @@
 .treamtments-box,
-.rooms-box,
-.treamtment-box,
-.room-box {
+.rooms-box {
   background-color: $bg-color;
   display: flex;
   flex-direction: column;
@@ -32,48 +30,11 @@
       opacity: 0.7;
     }
   }
-
-  p {
-    font-size: $xs-size * 4;
-    line-height: 1.6;
-    margin-bottom: $xs-size * 6;
-
-    span {
-      font-weight: bold;
-    }
-
-    input {
-      border: none;
-      color: $input-text-color;
-      font-size: $xs-size * 4;
-      margin-top: $xs-size * 2;
-      padding: $xs-size;
-    }
-
-    #room-to {
-      margin-left: 0;
-    }
-  }
-
-  button {
-    background-color: $font-color;
-    color: $edit-color;
-    font-size: $xs-size * 5;
-    font-weight: bold;
-    padding: $xs-size * 3;
-
-    &:hover {
-      cursor: pointer;
-      opacity: 0.7;
-    }
-  }
 }
 
 @media only screen and (min-width: 800px) {
   .treamtments-box,
-  .rooms-box,
-  .treamtment-box,
-  .room-box {
+  .rooms-box {
     left: $xs-size * 14;
     padding: 50px 70px 70px 90px;
     top: 200px;
@@ -86,21 +47,6 @@
 
     ol {
       font-size: $xl-size;
-    }
-
-    p {
-      font-size: $xs-size * 5;
-      line-height: 1.6;
-      margin-bottom: $xs-size * 8;
-    }
-
-    input #room-to {
-      margin-left: $s-size;
-    }
-
-    button {
-      font-size: $xs-size * 6;
-      padding: $xs-size * 4;
     }
   }
 }

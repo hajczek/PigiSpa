@@ -1,5 +1,6 @@
 export const databaseConnection = () => {
   const url = "http://localhost:3000";
+
   fetch(`${url}/rooms`)
     .then(response => response.json())
     .then(dataBase => console.log(dataBase))

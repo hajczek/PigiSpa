@@ -1,0 +1,86 @@
+.treamtment-box,
+.room-box {
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  left: 5%;
+  opacity: 0.9;
+  padding: 25px;
+  position: absolute;
+  top: 100px;
+  width: 90%;
+
+  h2 {
+    color: $title-color;
+    font-size: $xs-size * 5;
+    font-weight: normal;
+    margin-bottom: $xs-size * 6;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: $xs-size * 4;
+    line-height: 1.6;
+    margin-bottom: $xs-size * 6;
+
+    span {
+      font-weight: bold;
+    }
+
+    input {
+      border: none;
+      color: $input-text-color;
+      font-size: $xs-size * 4;
+      margin-top: $xs-size * 2;
+      padding: $xs-size;
+    }
+
+    #room-to {
+      margin-left: 0;
+    }
+  }
+
+  button {
+    background-color: $font-color;
+    color: $edit-color;
+    font-size: $xs-size * 5;
+    font-weight: bold;
+    padding: $xs-size * 3;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .treamtment-box,
+  .room-box {
+    left: 700px;
+    padding: 50px 70px 70px 90px;
+    top: 200px;
+    width: 600px;
+
+    h2 {
+      font-size: $xs-size * 8;
+      margin-bottom: $xs-size * 9;
+    }
+
+    p {
+      font-size: $xs-size * 5;
+      line-height: 1.6;
+      margin-bottom: $xs-size * 8;
+    }
+
+    input #room-to {
+      margin-left: $s-size;
+    }
+
+    button {
+      font-size: $xs-size * 6;
+      padding: $xs-size * 4;
+    }
+  }
+}

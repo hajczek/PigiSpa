@@ -4,7 +4,7 @@ export * from "./bookings";
 export * from "./rooms";
 export * from "./room";
 export * from "./treatments";
-export * from "./treatment";
+export * from "./treatment-box";
 export * from "./login/login";
 export * from "./login/login-form";
 export * from "./login/after-login";

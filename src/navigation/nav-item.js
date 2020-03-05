@@ -8,33 +8,31 @@ export const navItem = route => {
   const li = $(`<li></li>`);
   const a = $(`<a>${route.name}</a>`);
 
+  // Add event to a element
+  a.on("click", event => {
+    // We don't want refresh page!!!
+    event.preventDefault();
+    // emision of event
+    a.trigger("routechange", {
+      path: route.path
+    });
+  });
+
+  // Loop through route data to check the value
   for (let key in route.data) {
-    let styleVal = route.data[key];
+    // Check if on page is element with id '#welcome-text'
     if (!$(`#welcome-text`).length) {
-      if (styleVal === "all") {
-        a.on("click", event => {
-          // We don't want refresh page!!!
-          event.preventDefault();
-          // emision of event
-          a.trigger("routechange", {
-            path: route.path
-          });
-        });
+      // If yes, find routes with data 'all' and display on page
+      if (route.data[key] === "all") {
         li.append(a);
         return li;
       }
     } else {
-      a.on("click", event => {
-        // We don't want refresh page!!!
-        event.preventDefault();
-        // emision of event
-        a.trigger("routechange", {
-          path: route.path
-        });
-      });
-      li.append(a);
-      return li;
+      // If no, find routes with data 'user' and display on page
+      if (route.data[key] === "user") {
+        li.append(a);
+        return li;
+      }
     }
   }
-  console.log($(`#welcome-text`).show(), !$(`#welcome-text`).show());
 };

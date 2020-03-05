@@ -39,14 +39,13 @@ export const activateLoginForm = () => {
               $("main")
                 .find("header")
                 .after(afterLogin);
-
-              // Display on header welcome text with user name
+              // Display info for user about panel in header
               $(`nav`).after(
                 `<p id="welcome-text">Panel użytkownika: <span>${emailLogin}</span></p>`
               );
               /* Todo: Display menu for user */
             } else {
-              $("#info-err").html("Nie ma takiego użytkownika.");
+              $("#info-err").html("Podane dane do logowania są nieprawidłowe.");
               $("#info-err").css("backgroundColor", "rgba(255, 255, 255, 0.5)");
               // Hide box with info after 3 seconds
               setTimeout(() => {
@@ -57,7 +56,7 @@ export const activateLoginForm = () => {
         )
         .catch(error => console.log("Error ...", error));
 
-      console.log(emailLogin, passLogin);
+      console.log(login);
     }
 
     e.preventDefault();

@@ -1,5 +1,6 @@
 import $ from "jquery";
 import { afterRegister } from "./../views/index";
+import { errorFunc } from "./index";
 
 export const activateRegisterForm = () => {
   $("#email").change(registerUser);
@@ -28,9 +29,18 @@ export const activateRegisterForm = () => {
   }
 
   function sendForm(e) {
-    // Check if password and repeat-password are the same
     if (
+      // Check if all input fields are empty
+      $("#email").val().length === 0 &&
+      $("#pass").val().length === 0 &&
+      $("#pass-repeat").val().length === 0
+    ) {
+      errorFunc("Nie podałeś żadnych danych. Wprowadź dane do formularza.");
+    } else if (
+      // Check if password and repeat-password are the same
       $("#email").val().length !== 0 &&
+      $("#pass").val().length !== 0 &&
+      $("#pass-repeat").val().length !== 0 &&
       $("#pass").val() === $("#pass-repeat").val()
     ) {
       // Handle for data from register form
@@ -75,29 +85,14 @@ export const activateRegisterForm = () => {
                 .after(afterRegister);
             } else if (user.login === userEmail) {
               // Display info that this user exists in database
-              $("#info-err").html("Ten użytkownik jest już w naszej bazie.");
-              $("#info-err").css(
-                "background-color",
-                "rgba(255, 255, 255, 0.5)"
-              );
-
-              // Hide box with info after 3 minutes
-              setTimeout(() => {
-                $("#info-err").css("display", "none");
-              }, 3000);
+              errorFunc("Ten użytkownik jest już w naszej bazie.");
             }
           })
         )
         .catch(error => console.log("Error ...", error));
     } else {
       // Display info about different passwords
-      $("#info-err").html("Hasła są różne. Wprowadź do obu pól to samo hasło.");
-      $("#info-err").css("background-color", "rgba(255, 255, 255, 0.5)");
-
-      // Hide box with info after 3 minutes
-      setTimeout(() => {
-        $("#info-err").css("display", "none");
-      }, 3000);
+      errorFunc("Hasła są różne. Wprowadź do obu pól to samo hasło.");
     }
 
     e.preventDefault();

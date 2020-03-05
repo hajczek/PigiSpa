@@ -16,25 +16,48 @@ export const activateLoginForm = () => {
         "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane."
       );
       $("#info-err").css("backgroundColor", "rgba(255, 255, 255, 0.5)");
-      // Hide box with info after 3 minutes
+      // Hide box with info after 3 seconds
       setTimeout(() => {
         $("#info-err").css("display", "none");
       }, 3000);
     } else {
-      /* Todo: check, if login and pass are in database/users */
+      // Handle for user login and password
+      let emailLogin = $("#email-login").val();
+      let passLogin = $("#pass-login").val();
 
-      // Hide form
-      $(".login-box").css("display", "none");
-      // Display text after login
-      $("main")
-        .find("header")
-        .after(afterLogin);
+      // Connect with database
+      fetch("http://localhost:3000/users")
+        .then(response => response.json())
+        .then(users =>
+          // Filter users
+          users.filter(user => {
+            // Check, if login and pass are in database/users
+            if (user.login === emailLogin && user.password === passLogin) {
+              // Hide form
+              $(".login-box").css("display", "none");
+              // Display text after login
+              $("main")
+                .find("header")
+                .after(afterLogin);
 
-      // Display on header welcome text with user name
-      $(`nav`).after(
-        `<p id="welcome-text">Panel użytkownika: <span>UserName</span></p>`
-      );
-      // Display menu for user
+              // Display on header welcome text with user name
+              $(`nav`).after(
+                `<p id="welcome-text">Panel użytkownika: <span>${emailLogin}</span></p>`
+              );
+              /* Todo: Display menu for user */
+            } else {
+              $("#info-err").html("Nie ma takiego użytkownika.");
+              $("#info-err").css("backgroundColor", "rgba(255, 255, 255, 0.5)");
+              // Hide box with info after 3 seconds
+              setTimeout(() => {
+                $("#info-err").css("display", "none");
+              }, 3000);
+            }
+          })
+        )
+        .catch(error => console.log("Error ...", error));
+
+      console.log(emailLogin, passLogin);
     }
 
     e.preventDefault();

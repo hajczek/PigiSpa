@@ -33,10 +33,11 @@ export const activateRegisterForm = () => {
       $("#email").val().length !== 0 &&
       $("#pass").val() === $("#pass-repeat").val()
     ) {
-      /* Todo:  Save login and password in database */
+      // Handle for data from register form
       let userEmail = $("#email").val();
       let userPassword = $("#pass").val();
 
+      // Save user login and password in database
       // Connect with database and create a new user
       fetch("http://localhost:3000/users", {
         headers: { "Content-Type": "application/json; charset=utf-8" },
@@ -51,6 +52,7 @@ export const activateRegisterForm = () => {
       $("#email").val("");
       $("#pass").val("");
       $("#pass-repeat").val("");
+
       // Clear fields for checking strength of password
       $("span.weak").css("background-color", "#fff");
       $("span.average").css("background-color", "#fff");
@@ -58,6 +60,7 @@ export const activateRegisterForm = () => {
 
       // Hide form
       $(".registration-box").css("display", "none");
+
       // Display text after registration
       $("main")
         .find("header")
@@ -68,6 +71,7 @@ export const activateRegisterForm = () => {
         "Hasła są różne. Wprowadź do obu pól takie same hasła."
       );
       $("#info-err").css("background-color", "rgba(255, 255, 255, 0.5)");
+
       // Hide box with info after 3 minutes
       setTimeout(() => {
         $("#info-err").css("display", "none");

@@ -9,6 +9,11 @@
       "login": "info@serwisstron.pl",
       "password": "kot",
       "id": 2
+    },
+    {
+      "login": "malina@op.pl",
+      "password": "katar546",
+      "id": 3
     }
   ],
   "rooms": [

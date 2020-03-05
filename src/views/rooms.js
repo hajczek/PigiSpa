@@ -18,7 +18,7 @@ export const rooms = () => {
   box.append(title).append(list);
 
   // Connect with database
-  fetch("http://localhost:3000/rooms")
+  fetch("http://localhost:3004/rooms")
     .then(response => response.json())
     .then(rooms =>
       // Prepare data with function map

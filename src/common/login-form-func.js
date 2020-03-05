@@ -20,7 +20,7 @@ export const activateLoginForm = () => {
       let passLogin = $("#pass-login").val();
 
       // Connect with database
-      fetch("http://localhost:3000/users")
+      fetch("http://localhost:3004/users")
         .then(response => response.json())
         .then(users =>
           // Filter users

@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "login": "user1",
-      "password": "password1",
+      "login": "i.hajczewska@gmail.com",
+      "password": "haja768",
       "id": 1
     },
     {
-      "login": "i.hajczewska@gmail.com",
-      "password": "haja768",
+      "login": "info@serwisstron.pl",
+      "password": "kot",
       "id": 2
     }
   ],

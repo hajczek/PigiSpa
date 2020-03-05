@@ -1,9 +1,9 @@
 // login-form-func.js
 import $ from "jquery";
-import { afterLogin } from "./../views/index";
+import { afterLogin } from "../views/index";
 import { errorFunc } from "./index";
 
-export const activateLoginForm = () => {
+export const activateLoginForm = e => {
   $("#login-btn").on("click", logIn);
 
   function logIn(e) {

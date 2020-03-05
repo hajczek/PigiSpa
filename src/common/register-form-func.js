@@ -74,9 +74,7 @@ export const activateRegisterForm = () => {
                 .find("header")
                 .after(afterRegister);
             } else if (user.login === userEmail) {
-              console.log("Taki użytkownik już istnieje w naszej bazie");
-
-              // Display info about different passwords
+              // Display info that this user exists in database
               $("#info-err").html("Ten użytkownik jest już w naszej bazie.");
               $("#info-err").css(
                 "background-color",

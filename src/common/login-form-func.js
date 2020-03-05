@@ -1,6 +1,7 @@
 // login-form-func.js
 import $ from "jquery";
 import { afterLogin } from "./../views/index";
+import { errorFunc } from "./index";
 
 export const activateLoginForm = () => {
   $("#login-btn").on("click", logIn);
@@ -11,15 +12,8 @@ export const activateLoginForm = () => {
       $("#email-login").val().length === 0 &&
       $("#pass-login").val().length === 0
     ) {
-      // If yes, display info
-      $("#info-err").html(
-        "Nie wpisałeś loginu i hasła. Wprowadź poprawne dane."
-      );
-      $("#info-err").css("backgroundColor", "rgba(255, 255, 255, 0.5)");
-      // Hide box with info after 3 seconds
-      setTimeout(() => {
-        $("#info-err").css("display", "none");
-      }, 3000);
+      // If yes, display info about error
+      errorFunc("Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.");
     } else {
       // Handle for user login and password
       let emailLogin = $("#email-login").val();
@@ -45,20 +39,13 @@ export const activateLoginForm = () => {
               );
               /* Todo: Display menu for user */
             } else {
-              $("#info-err").html("Podane dane do logowania są nieprawidłowe.");
-              $("#info-err").css("backgroundColor", "rgba(255, 255, 255, 0.5)");
-              // Hide box with info after 3 seconds
-              setTimeout(() => {
-                $("#info-err").css("display", "none");
-              }, 3000);
+              // Display info about error
+              errorFunc("Podane dane do logowania są nieprawidłowe.");
             }
           })
         )
         .catch(error => console.log("Error ...", error));
-
-      console.log(login);
     }
-
     e.preventDefault();
   }
 };

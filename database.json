@@ -1,5 +1,26 @@
 {
-  "users": [],
+  "users": [
+    {
+      "login": "user1",
+      "password": "password1",
+      "id": 1
+    },
+    {
+      "login": "user1",
+      "password": "password1",
+      "id": 2
+    },
+    {
+      "login": "\"i.hajczewska@gmail.com\"",
+      "password": "\"Karawana457&\"",
+      "id": 3
+    },
+    {
+      "login": "i.hajczewska@gmail.com",
+      "password": "haja768",
+      "id": 4
+    }
+  ],
   "rooms": [
     {
       "id": 1,
@@ -82,4 +103,3 @@
     }
   ]
 }
- 

@@ -34,6 +34,18 @@ export const activateRegisterForm = () => {
       $("#pass").val() === $("#pass-repeat").val()
     ) {
       /* Todo:  Save login and password in database */
+      let userEmail = $("#email").val();
+      let userPassword = $("#pass").val();
+
+      // Connect with database and create a new user
+      fetch("http://localhost:3000/users", {
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        method: "POST",
+        body: JSON.stringify({
+          login: `${userEmail}`,
+          password: `${userPassword}`
+        })
+      });
 
       // Clear input fields value
       $("#email").val("");

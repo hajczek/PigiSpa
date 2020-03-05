@@ -24,20 +24,20 @@ export const navItem = route => {
         li.append(a);
         return li;
       }
-    } else {
-      if (styleVal === "user") {
-        a.on("click", event => {
-          // We don't want refresh page!!!
-          event.preventDefault();
-          // emision of event
-          a.trigger("routechange", {
-            path: route.path
-          });
-        });
-        li.append(a);
-        return li;
-      }
     }
-    console.log($(`#welcome-text`), !$(`#welcome-text`));
+
+    if ($(`#welcome-text`).length) {
+      a.on("click", event => {
+        // We don't want refresh page!!!
+        event.preventDefault();
+        // emision of event
+        a.trigger("routechange", {
+          path: route.path
+        });
+      });
+      li.append(a);
+      return li;
+    }
   }
+  console.log($(`#welcome-text`).show(), !$(`#welcome-text`).show());
 };

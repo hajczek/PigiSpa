@@ -5,12 +5,11 @@ import $ from "jquery";
 export const navItem = route => {
   // Check value of data/data-type of all elements
 
-  let styleVal;
   const li = $(`<li></li>`);
   const a = $(`<a>${route.name}</a>`);
 
   for (let key in route.data) {
-    styleVal = route.data[key];
+    let styleVal = route.data[key];
     if (!$(`#welcome-text`).length) {
       if (styleVal === "all") {
         a.on("click", event => {
@@ -24,9 +23,7 @@ export const navItem = route => {
         li.append(a);
         return li;
       }
-    }
-
-    if ($(`#welcome-text`).length) {
+    } else {
       a.on("click", event => {
         // We don't want refresh page!!!
         event.preventDefault();

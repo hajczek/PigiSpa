@@ -89,8 +89,8 @@ body {
 
         // Styles for user menu
         .menu-link[style="visibility: visible;"] {
-          position: relative;
-          right: -200px;
+          position: absolute;
+          right: 50px;
         }
       }
     }

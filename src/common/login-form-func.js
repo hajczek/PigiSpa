@@ -50,6 +50,8 @@ export const activateLoginForm = e => {
                   "hidden"
                 );
               }
+              $('.menu-link:contains("Zabiegi")').css("position", "absolute");
+              $('.menu-link:contains("Zabiegi")').css("right", "150px");
             } else {
               // Display info about error
               errorFunc("Podane dane do logowania są nieprawidłowe.");

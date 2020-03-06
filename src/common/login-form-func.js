@@ -38,6 +38,18 @@ export const activateLoginForm = e => {
                 `<p id="welcome-text">Panel użytkownika: <span>${emailLogin}</span></p>`
               );
               /* Todo: Display menu for user */
+              if ($(`.menu-link[style="visibility: hidden"]`)) {
+                $(`.menu-link[style="visibility: hidden"]`).css(
+                  "visibility",
+                  "visible"
+                );
+              }
+              if ($(`.menu-link[style="visibility: visible"]`)) {
+                $(`.menu-link[style="visibility: visible"]`).css(
+                  "visibility",
+                  "hidden"
+                );
+              }
             } else {
               // Display info about error
               errorFunc("Podane dane do logowania są nieprawidłowe.");

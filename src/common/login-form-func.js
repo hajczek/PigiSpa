@@ -1,7 +1,7 @@
 // login-form-func.js
 import $ from "jquery";
 import { afterLogin } from "../views/index";
-import { errorFunc } from "./index";
+import { errorFunc, displayUserMenu } from "./index";
 
 export const activateLoginForm = e => {
   $("#login-btn").on("click", logIn);
@@ -38,20 +38,7 @@ export const activateLoginForm = e => {
                 `<p id="welcome-text">Panel użytkownika: <span>${emailLogin}</span></p>`
               );
               /* Todo: Display menu for user */
-              if ($(`.menu-link[style="visibility: hidden"]`)) {
-                $(`.menu-link[style="visibility: hidden"]`).css(
-                  "visibility",
-                  "visible"
-                );
-              }
-              if ($(`.menu-link[style="visibility: visible"]`)) {
-                $(`.menu-link[style="visibility: visible"]`).css(
-                  "visibility",
-                  "hidden"
-                );
-              }
-              $('.menu-link:contains("Zabiegi")').css("position", "absolute");
-              $('.menu-link:contains("Zabiegi")').css("right", "150px");
+              displayUserMenu();
             } else {
               // Display info about error
               errorFunc("Podane dane do logowania są nieprawidłowe.");

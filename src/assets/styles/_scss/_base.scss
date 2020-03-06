@@ -86,6 +86,12 @@ body {
 
       nav {
         font-size: $l-size;
+
+        // Styles for user menu
+        .menu-link[style="visibility: visible;"] {
+          position: relative;
+          right: -200px;
+        }
       }
     }
   }

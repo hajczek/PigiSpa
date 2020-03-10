@@ -2,6 +2,7 @@
 
 import $ from "jquery";
 import { header, basket, footer } from "./index";
+import { displayUserMenu } from "./../common/index";
 
 export const rooms = () => {
   const fragment = $(new DocumentFragment());
@@ -23,6 +24,10 @@ export const rooms = () => {
     .then(rooms =>
       // Prepare data with function map
       rooms.map(room => {
+        // Display user menu
+        if (box) {
+          displayUserMenu();
+        }
         // Define li element for each room
         let li = `<li id="room_${room.id}">${room.name}<span> &raquo;</span></li>`;
         // Display list of treatments on page

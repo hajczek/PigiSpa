@@ -2,6 +2,8 @@
 
 import $ from "jquery";
 import { header, basket, footer } from "./index";
+import { addTreatmentToBasket } from "./../cart/index";
+import { displayUserMenu } from "./../common/index";
 
 export const treatments = () => {
   const fragment = $(new DocumentFragment());
@@ -9,6 +11,7 @@ export const treatments = () => {
   const box = $(`<div class="treatments-box"></div>`);
   const title = $(`<h2>Dostępne zabiegi:</h2>`);
   const list = $(`<ol id="treatments-list"></ol>`);
+
   fragment
     .append(header)
     .append(box)
@@ -23,6 +26,10 @@ export const treatments = () => {
     .then(treatments =>
       // Prepare data with function map
       treatments.map(treatment => {
+        // Display user menu
+        if (box) {
+          displayUserMenu();
+        }
         // Define li element for each treatment
         let li = `<li id="treat_${treatment.id}">${treatment.name}<span> &raquo;</span></li>`;
         // Display list of treatments on page
@@ -44,6 +51,7 @@ export const treatments = () => {
             const button = $(
               `<button id="add-treatment">Wrzuć do kosza!</button>`
             );
+            button.on("click", addTreatmentToBasket);
             // Display all elements on page
             boxDetails
               .append(title)
@@ -55,6 +63,5 @@ export const treatments = () => {
       })
     )
     .catch(error => console.log("Error ...", error));
-
   return fragment;
 };

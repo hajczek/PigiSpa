@@ -37,7 +37,7 @@ export const activateLoginForm = e => {
               $(`nav`).after(
                 `<p id="welcome-text">Panel użytkownika: <span>${emailLogin}</span></p>`
               );
-              /* Todo: Display menu for user */
+              // Display menu for user
               displayUserMenu();
             } else {
               // Display info about error

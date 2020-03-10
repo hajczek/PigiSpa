@@ -13,7 +13,9 @@ export const addTreatmentToBasket = e => {
 
   $("#slogan-basket").css("display", "none");
   $(`#basket-content`).append(cartLi);
-  $(".summary-text").css("display", "block");
-  $("#pay").css("display", "block");
+  $("#all-value").removeClass("summary-text-not-display");
+  $("#all-value").addClass("summary-text");
+  $("#pay").removeClass("button-not-display");
+
   e.preventDefault();
 };

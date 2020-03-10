@@ -1,7 +1,7 @@
 body {
   color: $font-color;
-  background: $active-color url("../src/assets/img/pigispa-bg-small.jpg")
-    no-repeat fixed;
+  background: $bg-color url("../src/assets/img/pigispa-bg-small.jpg") no-repeat
+    fixed;
   background-position: 0 0;
   background-size: cover;
   display: flex;
@@ -73,7 +73,7 @@ body {
 
 @media only screen and (min-width: 800px) {
   body {
-    background: $active-color url("../src/assets/img/pigispa-bg.jpg") no-repeat
+    background: $bg-color url("../src/assets/img/pigispa-bg.jpg") no-repeat
       fixed;
     background-position: 0 -100px;
     header {

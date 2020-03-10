@@ -12,10 +12,10 @@ export const basket = () => {
   const text = $(`<p id="slogan-basket">Załaduj coś do koszyka!</p>`);
   const cartList = $(`<ol id="basket-content"></ol>`);
   const cartSummary = $(
-    `<p class="summary-text" style="display: none;">Razem do zapłaty: <span id="all-cost">0</span> zł</p>`
+    `<p id="all-value" class="summary-text-not-display">Razem do zapłaty: <span id="all-cost">0</span> zł</p>`
   );
   const cartButton = $(
-    `<button id="pay" style="display: none;">Kupuję i płacę</button>`
+    `<button id="pay" class="button-not-display">Kupuję i płacę</button>`
   );
 
   cartList.on("click", removeFromBasket);

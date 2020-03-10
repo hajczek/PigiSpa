@@ -28,14 +28,18 @@
   #basket-content-box,
   #basket-bought-content-box {
     ol {
-      margin-left: 5%;
-      width: 90%;
+      margin-left: 10%;
+      width: 85%;
 
       li {
+        border-bottom: 1px dotted $edit-color;
         font-size: $m-size;
         line-height: 2.2;
+        margin-top: 10px;
+        padding-bottom: 10px;
         position: relative;
         width: 100%;
+        text-align: left;
 
         &:hover {
           opacity: 1;
@@ -78,6 +82,10 @@
       }
     }
 
+    .summary-text-not-display {
+      display: none;
+    }
+
     .summary-text {
       font-size: $xs-size * 4;
       font-weight: bold;
@@ -87,6 +95,10 @@
       span {
         font-size: $xs-size * 6;
       }
+    }
+
+    .button-not-display {
+      display: none;
     }
 
     button {
@@ -117,5 +129,42 @@
     height: calc(100% - 168px);
     top: 100px;
     width: 425px;
+
+    .button-not-display {
+      display: none;
+    }
+    .summary-text-not-display {
+      display: none;
+    }
+
+    .summary-text {
+      font-size: $xs-size * 4;
+      font-weight: bold;
+      margin-top: $xs-size * 12;
+      text-transform: uppercase;
+
+      span {
+        font-size: $xs-size * 6;
+      }
+    }
+
+    button {
+      background-color: $button-color;
+      bottom: 0;
+      border: none;
+      color: $font-color;
+      font-size: $xs-size * 6;
+      font-weight: bold;
+      outline: none;
+      padding: $xs-size * 4 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
   }
 }

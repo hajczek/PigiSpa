@@ -27,6 +27,9 @@
 
   #basket-content-box,
   #basket-bought-content-box {
+    max-height: 550px;
+    overflow-y: scroll;
+
     ol {
       margin-left: 10%;
       width: 85%;
@@ -69,6 +72,7 @@
 
           &:hover {
             opacity: 0.7;
+            cursor: pointer;
           }
         }
 
@@ -87,9 +91,11 @@
     }
 
     .summary-text {
+      bottom: $l-size * 4;
       font-size: $xs-size * 4;
       font-weight: bold;
-      margin-top: $xs-size * 12;
+      left: $l-size * 5;
+      position: absolute;
       text-transform: uppercase;
 
       span {
@@ -138,9 +144,11 @@
     }
 
     .summary-text {
+      bottom: $l-size * 4;
       font-size: $xs-size * 4;
       font-weight: bold;
-      margin-top: $xs-size * 12;
+      left: $l-size * 5;
+      position: absolute;
       text-transform: uppercase;
 
       span {

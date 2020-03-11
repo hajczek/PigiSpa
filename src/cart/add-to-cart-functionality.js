@@ -27,9 +27,10 @@ export const addToCart = e => {
     const roomFrom = $(`#room-from`).val();
     const roomTo = $(`#room-to`).val();
 
+    // console.log(typeof $(`#room-from`).val(), typeof $(`#room-data-from`).val());
     // Create new dates from data for room to calculate number of days
-    let date1 = new Date($(`#room-from`).val());
-    let date2 = new Date($(`#room-to`).val());
+    let date1 = new Date(roomFrom);
+    let date2 = new Date(roomTo);
 
     // Calculate the time difference of two dates
     let Difference_In_Time = date2.getTime() - date1.getTime();
@@ -45,8 +46,13 @@ export const addToCart = e => {
     od <span class="room-data" id="room-data-from">${roomFrom}</span>
     do <span class="room-data" id="room-data-to">${roomTo}</span><br/>
     Łączna ilość dni: ${Difference_In_Days}<br/>
+    Cena pokoju (${$(
+      `#room-price`
+    ).html()} zł) * ilość pokoi * ilość dni:<br/>    
     Łączna wartość: <span class="price">${parseInt(
-      $(`#room-price`).html() * parseInt($(`#room-num`).val())
+      $(`#room-price`).html() *
+        parseInt($(`#room-num`).val()) *
+        parseInt(Difference_In_Days)
     )}</span> zł
   <span class="remove"></span></li>`);
 

@@ -20,6 +20,13 @@ export const addToCart = e => {
     $("#all-value").removeClass("summary-text-not-display");
     $("#all-value").addClass("summary-text");
     $("#pay").removeClass("button-not-display");
+
+    $(`#all-cost`).html(
+      parseInt($(`#all-cost`).html()) +
+        parseInt($(`#treat-price`).html()) * parseInt($(`#treatment-num`).val())
+    );
+
+    allPrice += allTreatmentPrice;
   }
   // Display added rooms
   else if (parseInt($(`#room-price`).html()) > 0) {
@@ -61,6 +68,14 @@ export const addToCart = e => {
     $("#all-value").removeClass("summary-text-not-display");
     $("#all-value").addClass("summary-text");
     $("#pay").removeClass("button-not-display");
+
+    // Calculating all price of element in cart
+    $(`#all-cost`).html(
+      parseInt($(`#all-cost`).html()) +
+        parseInt($(`#room-price`).html()) *
+          parseInt($(`#room-num`).val()) *
+          parseInt(Difference_In_Days)
+    );
   }
 
   e.preventDefault();

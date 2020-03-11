@@ -2,6 +2,7 @@
 
 import $ from "jquery";
 import { header, basket, footer } from "./index";
+import { addToCart } from "./../cart/index";
 import { displayUserMenu } from "./../common/index";
 
 export const rooms = () => {
@@ -21,13 +22,13 @@ export const rooms = () => {
   // Connect with database
   fetch("http://localhost:3004/rooms")
     .then(response => response.json())
-    .then(rooms =>
+    .then(rooms => {
+      // Display user menu
+      if (box) {
+        displayUserMenu();
+      }
       // Prepare data with function map
       rooms.map(room => {
-        // Display user menu
-        if (box) {
-          displayUserMenu();
-        }
         // Define li element for each room
         let li = `<li id="room_${room.id}">${room.name}<span> &raquo;</span></li>`;
         // Display list of treatments on page
@@ -49,6 +50,8 @@ export const rooms = () => {
             Data wyjazdu: <input id="room-to" type="date"><br>
             Ilość pokoi: <input id="room-num" type="number" min="1" max="10"></p>`);
             const button = $(`<button id="add-room">Wrzuć do kosza!</button>`);
+            // Add action to button in
+            button.on("click", addToCart);
             // Display all elements on page
             boxDetails
               .append(title)
@@ -57,8 +60,8 @@ export const rooms = () => {
             box.after(boxDetails);
           }
         });
-      })
-    )
+      });
+    })
     .catch(error => console.log("Error ...", error));
 
   return fragment;

@@ -6,6 +6,7 @@ export const addToCart = e => {
 
   // Display added treatments
   if (parseInt($(`#treat-price`).html()) > 0) {
+    // Define content to display details of added tratment in cart
     const cartLi = $(`<li>${$(
       `#title`
     ).html()} x <input class="quant" type="number" value="${parseInt(
@@ -15,12 +16,14 @@ export const addToCart = e => {
     )}</span> zł
   <span class="remove"></span></li>`);
 
+    // Define what must be display on basket
     $("#slogan-basket").css("display", "none");
     $(`#basket-content`).append(cartLi);
     $("#all-value").removeClass("summary-text-not-display");
     $("#all-value").addClass("summary-text");
     $("#pay").removeClass("button-not-display");
 
+    // Add price of added treatment to cart to all price
     $(`#all-cost`).html(
       parseInt($(`#all-cost`).html()) +
         parseInt($(`#treat-price`).html()) * parseInt($(`#treatment-num`).val())
@@ -45,6 +48,7 @@ export const addToCart = e => {
     // Calculate the no. of days between two dates
     let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 
+    // Define content to display details of added room in cart
     const cartLiRoom = $(`<li>${$(
       `#title`
     ).html()} x <input class="quant" type="number" value="${parseInt(
@@ -63,13 +67,14 @@ export const addToCart = e => {
     )}</span> zł
   <span class="remove"></span></li>`);
 
+    // Define what must be display on basket
     $("#slogan-basket").css("display", "none");
     $(`#basket-content`).append(cartLiRoom);
     $("#all-value").removeClass("summary-text-not-display");
     $("#all-value").addClass("summary-text");
     $("#pay").removeClass("button-not-display");
 
-    // Calculating all price of element in cart
+    // Add price of added room to cart to all price
     $(`#all-cost`).html(
       parseInt($(`#all-cost`).html()) +
         parseInt($(`#room-price`).html()) *

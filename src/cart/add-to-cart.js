@@ -7,9 +7,9 @@ export const addToCart = e => {
   // Display added treatments
   if (parseInt($(`#treat-price`).html()) > 0) {
     // Define content to display details of added tratment in cart
-    const cartLi = $(`<li>${$(
+    const cartLi = $(`<li><b>${$(
       `#title`
-    ).html()} x <input class="quant" type="number" value="${parseInt(
+    ).html()}</b> x <input class="quant" type="number" value="${parseInt(
       $(`#treatment-num`).val()
     )}" min="1" max="100"><br/>Łączna wartość: <span class="price">${parseInt(
       $(`#treat-price`).html() * parseInt($(`#treatment-num`).val())
@@ -49,14 +49,14 @@ export const addToCart = e => {
     let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 
     // Define content to display details of added room in cart
-    const cartLiRoom = $(`<li>${$(
+    const cartLiRoom = $(`<li><b>${$(
       `#title`
-    ).html()} x <input class="quant" type="number" value="${parseInt(
+    ).html()}</b> x <input class="quant" type="number" value="${parseInt(
       $(`#room-num`).val()
     )}" min="1" max="100"><br/>
     od <span class="room-data" id="room-data-from">${roomFrom}</span>
     do <span class="room-data" id="room-data-to">${roomTo}</span><br/>
-    Łączna ilość dni: ${Difference_In_Days}<br/>
+    Łączna ilość dni: <b>${Difference_In_Days}</b><br/>
     Cena pokoju (${$(
       `#room-price`
     ).html()} zł) * ilość pokoi * ilość dni:<br/>    

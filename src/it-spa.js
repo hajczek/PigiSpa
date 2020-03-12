@@ -1,6 +1,6 @@
 import { Router, routes } from "./router";
 import $ from "jquery";
-import { activateRegisterForm, activateLoginForm } from "./common/index";
+import { activateRegisterForm } from "./common/index";
 
 // Code for Router
 const main = $("main");
@@ -16,7 +16,7 @@ router.init();
 activateRegisterForm();
 
 // Functionality for login form
-activateLoginForm();
+// activateLoginForm();
 
 /********** MAIN CODE ***************/
 
@@ -83,44 +83,6 @@ activateLoginForm();
 //   /* Calculate cost of room */
 //   let costOfRoom = numOfDays * roomPrice * roomNum;
 //   console.log(costOfRoom);
-// }
-
-// /* FOR BUTTON 'remove' IN BASKET */
-
-// // Handle for list of elements in basket
-// const inBasket = document.getElementById("basket-content");
-// // Add event listener for every 'remove' element in each element on basket list
-// inBasket.addEventListener("click", removeFromBasket);
-
-// // Handle for all cost of things in basket
-// const allCostInBasket = document.getElementById("all-cost");
-
-// // Function for remove element from basket after click trash button
-// function removeFromBasket(e) {
-//   e.preventDefault();
-
-//   /* Remove element from basket list after trash btn of this element was clicked  */
-//   if (event.target.className === "remove") {
-//     e.target.parentElement.remove();
-
-//     /* Subtract cost of remove element from all cost in basket */
-//     // Handle for price of remove element
-//     const elementPrice = parseInt(
-//       e.target.previousSibling.previousElementSibling.innerHTML
-//     );
-//     // Handke for actual all cost in basket
-//     let actuallCostInBasket = parseInt(allCostInBasket.innerHTML);
-//     // Handle for new cost in basket, after remove element
-//     let newAllCostInBasket = actuallCostInBasket - elementPrice;
-//     // Put new cost in basket (after remove element) as an all cost in basket
-//     allCostInBasket.innerHTML = newAllCostInBasket;
-
-//     if (allCostInBasket.innerHTML === "0") {
-//       document.querySelector(".summary-text").innerHTML =
-//         "Załaduj coś do koszyka!";
-//       /* Tutaj ma się wyświetlać slogan z kosza */
-//     }
-//   }
 // }
 
 // /* FOR INPUT WITH 'quant' IN BASKET to change number of elements*/

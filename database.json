@@ -14,6 +14,11 @@
       "login": "malina@op.pl",
       "password": "katar546",
       "id": 3
+    },
+    {
+      "login": "kalina@op.pl",
+      "password": "kraska",
+      "id": 4
     }
   ],
   "rooms": [

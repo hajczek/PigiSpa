@@ -1,2 +1,2 @@
 export * from "./cart";
-export * from "./add-to-cart-functionality";
+export * from "./add-to-cart";

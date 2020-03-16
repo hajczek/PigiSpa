@@ -45,7 +45,7 @@ export const rooms = () => {
             const title = $(`<h2 id="title">${room.name}</h2>`);
             const details = $(`<p>Ilość łóżek: <span id="beds-quantity">${room.beds}</span>, 
             osób: <span id="persons-quantity">${room.guests}</span><br>
-            Cena pokoju: <span id="room-price" class="price">${room.price}</span> zł<br>
+            Cena pokoju: <span id="room-price" class="product-price">${room.price}</span> zł<br>
             Data przyjazdu: <input id="room-from" type="date"><br>
             Data wyjazdu: <input id="room-to" type="date"><br>
             Ilość pokoi: <input id="room-num" class="num" type="number" min="1" max="10"></p>`);

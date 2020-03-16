@@ -1,29 +1,28 @@
 {
   "users": [
     {
-      "login": "i.hajczewska@gmail.com",
-      "password": "haja768",
+      "login": "testing@user.pl",
+      "password": "test12345",
+      "active": "no",
       "id": 1
     },
     {
       "login": "info@serwisstron.pl",
-      "password": "kot",
+      "password": "koloratka",
+      "active": "no",
       "id": 2
     },
     {
-      "login": "malina@op.pl",
-      "password": "katar546",
+      "login": "koala@op.pl",
+      "password": "busz",
+      "active": "no",
       "id": 3
     },
     {
-      "login": "kalina@op.pl",
-      "password": "kraska",
+      "login": "hajczek@op.pl",
+      "password": "samoloty",
+      "active": "no",
       "id": 4
-    },
-    {
-      "login": "kot@op.pl",
-      "password": "kalarepa12",
-      "id": 5
     }
   ],
   "rooms": [

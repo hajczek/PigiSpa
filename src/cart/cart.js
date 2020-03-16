@@ -14,7 +14,7 @@ export class Cart {
     // Made array from string with cookies
     const cookies = document.cookie.split(";");
     // Looking for our cookie - return string ("IT_SPA_CART=value") or undefined
-    return cookies.find(cookie => cookie.startsWith(this.key));
+    return cookies.find(cookie => cookie.startsWith("IT_SPA_CART"));
   }
 
   // Check if our cookie IT_SPA_CART is set

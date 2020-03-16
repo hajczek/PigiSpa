@@ -44,7 +44,8 @@ export function sendRegisterForm(e) {
               // Save user login and password in database
               body: JSON.stringify({
                 login: `${userEmail}`,
-                password: `${userPassword}`
+                password: `${userPassword}`,
+                active: "no"
               })
             });
 

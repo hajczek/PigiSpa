@@ -19,6 +19,11 @@
       "login": "kalina@op.pl",
       "password": "kraska",
       "id": 4
+    },
+    {
+      "login": "kot@op.pl",
+      "password": "kalarepa12",
+      "id": 5
     }
   ],
   "rooms": [

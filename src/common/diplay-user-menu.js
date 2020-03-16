@@ -1,4 +1,4 @@
-import $ from "jQuery";
+import $ from "jquery";
 
 export function displayUserMenu() {
   // If link in menu is hidden, make it visible

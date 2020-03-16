@@ -46,8 +46,8 @@ export const treatments = () => {
             const title = $(`<h2 id="title">${treatment.name}</h2>`);
             const details = $(`<p>Zabieg obejmuje obszar: <span id="treat-area">${treatment.area}</span><br>
             Czas trwania zabiegu: <span id="treat-time">${treatment.time}</span> min.<br>
-            Cena zabiegu: <span id="treat-price">${treatment.price}</span> zł<br>
-            Ilość zabiegów: <input id="treatment-num" type="number" min="1" max="10"></p>`);
+            Cena zabiegu: <span id="treat-price" class="price">${treatment.price}</span> zł<br>
+            Ilość zabiegów: <input id="treatment-num" class="num" type="number" min="1" max="10"></p>`);
             const button = $(
               `<button id="add-treatment">Wrzuć do kosza!</button>`
             );

@@ -24,9 +24,9 @@ export class Cart {
 
   // Read value from our cookie IT_SPA_CART
   getItSpaCart() {
-    const cookieValue = this.get();
+    const cookieValue = this.get().slice(12);
     // "{foo: 1, bar:[1,2,3]}" --> {foo: 1, bar:[1,2,3]}
-    const parsedValue = JSON.paarse(cookieValue);
+    const parsedValue = JSON.parse(cookieValue);
 
     return parsedValue;
   }

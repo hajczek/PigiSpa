@@ -1,6 +1,5 @@
 import { Router, routes } from "./router";
 import $ from "jquery";
-import { activateRegisterForm } from "./common/index";
 
 // Code for Router
 const main = $("main");
@@ -12,78 +11,7 @@ router.mount(main);
 // For special paths in browser
 router.init();
 
-// Functionality for register form
-activateRegisterForm();
-
-// Functionality for login form
-// activateLoginForm();
-
 /********** MAIN CODE ***************/
-
-// /* FOR ADD POSITION FROM BOX TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON TREATMENT BOX */
-
-// // Handle for button on treatment box
-// const addTreatmentBtn = document.getElementById("add-treatment");
-
-// // Add event after click button addTreatmentBtn
-// addTreatmentBtn
-//   ? addTreatmentBtn.addEventListener("click", addTreatmentToBasket)
-//   : false;
-
-// function addTreatmentToBasket(e) {
-//   e.preventDefault();
-
-//   /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku*/
-//   // Display name of treatment
-//   const treatmentName = document.getElementById("title").innerHTML;
-//   console.log(treatmentName);
-//   // Display price of treatment
-//   const treatmentPrice = parseInt(
-//     document.getElementById("treat-price").innerHTML
-//   );
-//   console.log(treatmentPrice);
-//   // Display number of treatment
-//   const treatmentNum = document.getElementById("treatment-num").value;
-//   console.log(treatmentNum);
-//   // Calculate cost of treatment
-//   let treatmentCost = treatmentPrice * treatmentNum;
-//   console.log(treatmentCost);
-// }
-
-// /* FOR ADD POSITION FROM BOX TO BASKET AFTER CLICKED BUTTON 'Wrzuć do kosza' ON ROOM BOX */
-
-// // Handle for button on room box
-// const addRoomBtn = document.getElementById("add-room");
-
-// // Add event after click this button addRoomBtn
-// addRoomBtn ? addRoomBtn.addEventListener("click", addRoomToBasket) : false;
-
-// function addRoomToBasket(e) {
-//   e.preventDefault();
-
-//   /* Tutaj ma nastąpić dodanie pozycji z boxa do koszyka - trzeba pobrać wszystkie dane potrzebne w koszyku o usłudze i wyświetlić je w koszyku */
-
-//   /* Display name of room */
-//   const roomName = document.getElementById("title").innerHTML;
-//   console.log(roomName);
-//   /* Display term of arrival */
-//   const roomFrom = new Date(document.getElementById("room-from").value);
-//   console.log(roomFrom);
-//   /* Display term of departure */
-//   const roomTo = new Date(document.getElementById("room-to").value);
-//   console.log(roomTo);
-//   /* Display price of room */
-//   const roomPrice = parseInt(document.getElementById("room-price").innerHTML);
-//   console.log(roomPrice);
-//   /* Display num of rooms */
-//   const roomNum = document.getElementById("room-num").value;
-//   /* Calculate number of days */
-//   let numOfDays = parseInt((roomTo - roomFrom) / (24 * 3600 * 1000));
-//   console.log(numOfDays);
-//   /* Calculate cost of room */
-//   let costOfRoom = numOfDays * roomPrice * roomNum;
-//   console.log(costOfRoom);
-// }
 
 // /* FOR INPUT WITH 'quant' IN BASKET to change number of elements*/
 

@@ -21,57 +21,57 @@ export function sendRegisterForm(e) {
     let userEmail = $("#email").val();
     let userPassword = $("#pass").val();
     // Handle for information if user exist on database or not
-    let userExist = "";
+    let userExist = [];
 
     // Connect with database
     fetch("http://localhost:3004/users")
       .then(response => response.json())
-      .then(users =>
-        // Filter users
-        users.filter(user => {
+      .then(users => {
+        // Iterate on users
+        for (let i = 0; i < users.length; i++) {
           // Check, if user exist in database
-          if (user.login === userEmail) {
-            // If exist, change the value of userExist variable
-            userExist = "exist";
+          if (users[i].login === userEmail) {
+            // If yes, push email to array UserExist
+            userExist.push(userEmail);
           }
+        }
 
-          // Check, if user not exist in database (userExist variable is equal to empty string)
-          if (userExist === "") {
-            // Connect with database and create a new user
-            fetch("http://localhost:3004/users", {
-              headers: { "Content-Type": "application/json; charset=utf-8" },
-              method: "POST",
-              // Save user login and password in database
-              body: JSON.stringify({
-                login: `${userEmail}`,
-                password: `${userPassword}`,
-                active: "no"
-              })
-            });
+        // Check, if array userExist is empty
+        if (userExist.length === 0) {
+          // Connect with database and create a new user
+          fetch("http://localhost:3004/users", {
+            headers: { "Content-Type": "application/json; charset=utf-8" },
+            method: "POST",
+            // Save user login and password in database
+            body: JSON.stringify({
+              login: `${userEmail}`,
+              password: `${userPassword}`,
+              active: "no"
+            })
+          });
 
-            // Clear input fields value
-            $("#email").val("");
-            $("#pass").val("");
-            $("#pass-repeat").val("");
+          // Clear input fields value
+          $("#email").val("");
+          $("#pass").val("");
+          $("#pass-repeat").val("");
 
-            // Clear fields for checking strength of password
-            $("span.weak").css("background-color", "#fff");
-            $("span.average").css("background-color", "#fff");
-            $("span.strong").css("background-color", "#fff");
+          // Clear fields for checking strength of password
+          $("span.weak").css("background-color", "#fff");
+          $("span.average").css("background-color", "#fff");
+          $("span.strong").css("background-color", "#fff");
 
-            // Hide form
-            $(".registration-box").css("display", "none");
+          // Hide form
+          $(".registration-box").css("display", "none");
 
-            // Display text after registration
-            $("main")
-              .find("header")
-              .after(afterRegister);
-          } else {
-            // Display info that this user exists in database
-            errorFunc("Ten użytkownik jest już w naszej bazie.");
-          }
-        })
-      )
+          // Display text after registration
+          $("main")
+            .find("header")
+            .after(afterRegister);
+        } else {
+          // Display info that this user exists in database
+          errorFunc("Ten użytkownik jest już w naszej bazie.");
+        }
+      })
       .catch(error => console.log("Error ...", error));
   } else {
     // Display info about different passwords

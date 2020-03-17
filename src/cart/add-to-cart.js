@@ -107,5 +107,7 @@ export const addToCart = e => {
   $("#all-value").addClass("summary-text");
   $("#pay").removeClass("button-not-display");
 
+  console.log(cart.getItSpaCart());
+
   e.preventDefault();
 };

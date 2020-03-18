@@ -1,4 +1,5 @@
 import $ from "jquery";
+import { logOut } from "./index";
 
 export function displayUserMenu() {
   fetch("http://localhost:3004/users")
@@ -27,9 +28,13 @@ export function displayUserMenu() {
           $('.menu-link:contains("Zabiegi")').css("right", "150px");
 
           // Display info for user about panel in header
-          $(`nav`).after(
-            `<p id="welcome-text">Panel użytkownika: <span>${users[i].login}</span></p>`
-          );
+          $(`nav`)
+            .after(
+              `<p id="welcome-text">Panel użytkownika: <span>${users[i].login}</span></p>`
+            )
+            .after(`<span class="span-btn" id="logout">Wyloguj</span>`);
+
+          $(`#logout`).on("click", logOut);
         }
       }
     });

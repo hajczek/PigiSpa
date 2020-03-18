@@ -9,20 +9,8 @@
     {
       "login": "info@serwisstron.pl",
       "password": "koloratka",
-      "active": "no",
+      "active": "yes",
       "id": 2
-    },
-    {
-      "login": "koala@op.pl",
-      "password": "busz",
-      "active": "no",
-      "id": 3
-    },
-    {
-      "login": "hajczek@onet.pl",
-      "password": "kalinka",
-      "active": "no",
-      "id": 4
     }
   ],
   "rooms": [

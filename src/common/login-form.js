@@ -24,6 +24,18 @@ export function logIn(e) {
         users.filter(user => {
           // Check, if login and pass are in database/users
           if (user.login === emailLogin && user.password === passLogin) {
+            // Connect with database and create a new user
+            fetch(`http://localhost:3004/users/${user.id}`, {
+              headers: { "Content-Type": "application/json; charset=utf-8" },
+              method: "PUT",
+              // Change 'active' of logon user for 'yes'
+              body: JSON.stringify({
+                login: user.login,
+                password: user.password,
+                active: "yes"
+              })
+            });
+
             // Hide form
             $(".login-box").css("display", "none");
             // Display text after login
@@ -31,9 +43,9 @@ export function logIn(e) {
               .find("header")
               .after(afterLogin);
             // Display info for user about panel in header
-            $(`nav`).after(
-              `<p id="welcome-text">Panel użytkownika: <span>${emailLogin}</span></p>`
-            );
+            // $(`nav`).after(
+            //   `<p id="welcome-text">Panel użytkownika: <span>${emailLogin}</span></p>`
+            // );
             // Display menu for user
             displayUserMenu();
           } else {

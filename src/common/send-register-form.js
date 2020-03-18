@@ -41,7 +41,7 @@ export function sendRegisterForm(e) {
           // Connect with database and create a new user
           fetch("http://localhost:3004/users", {
             headers: { "Content-Type": "application/json; charset=utf-8" },
-            method: "POST",
+            method: "PATCH",
             // Save user login and password in database
             body: JSON.stringify({
               login: `${userEmail}`,

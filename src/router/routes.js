@@ -1,6 +1,5 @@
 import {
   home,
-  bookings,
   rooms,
   treatments,
   login,
@@ -38,12 +37,12 @@ export const routes = [
     // data: { "data-type": "user" }
     data: { visibility: "hidden" }
   },
-  {
-    name: "Bookings",
-    path: "/bookings",
-    component: bookings,
-    data: { display: "none" }
-  },
+  // {
+  //   name: "Wyloguj",
+  //   path: "/",
+  //   component: home,
+  //   data: { visibility: "hidden" }
+  // },
   {
     name: "Logowanie",
     path: "/login",

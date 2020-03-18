@@ -3,6 +3,7 @@ import $ from "jquery";
 export function displayMainMenu() {
   $('.menu-link:contains("Zabiegi")').css("visibility", "hidden");
   $('.menu-link:contains("Pokoje")').css("visibility", "hidden");
+  $('.menu-link:contains("Wyloguj")').css("visibility", "hidden");
 
   $('.menu-link:contains("Logowanie")').css("visibility", "visible");
   $('.menu-link:contains("Rejestracja")').css("visibility", "visible");

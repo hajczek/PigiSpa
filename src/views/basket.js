@@ -35,9 +35,10 @@ export const basket = () => {
       let cartCount = $(`<span class="quant">${cookies[i].count}</span>`);
       let cartValueTreat = $(`<p>Łączna wartość: </p>`);
       let cartPriceTreat = $(`<span class="price">
-      ${parseInt(cookies[i].price) * parseInt(cookies[i].count)}  zł</span>`);
-      let cartRoomDetails = $(`<p>od <span class="room-data" id="room-data-from">${cookies[i].from}</span>
-      do <span class="room-data" id="room-data-to">${cookies[i].to}</span></p>`);
+      ${parseInt(cookies[i].price) *
+        parseInt(cookies[i].count)} zł</span><br/>`);
+      let cartRoomDetails = $(`<br/><span>od <span class="room-data" id="room-data-from">${cookies[i].from}</span>
+      do <span class="room-data" id="room-data-to">${cookies[i].to}</span></span><br/>`);
       let cartRoomDays = $(
         `<span>Łączna ilość dni: <b>${cookies[i].days}</b></span><br/>`
       );

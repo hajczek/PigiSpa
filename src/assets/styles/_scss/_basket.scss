@@ -60,6 +60,8 @@
         .quant {
           color: $input-text-color;
           width: $xs-size * 8;
+          font-size: $l-size;
+          font-weight: bold;
         }
 
         .room-data {

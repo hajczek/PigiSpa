@@ -1,7 +1,9 @@
 import $ from "jquery";
 import { Cart } from "./index";
 
-export const addToCart = e => {
+export const addToCart = () => {
+  console.log("Added to cart");
+
   // Define a new cart
   let cart = new Cart();
 
@@ -41,5 +43,6 @@ export const addToCart = e => {
         parseInt(Difference_In_Days)
     });
   }
+
   e.preventDefault();
 };

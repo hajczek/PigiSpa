@@ -1,7 +1,7 @@
 // basket.js
 
 import $ from "jquery";
-import { removeFromBasket } from "./../common/index";
+import { removeFromCart } from "./../cart/index";
 import { Cart } from "./../cart/index";
 import { afterPurchase } from "./index";
 
@@ -26,7 +26,7 @@ export const basket = () => {
       .after(afterPurchase);
   });
 
-  cartList.on("click", removeFromBasket);
+  cartList.on("click", removeFromCart);
 
   // Display products from cookies in cart
   const cart = new Cart();

@@ -1,9 +1,9 @@
 // remove-from-basket.js
 import $ from "jquery";
-import { Cart } from "./../cart/index";
+import { Cart } from "./index";
 
 // Function for remove element from basket after click trash button
-export function removeFromBasket(e) {
+export function removeFromCart(e) {
   e.preventDefault();
 
   let cart = new Cart();

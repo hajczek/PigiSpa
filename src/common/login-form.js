@@ -42,10 +42,6 @@ export function logIn(e) {
             $("main")
               .find("header")
               .after(afterLogin);
-            // Display info for user about panel in header
-            // $(`nav`).after(
-            //   `<p id="welcome-text">Panel użytkownika: <span>${emailLogin}</span></p>`
-            // );
             // Display menu for user
             displayUserMenu();
           } else {

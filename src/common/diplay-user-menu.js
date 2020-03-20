@@ -28,11 +28,13 @@ export function displayUserMenu() {
           $('.menu-link:contains("Zabiegi")').css("right", "150px");
 
           // Display info for user about panel in header
-          $(`nav`)
-            .after(
-              `<p id="welcome-text">Panel użytkownika: <span>${users[i].login}</span></p>`
-            )
-            .after(`<span class="span-btn" id="logout">Wyloguj</span>`);
+          $(`nav`).after(
+            `<p id="welcome-text">Panel użytkownika: <span>${users[i].login}</span></p>`
+          );
+          // Display logout button in footer
+          $(`footer`).append(
+            `<span class="span-btn" id="logout">Wyloguj</span>`
+          );
 
           $(`#logout`).on("click", logOut);
         }

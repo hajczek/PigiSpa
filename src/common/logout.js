@@ -5,6 +5,12 @@ import { displayMainMenu } from "./index";
 export function logOut(e) {
   console.log("logout");
 
+  // Hide elements
+  $(`.basket-box`).css("display", "none");
+  $(`.treatments-box`).css("display", "none");
+  $(`.rooms-box`).css("display", "none");
+  $(`.thanks-box-after-payment`).css("display", "none");
+
   fetch("http://localhost:3004/users")
     .then(response => response.json())
     .then(users => {

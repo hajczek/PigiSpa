@@ -1,8 +1,9 @@
 // basket.js
 
+import $ from "jquery";
 import { removeFromBasket } from "./../common/index";
 import { Cart } from "./../cart/index";
-import $ from "jquery";
+import { afterPurchase } from "./index";
 
 export const basket = () => {
   const fragment = $(new DocumentFragment());
@@ -20,7 +21,9 @@ export const basket = () => {
   );
 
   cartButton.on("click", function() {
-    console.log("Kupiłeś towar");
+    $("main")
+      .find("header")
+      .after(afterPurchase);
   });
 
   cartList.on("click", removeFromBasket);
@@ -37,7 +40,7 @@ export const basket = () => {
         `<li><span class="title">${cookies[i].name}</span> x </li>`
       );
       let cartCount = $(`<span class="quant">${cookies[i].count}</span>`);
-      let cartValueTreat = $(`<p>Łączna wartość: </p>`);
+      let cartValueTreat = $(`<p class="value">Łączna wartość: </p>`);
       let cartPriceTreat = $(`<span class="price">
       ${parseInt(cookies[i].price) * parseInt(cookies[i].count)}</span><br/>`);
       let cartRoomDetails = $(`<br/><span>od <span class="room-data" id="room-data-from">${cookies[i].from}</span>
@@ -48,7 +51,7 @@ export const basket = () => {
       let cartValueRoom = $(
         `<span class="room-price">Cena pokoju (${cookies[i].price} zł) * ilość pokoi * ilość dni:<span><br/>`
       );
-      let cartTextPriceRoom = $(`<p>Łączna wartość: </p>`);
+      let cartTextPriceRoom = $(`<p class="value">Łączna wartość: </p>`);
       let cartPriceRoom = $(
         `<span class="price">${parseInt(cookies[i].price) *
           parseInt(parseInt(cookies[i].count)) *

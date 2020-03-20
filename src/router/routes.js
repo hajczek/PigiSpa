@@ -5,7 +5,8 @@ import {
   login,
   registration,
   afterRegister,
-  afterLogin
+  afterLogin,
+  afterPurchase
 } from "../views";
 
 // Routes in project
@@ -23,18 +24,23 @@ export const routes = [
     component: afterLogin,
     data: { display: "none" }
   },
+
+  {
+    name: "After Purchase",
+    path: "/after-purchase",
+    component: afterPurchase,
+    data: { display: "none" }
+  },
   {
     name: "Pokoje",
     path: "/rooms",
     component: rooms,
-    // data: { "data-type": "user" }
     data: { visibility: "hidden" }
   },
   {
     name: "Zabiegi",
     path: "/treatments",
     component: treatments,
-    // data: { "data-type": "user" }
     data: { visibility: "hidden" }
   },
   // {
@@ -47,14 +53,12 @@ export const routes = [
     name: "Logowanie",
     path: "/login",
     component: login,
-    // data: { "data-type": "all" }
     data: { visibility: "visible" }
   },
   {
     name: "Rejestracja",
     path: "/registration",
     component: registration,
-    // data: { "data-type": "all" }
     data: { visibility: "visible" }
   }
 ];

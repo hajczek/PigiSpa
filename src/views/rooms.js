@@ -4,6 +4,11 @@ import $ from "jquery";
 import { header, basket, footer } from "./index";
 import { addToCart } from "./../cart/index";
 import { displayUserMenu } from "./../common/index";
+import {
+  limitDateFunction,
+  todayDate,
+  yearFromTodayDate
+} from "./../common/index";
 
 export const rooms = () => {
   const fragment = $(new DocumentFragment());
@@ -41,34 +46,8 @@ export const rooms = () => {
           // Define box for room details
           const boxDetails = $(`<div class="room-box"></div>`);
 
-          // Define dates elements for input with date type for set min and max date
-          const today = new Date();
-          let year = today.getFullYear();
-          let month = today.getMonth() + 1;
-          let day = today.getDate();
-          let yearFromToday = year + 1;
-
-          // Set 0 before day if length of this element is 1
-          if (day.toString().length === 1) {
-            day = "0" + day;
-          }
-
-          // Set 0 before month if length of this element is 1
-          if (month.toString().length === 1) {
-            month = "0" + month;
-          }
-
-          // Define date for today
-          const todayDate =
-            year.toString() + "-" + month.toString() + "-" + day.toString();
-
-          // Define date for year after today
-          const yearFromTodayDate =
-            yearFromToday.toString() +
-            "-" +
-            month.toString() +
-            "-" +
-            day.toString();
+          // Call function to set limit date for inpit with date type
+          limitDateFunction();
 
           // Define all details about room which was clicked
           if (room.id) {

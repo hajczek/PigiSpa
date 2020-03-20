@@ -1,13 +1,21 @@
 // remove-from-basket.js
 import $ from "jquery";
+import { Cart } from "./../cart/index";
 
 // Function for remove element from basket after click trash button
 export function removeFromBasket(e) {
   e.preventDefault();
 
+  let cart = new Cart();
+
   /* Remove element from basket list after trash btn of this element was clicked  */
   if (event.target.className === "remove") {
-    e.target.parentElement.remove();
+    // e.target.parentElement.remove();
+
+    let targetParent = $(event.target).parent();
+    let targetName = targetParent.children(".title").html();
+
+    cart.remove({ name: targetName });
 
     /* Subtract cost of remove element from all cost in basket */
     // Handle for price of remove element

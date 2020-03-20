@@ -14,7 +14,19 @@ export class Cart {
     // Made array from string with cookies
     const cookies = document.cookie.split(";");
     // Looking for our cookie - return string ("IT_SPA_CART=value") or undefined
-    return cookies.find(cookie => cookie.startsWith("IT_SPA_CART"));
+    // Define cookie with key 'IT_SPA_CART'
+    let cookieFirst = cookies.find(cookie => cookie.startsWith(this.key));
+    // Define cookie with key ' IT_SPA_CART'
+    let cookieSecond = cookies.find(cookie =>
+      cookie.startsWith(" " + this.key)
+    );
+
+    // Return this cookie, which exist
+    if (cookieFirst) {
+      return cookieFirst;
+    } else {
+      return cookieSecond;
+    }
   }
 
   // Check if our cookie IT_SPA_CART is set
@@ -24,7 +36,17 @@ export class Cart {
 
   // Read value from our cookie IT_SPA_CART
   getItSpaCart() {
-    const cookieValue = this.get().slice(12);
+    // Define variale for cookie value
+    let cookieValue;
+    // If cookie with key 'IT_SPA_CART' exists
+    if (this.get() === "IT_SPA_CART") {
+      // Remove key name from begining and set value of this cookie to cookieValue variable
+      cookieValue = this.get().slice(12);
+    } else {
+      // Remove key name with white space before from begining and set value of this cookie to cookieValue variable
+      cookieValue = this.get().slice(13);
+    }
+    // const cookieValue = this.get().slice(12);
     // "{foo: 1, bar:[1,2,3]}" --> {foo: 1, bar:[1,2,3]}
     const parsedValue = JSON.parse(cookieValue);
 

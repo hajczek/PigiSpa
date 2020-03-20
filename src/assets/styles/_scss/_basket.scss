@@ -70,6 +70,10 @@
 
         .price {
           font-weight: bold;
+
+          &::after {
+            content: " zł";
+          }
         }
 
         .remove {

@@ -8,15 +8,17 @@ export function removeFromBasket(e) {
 
   let cart = new Cart();
 
-  /* Remove element from basket list after trash btn of this element was clicked  */
+  /* Check if the trash btn of element was clicked  */
   if (e.target.className === "remove") {
-    // e.target.parentElement.remove();
-
+    // If yes, define parent element of this btn
     let targetParent = $(e.target).parent();
+    // Define name of this product
     let targetName = targetParent.children(".title").html();
 
+    // Remove this object from cookie
     cart.remove({ name: targetName });
-    cart.getItSpaCart();
+    // Remove this element from cart
+    targetParent.remove();
 
     /* Subtract cost of remove element from all cost in basket */
     // Handle for html element with price of remove element

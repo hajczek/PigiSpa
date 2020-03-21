@@ -41,10 +41,10 @@ export class Cart {
     // If cookie with key 'IT_SPA_CART' exists
     if (this.get() === "IT_SPA_CART") {
       // Remove key name from begining and set value of this cookie to cookieValue variable
-      cookieValue = this.get().slice(12);
+      cookieValue = this.get().slice(11);
     } else {
       // Remove key name with white space before from begining and set value of this cookie to cookieValue variable
-      cookieValue = this.get().slice(13);
+      cookieValue = this.get().slice(12);
     }
     // const cookieValue = this.get().slice(12);
     // "{foo: 1, bar:[1,2,3]}" --> {foo: 1, bar:[1,2,3]}

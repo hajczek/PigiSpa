@@ -30,10 +30,25 @@ export const afterPurchase = () => {
   const textAfterPurchase = $(`<div class="thanks-box-after-payment"><h2>Dziękujemy za rezerwację!</h2>
   <p>Czekamy na Ciebie w PigiSpa! Nie zapomnij kąpielówek ;)</p></div>`);
 
+  console.log(document.cookie.slice(";"));
+
   fragment
     .append(textAfterPurchase)
     .append(basket)
     .append(footer);
+
+  // Remove all cookies
+  // document.cookie.split(";").forEach(function(c) {
+  //   document.cookie =
+  //     c.trim().split("=")[0] + "=;" + "expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+  // });
+
+  function delete_cookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+  }
+
+  delete_cookie("IT_SPA_CART");
+  delete_cookie(" IT_SPA_CART");
 
   return fragment;
 };

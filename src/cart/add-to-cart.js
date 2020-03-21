@@ -19,7 +19,11 @@ export const addToCart = e => {
   // Calculate the no. of days between two dates
   let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 
+  // Define what must be display on basket
   $(`#slogan-basket`).css("display", "none");
+  $(`.summary-text-not-display`).removeClass("summary-text-not-display");
+  $(`.summary-text-not-display`).addClass("summary-text");
+  $(`.button-not-display`).removeClass("button-not-display");
 
   // Check if added product to cart is not a room
   if ($(`#room-from`).val() === undefined) {
@@ -68,12 +72,15 @@ export const addToCart = e => {
     });
 
     // Define li element with details about added room to display in cart
+
     let cartLi = $(
       `<li><span class="title">${$(
         `#title`
       ).html()}</span> x <span class="quant">${$(
         `.num`
-      ).val()}</span><br><span>od <span class="room-data" id="room-data-from">${roomFrom}</span> do <span class="room-data" id="room-data-to">${roomTo}</span></span><br><span>Łączna ilość dni: <b>${Difference_In_Days}</b></span><br><span class="room-price">Cena pokoju (960 zł) * ilość pokoi * ilość dni:<span><br></span></span><p class="value">Łączna wartość: <span class="price">${$(
+      ).val()}</span><br><span>od <span class="room-data" id="room-data-from">${roomFrom}</span> do <span class="room-data" id="room-data-to">${roomTo}</span></span><br><span>Łączna ilość dni: <b>${Difference_In_Days}</b></span><br><span class="room-price">Cena pokoju ${$(
+        `#room-price`
+      ).html()} * ilość pokoi * ilość dni:<span><br></span></span><p class="value">Łączna wartość: <span class="price">${$(
         `.product-price`
       ).html() *
         parseInt($(`.num`).val()) *

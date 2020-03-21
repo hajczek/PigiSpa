@@ -2,7 +2,6 @@
 
 import $ from "jquery";
 import { basket, footer } from "./index";
-import { Cart } from "./../cart/index";
 
 export const afterPurchase = () => {
   const fragment = $(new DocumentFragment());
@@ -35,9 +34,6 @@ export const afterPurchase = () => {
     .append(textAfterPurchase)
     .append(basket)
     .append(footer);
-
-  let cart = new Cart();
-  cart = [];
 
   return fragment;
 };

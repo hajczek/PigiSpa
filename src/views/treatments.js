@@ -3,6 +3,7 @@
 import $ from "jquery";
 import { header, basket, footer } from "./index";
 import { addToCart } from "./../cart/index";
+import { displayUserMenu } from "./../common/index";
 
 export const treatments = () => {
   const fragment = $(new DocumentFragment());
@@ -23,6 +24,10 @@ export const treatments = () => {
   fetch("http://localhost:3004/treatments")
     .then(response => response.json())
     .then(treatments => {
+      // Display user menu
+      if (box) {
+        displayUserMenu();
+      }
       // Prepare data with function map
       treatments.map(treatment => {
         // Define li element for each treatment

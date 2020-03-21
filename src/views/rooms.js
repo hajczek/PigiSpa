@@ -3,6 +3,7 @@
 import $ from "jquery";
 import { header, basket, footer } from "./index";
 import { addToCart } from "./../cart/index";
+import { displayUserMenu } from "./../common/index";
 import {
   limitDateFunction,
   todayDate,
@@ -28,6 +29,10 @@ export const rooms = () => {
   fetch("http://localhost:3004/rooms")
     .then(response => response.json())
     .then(rooms => {
+      // Display user menu
+      if (box) {
+        displayUserMenu();
+      }
       // Prepare data with function map
       rooms.map(room => {
         // Define li element for each room

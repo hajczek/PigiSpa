@@ -6,3 +6,4 @@ export * from "./send-register-form";
 export * from "./display-main-menu.js";
 export * from "./diplay-user-menu";
 export * from "./limit-date-function";
+export * from "./calculate-number-days-for-room";

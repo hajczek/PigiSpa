@@ -2,6 +2,7 @@
 
 import $ from "jquery";
 import { basket, footer } from "./index";
+import { removeFromCookie } from "./../cart/index";
 
 export const afterPurchase = () => {
   const fragment = $(new DocumentFragment());
@@ -37,18 +38,15 @@ export const afterPurchase = () => {
     .append(basket)
     .append(footer);
 
+  // Remove all cookie
+  removeFromCookie("IT_SPA_CART");
+  removeFromCookie(" IT_SPA_CART");
+
   // Remove all cookies
   // document.cookie.split(";").forEach(function(c) {
   //   document.cookie =
   //     c.trim().split("=")[0] + "=;" + "expires=Thu, 01 Jan 1970 00:00:00 UTC;";
   // });
-
-  function delete_cookie(name) {
-    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-  }
-
-  delete_cookie("IT_SPA_CART");
-  delete_cookie(" IT_SPA_CART");
 
   return fragment;
 };

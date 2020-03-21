@@ -35,7 +35,7 @@ export const basket = () => {
     const cookies = cart.getItSpaCart();
 
     for (let i = 0; i < cookies.length; i++) {
-      // Define content to display details of added tratment in cart
+      // Define content to display details of added product in cart
       let cartLi = $(
         `<li><span class="title">${cookies[i].name}</span> x </li>`
       );
@@ -49,13 +49,11 @@ export const basket = () => {
         `<span>Łączna ilość dni: <b>${cookies[i].days}</b></span><br/>`
       );
       let cartValueRoom = $(
-        `<span class="room-price">Cena pokoju (${cookies[i].price} zł) * ilość pokoi * ilość dni:<span><br/>`
+        `<span class="room-price">Cena pokoju (${cookies[i].price} zł) * il. pokoi * il. dni:<span><br/>`
       );
       let cartTextPriceRoom = $(`<p class="value">Łączna wartość: </p>`);
       let cartPriceRoom = $(
-        `<span class="price">${parseInt(cookies[i].price) *
-          parseInt(parseInt(cookies[i].count)) *
-          parseInt(cookies[i].days)}</span>`
+        `<span class="price">${cookies[i].valueAll}</span>`
       );
       let cartRemoveBtn = $(`<span class="remove"></span>`);
 

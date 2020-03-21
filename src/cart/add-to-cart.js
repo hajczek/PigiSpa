@@ -62,8 +62,9 @@ export const addToCart = e => {
       from: roomFrom,
       to: roomTo,
       days: Difference_In_Days,
-      price:
-        $(`.product-price`).html() *
+      price: $(`#room-price`).html(),
+      valueAll:
+        $(`#room-price`).html() *
         parseInt($(`.num`).val()) *
         parseInt(Difference_In_Days)
     });
@@ -76,8 +77,8 @@ export const addToCart = e => {
         `.num`
       ).val()}</span><br><span>od <span class="room-data" id="room-data-from">${roomFrom}</span> do <span class="room-data" id="room-data-to">${roomTo}</span></span><br><span>Łączna ilość dni: <b>${Difference_In_Days}</b></span><br><span class="room-price">Cena pokoju (${$(
         `#room-price`
-      ).html()}) * ilość pokoi * ilość dni:<span><br></span></span><p class="value">Łączna wartość: <span class="price">${$(
-        `.product-price`
+      ).html()} zł) * il. pokoi * il. dni:<span><br></span></span><p class="value">Łączna wartość: <span class="price">${$(
+        `#room-price`
       ).html() *
         parseInt($(`.num`).val()) *
         parseInt(
@@ -91,7 +92,7 @@ export const addToCart = e => {
     // Define new whole value in cart after added element to cart
     let allValue =
       parseInt($(`#all-cost`).html()) +
-      $(`.product-price`).html() *
+      $(`#room-price`).html() *
         parseInt($(`.num`).val()) *
         parseInt(Difference_In_Days);
 

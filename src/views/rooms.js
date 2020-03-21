@@ -3,7 +3,6 @@
 import $ from "jquery";
 import { header, basket, footer } from "./index";
 import { addToCart } from "./../cart/index";
-import { displayUserMenu } from "./../common/index";
 import {
   limitDateFunction,
   todayDate,
@@ -13,6 +12,7 @@ import {
 export const rooms = () => {
   const fragment = $(new DocumentFragment());
 
+  // Define html elements
   const box = $(`<div class="rooms-box"></div>`);
   const title = $(`<h2>Dostępne pokoje:</h2>`);
   const list = $(`<ol id="rooms-list"></ol>`);
@@ -24,14 +24,10 @@ export const rooms = () => {
 
   box.append(title).append(list);
 
-  // Connect with database
+  // Connect with database form rooms
   fetch("http://localhost:3004/rooms")
     .then(response => response.json())
     .then(rooms => {
-      // Display user menu
-      if (box) {
-        displayUserMenu();
-      }
       // Prepare data with function map
       rooms.map(room => {
         // Define li element for each room
@@ -59,8 +55,10 @@ export const rooms = () => {
             Data wyjazdu: <input id="room-to" type="date" max=${yearFromTodayDate}><br>
             Ilość pokoi: <input id="room-num" class="num" type="number" min="1" max="10"></p>`);
             const button = $(`<button id="add-room">Wrzuć do kosza!</button>`);
-            // Add action to button in
+
+            // Add action to button in cart
             button.on("click", addToCart);
+
             // Display all elements on page
             boxDetails
               .append(title)

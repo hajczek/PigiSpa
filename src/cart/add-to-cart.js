@@ -21,9 +21,9 @@ export const addToCart = e => {
 
   // Define what must be display on basket
   $(`#slogan-basket`).css("display", "none");
-  $(`.summary-text-not-display`).removeClass("summary-text-not-display");
-  $(`.summary-text-not-display`).addClass("summary-text");
-  $(`.button-not-display`).removeClass("button-not-display");
+  $(`#all-value`).removeClass("summary-text-not-display");
+  $(`#all-value`).addClass("summary-text");
+  $(`#pay`).removeClass("button-not-display");
 
   // Check if added product to cart is not a room
   if ($(`#room-from`).val() === undefined) {

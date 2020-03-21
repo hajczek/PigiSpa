@@ -24,7 +24,6 @@ export const routes = [
     component: afterLogin,
     data: { display: "none" }
   },
-
   {
     name: "After Purchase",
     path: "/after-purchase",
@@ -43,12 +42,6 @@ export const routes = [
     component: treatments,
     data: { visibility: "hidden" }
   },
-  // {
-  //   name: "Wyloguj",
-  //   path: "/",
-  //   component: home,
-  //   data: { visibility: "hidden" }
-  // },
   {
     name: "Logowanie",
     path: "/login",

@@ -1,5 +1,3 @@
-// basket.js
-
 import $ from "jquery";
 import { removeFromCart } from "./../cart/index";
 import { Cart } from "./../cart/index";
@@ -7,6 +5,8 @@ import { afterPurchase } from "./index";
 
 export const basket = () => {
   const fragment = $(new DocumentFragment());
+
+  // Define needed elements
   const box = $(`<div class="basket-box"></div>`);
   const title = $(`<h2 id="cartTitle">TWÓJ KOSZYK</h2>`);
   const boxContent = $(`<div id="basket-content-box"></div>`);
@@ -20,20 +20,25 @@ export const basket = () => {
     `<button id="pay" class="button-not-display">Kupuję i płacę</button>`
   );
 
+  // Add action to button on cart
   cartButton.on("click", function() {
     $("main")
       .find("header")
       .after(afterPurchase);
   });
 
+  // Add action to remove buttons
   cartList.on("click", removeFromCart);
 
   // Display products from cookies in cart
   const cart = new Cart();
 
+  // Check if cookie exists
   if (cart.exists()) {
+    // If yes, get data from cookie
     const cookies = cart.getItSpaCart();
 
+    // Iterate after data from cookie
     for (let i = 0; i < cookies.length; i++) {
       // Define content to display details of added product in cart
       let cartLi = $(
@@ -57,6 +62,7 @@ export const basket = () => {
       );
       let cartRemoveBtn = $(`<span class="remove"></span>`);
 
+      // Display all element on page
       cartList.append(cartLi);
 
       if (cookies[i].from) {
@@ -69,6 +75,7 @@ export const basket = () => {
           .append(cartRemoveBtn);
 
         cartTextPriceRoom.append(cartPriceRoom);
+
         // Add price of added room to cart to all price
         cartCost.html(
           parseInt(cartCost.html()) + parseInt(cartPriceRoom.html()) + ` zł`
@@ -96,6 +103,7 @@ export const basket = () => {
     }
   }
 
+  // Display all elements on page
   fragment.append(box);
   box
     .append(title)
@@ -105,7 +113,6 @@ export const basket = () => {
     .append(cartButton);
 
   cartSummary.append(cartCost);
-
   boxContent.append(cartList);
 
   return fragment;

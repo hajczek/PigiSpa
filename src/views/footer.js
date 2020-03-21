@@ -2,10 +2,12 @@ import $ from "jquery";
 import PigiLogoSmall from "./../assets/img/pigiSpa-logo-footer.png";
 
 export const footer = () => {
-  // const fragment = $(new DocumentFragment());
+  // Define all needed html elements
   const footer = $(`<footer><a href="./" id="logo-small"></a></footer>`);
   const logoImg = new Image();
   logoImg.src = PigiLogoSmall;
+
+  // Display elements on page
   footer.find("a").append(logoImg);
 
   return footer;

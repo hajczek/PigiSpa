@@ -1,5 +1,3 @@
-// after-purchase.js
-
 import $ from "jquery";
 import { basket, footer } from "./index";
 import { removeFromCookie } from "./../cart/index";
@@ -31,8 +29,7 @@ export const afterPurchase = () => {
   const textAfterPurchase = $(`<div class="thanks-box-after-payment"><h2>Dziękujemy za rezerwację!</h2>
   <p>Czekamy na Ciebie w PigiSpa! Nie zapomnij kąpielówek ;)</p></div>`);
 
-  console.log(document.cookie.slice(";"));
-
+  // Display all elements on page
   fragment
     .append(textAfterPurchase)
     .append(basket)
@@ -41,12 +38,6 @@ export const afterPurchase = () => {
   // Remove all cookie
   removeFromCookie("IT_SPA_CART");
   removeFromCookie(" IT_SPA_CART");
-
-  // Remove all cookies
-  // document.cookie.split(";").forEach(function(c) {
-  //   document.cookie =
-  //     c.trim().split("=")[0] + "=;" + "expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-  // });
 
   return fragment;
 };

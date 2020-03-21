@@ -1,4 +1,3 @@
-// logout.js
 import $ from "jquery";
 import { displayMainMenu } from "./index";
 
@@ -21,7 +20,7 @@ export function logOut(e) {
           fetch(`http://localhost:3004/users/${users[i].id}`, {
             headers: { "Content-Type": "application/json; charset=utf-8" },
             method: "PUT",
-            // Change 'active' of logon user for 'yes'
+            // Change option 'active' of logout user for 'no'
             body: JSON.stringify({
               login: users[i].login,
               password: users[i].password,

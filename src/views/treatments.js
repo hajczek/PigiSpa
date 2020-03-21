@@ -1,17 +1,16 @@
-// treatments.js
-
 import $ from "jquery";
 import { header, basket, footer } from "./index";
 import { addToCart } from "./../cart/index";
-// import { displayUserMenu } from "./../common/index";
 
 export const treatments = () => {
   const fragment = $(new DocumentFragment());
 
+  // Define all html elements
   const box = $(`<div class="treatments-box"></div>`);
   const title = $(`<h2>Dostępne zabiegi:</h2>`);
   const list = $(`<ol id="treatments-list"></ol>`);
 
+  // Display all elements on page
   fragment
     .append(header)
     .append(box)
@@ -24,10 +23,6 @@ export const treatments = () => {
   fetch("http://localhost:3004/treatments")
     .then(response => response.json())
     .then(treatments => {
-      // Display user menu
-      // if (box) {
-      //   displayUserMenu();
-      // }
       // Prepare data with function map
       treatments.map(treatment => {
         // Define li element for each treatment
@@ -51,8 +46,10 @@ export const treatments = () => {
             const button = $(
               `<button id="add-treatment">Wrzuć do kosza!</button>`
             );
+
             // Add action to button in cart
             button.on("click", addToCart);
+
             // Display all elements on page
             boxDetails
               .append(title)

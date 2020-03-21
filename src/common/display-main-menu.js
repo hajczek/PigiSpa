@@ -1,6 +1,7 @@
 import $ from "jquery";
 
 export function displayMainMenu() {
+  // Define which elements must be visible, which not
   $('.menu-link:contains("Zabiegi")').css("visibility", "hidden");
   $('.menu-link:contains("Pokoje")').css("visibility", "hidden");
   $('.menu-link:contains("Wyloguj")').css("visibility", "hidden");
@@ -18,9 +19,11 @@ export function displayMainMenu() {
   $(`#logout`).css("display", "none");
   $(`.box-after-login`).css("display", "none");
 
+  // Define slogan text
   const slogan = $(
     `<p class="slogan"><span class="pink">PigiSpa</span> zaprasza przepracowanych Front-End Developerów na zabiegi SPA!</p>`
   );
 
+  // Display slogan text on page
   $("header").append(slogan);
 }

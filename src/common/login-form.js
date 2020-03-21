@@ -1,4 +1,3 @@
-// login-form-func.js
 import $ from "jquery";
 import { afterLogin } from "../views/index";
 import { errorFunc, displayUserMenu } from "./index";

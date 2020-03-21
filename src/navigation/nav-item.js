@@ -1,4 +1,3 @@
-// nav-item.js
 import $ from "jquery";
 
 // Complete information about route element
@@ -14,10 +13,11 @@ export const navItem = route => {
     styleKey = key;
     styleVal = route.data[key];
   }
-
+  // Define link for each route
   const a = $(
     `<a class="menu-link" style="${styleKey}: ${styleVal}">${route.name}</a>`
   );
+  // Add action to each 'a' element
   a.on("click", event => {
     // We don't want refresh page!!!
     event.preventDefault();
@@ -26,6 +26,8 @@ export const navItem = route => {
       path: route.path
     });
   });
+
+  // Display defined links on page
   li.append(a);
   return li;
 };

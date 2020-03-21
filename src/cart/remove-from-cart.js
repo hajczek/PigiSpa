@@ -1,4 +1,3 @@
-// remove-from-basket.js
 import $ from "jquery";
 import { Cart } from "./index";
 
@@ -8,7 +7,7 @@ export function removeFromCart(e) {
 
   let cart = new Cart();
 
-  /* Check if the trash btn of element was clicked  */
+  /* Check if the trash btn of element in cart was clicked  */
   if (e.target.className === "remove") {
     // If yes, define parent element of this btn
     let targetParent = $(e.target).parent();
@@ -30,7 +29,7 @@ export function removeFromCart(e) {
         .html()
         .trim()
     );
-    // Handle for actual all cost in basket
+    // Handle for actual whole cost in basket
     let actuallCostInBasket = parseInt($(`#all-cost`).html());
     // Handle for the whole value of the basket, after remove element
     let newAllCostInBasket = actuallCostInBasket - elemPrice;

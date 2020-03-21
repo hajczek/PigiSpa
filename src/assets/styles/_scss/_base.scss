@@ -19,7 +19,7 @@ body {
     align-items: center;
     background-color: $bg-color;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     height: 70px;
     justify-content: space-between;
     opacity: 0.9;
@@ -29,6 +29,9 @@ body {
     #logo img {
       height: auto;
       width: 100px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
 
       &:hover {
         opacity: 0.7;
@@ -37,6 +40,8 @@ body {
 
     #welcome-text {
       font-size: $xs-size * 4;
+      width: 40%;
+      margin-left: 60%;
 
       span {
         font-weight: bold;
@@ -46,6 +51,9 @@ body {
 
     nav {
       font-size: $xs-size * 4;
+      position: relative;
+      top: -15px;
+
       ul {
         display: flex;
 
@@ -76,16 +84,22 @@ body {
     background: $bg-color url("../src/assets/img/pigispa-bg.jpg") no-repeat
       fixed;
     background-position: 0 -100px;
+
     header {
       padding: 0 $xs-size * 14;
       height: 100px;
+      flex-direction: row-reverse;
 
       #logo img {
         width: 149px;
+        position: relative;
+        top: 0;
+        left: 0;
       }
 
       nav {
         font-size: $l-size;
+        top: 0;
 
         // Styles for user menu
         .menu-link[style="visibility: visible;"] {

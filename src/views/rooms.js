@@ -1,9 +1,6 @@
-// rooms.js
-
 import $ from "jquery";
 import { header, basket, footer } from "./index";
 import { addToCart } from "./../cart/index";
-// import { displayUserMenu } from "./../common/index";
 import {
   limitDateFunction,
   todayDate,
@@ -17,6 +14,8 @@ export const rooms = () => {
   const box = $(`<div class="rooms-box"></div>`);
   const title = $(`<h2>Dostępne pokoje:</h2>`);
   const list = $(`<ol id="rooms-list"></ol>`);
+
+  // Display all elements on page
   fragment
     .append(header)
     .append(box)
@@ -25,14 +24,10 @@ export const rooms = () => {
 
   box.append(title).append(list);
 
-  // Connect with database form rooms
+  // Connect with database for rooms
   fetch("http://localhost:3004/rooms")
     .then(response => response.json())
     .then(rooms => {
-      // Display user menu
-      // if (box) {
-      //   displayUserMenu();
-      // }
       // Prepare data with function map
       rooms.map(room => {
         // Define li element for each room

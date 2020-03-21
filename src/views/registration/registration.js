@@ -1,16 +1,16 @@
-// registration.js
-
 import $ from "jquery";
 import { header, footer, registrationForm } from "../index";
 
 export const registration = () => {
   const fragment = $(new DocumentFragment());
-  // const headerBox = header();
+
+  // Define needed elements
   const box = $(`<div class="registration-box"></div`);
   const title = $(`<h2>Zarejestruj się</h2>`);
   const error = $(`<div id="info-err"></div>`);
   const form = registrationForm;
 
+  // Display all elements on page
   fragment
     .append(header)
     .append(box)

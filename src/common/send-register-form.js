@@ -1,6 +1,7 @@
 import $ from "jquery";
 import { afterRegister } from "./../views/index";
 import { errorFunc } from "./index";
+import { url } from "./../database/database-conntection";
 
 export function sendRegisterForm(e) {
   if (
@@ -24,7 +25,7 @@ export function sendRegisterForm(e) {
     let userExist = [];
 
     // Connect with database
-    fetch("http://localhost:3004/users")
+    fetch(`${url}/users`)
       .then(response => response.json())
       .then(users => {
         // Iterate on users
@@ -39,7 +40,7 @@ export function sendRegisterForm(e) {
         // Check, if array userExist is empty
         if (userExist.length === 0) {
           // Connect with database and create a new user
-          fetch("http://localhost:3004/users", {
+          fetch(`${url}/users`, {
             headers: { "Content-Type": "application/json; charset=utf-8" },
             method: "PATCH",
             // Save user login and password in database

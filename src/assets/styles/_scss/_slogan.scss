@@ -5,8 +5,7 @@
   position: absolute;
   text-align: center;
   text-shadow: $slogan-shadow;
-  width: 90%;
-  margin-left: 5%;
+  width: 100%;
 
   .pink {
     color: $edit-color;
@@ -18,7 +17,6 @@
   .slogan {
     bottom: 150px;
     font-size: $xs-size * 8;
-    width: 100%;
     margin-left: 0;
   }
 }

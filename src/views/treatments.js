@@ -1,6 +1,7 @@
 import $ from "jquery";
 import { header, basket, footer } from "./index";
 import { addToCart } from "./../cart/index";
+import { url } from "./../database/database-conntection";
 
 export const treatments = () => {
   const fragment = $(new DocumentFragment());
@@ -20,7 +21,7 @@ export const treatments = () => {
   box.append(title).append(list);
 
   // Connect with database
-  fetch("http://localhost:3004/treatments")
+  fetch(`${url}/treatments`)
     .then(response => response.json())
     .then(treatments => {
       // Prepare data with function map

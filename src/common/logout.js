@@ -1,5 +1,6 @@
 import $ from "jquery";
 import { displayMainMenu } from "./index";
+import { url } from "./../database/database-conntection";
 
 export function logOut(e) {
   // Hide elements
@@ -10,14 +11,14 @@ export function logOut(e) {
   $(`.room-box`).css("display", "none");
   $(`.thanks-box-after-payment`).css("display", "none");
 
-  fetch("http://localhost:3004/users")
+  fetch(`${url}/users`)
     .then(response => response.json())
     .then(users => {
       // Iterate on users
       for (let i = 0; i < users.length; i++) {
         // Check, if user exist in database
         if (users[i].active === "yes") {
-          fetch(`http://localhost:3004/users/${users[i].id}`, {
+          fetch(`${url}/users/${users[i].id}`, {
             headers: { "Content-Type": "application/json; charset=utf-8" },
             method: "PUT",
             // Change option 'active' of logout user for 'no'

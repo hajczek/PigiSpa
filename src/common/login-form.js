@@ -1,6 +1,7 @@
 import $ from "jquery";
 import { afterLogin } from "../views/index";
 import { errorFunc, displayUserMenu } from "./index";
+import { url } from "./../database/database-conntection";
 
 export function logIn(e) {
   // Check, if fields login and password are empty
@@ -16,7 +17,7 @@ export function logIn(e) {
     let passLogin = $("#pass-login").val();
 
     // Connect with database
-    fetch("http://localhost:3004/users")
+    fetch(`${url}/users`)
       .then(response => response.json())
       .then(users =>
         // Filter users
@@ -24,7 +25,7 @@ export function logIn(e) {
           // Check, if login and pass are in database/users
           if (user.login === emailLogin && user.password === passLogin) {
             // Connect with database and create a new user
-            fetch(`http://localhost:3004/users/${user.id}`, {
+            fetch(`${url}/users/${user.id}`, {
               headers: { "Content-Type": "application/json; charset=utf-8" },
               method: "PUT",
               // Change 'active' of logon user for 'yes'

@@ -6,6 +6,7 @@ import {
   todayDate,
   yearFromTodayDate
 } from "./../common/index";
+import { url } from "./../database/database-conntection";
 
 export const rooms = () => {
   const fragment = $(new DocumentFragment());
@@ -25,7 +26,7 @@ export const rooms = () => {
   box.append(title).append(list);
 
   // Connect with database for rooms
-  fetch("http://localhost:3004/rooms")
+  fetch(`${url}/rooms`)
     .then(response => response.json())
     .then(rooms => {
       // Prepare data with function map

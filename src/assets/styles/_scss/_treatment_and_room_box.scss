@@ -54,11 +54,19 @@
   }
 }
 
+@media only screen and (min-width: 550px) {
+  .treatment-box,
+  .room-box {
+    width: 500px;
+    height: auto;
+  }
+}
+
 @media only screen and (min-width: 1550px) {
   .treatment-box,
   .room-box {
     left: 600px;
-    margin: 0;
+    margin: 0 auto;
     padding: 50px 50px 50px 70px;
     position: absolute;
     top: 200px;

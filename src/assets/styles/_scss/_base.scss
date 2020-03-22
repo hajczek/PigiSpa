@@ -87,12 +87,8 @@ body {
   }
 }
 
-@media only screen and (min-width: 1550px) {
+@media only screen and (min-width: 700px) {
   body {
-    // background: $bg-color url("../src/assets/img/pigispa-bg.jpg") no-repeat
-    //   fixed;
-    // background-position: 0 -100px;
-
     header {
       padding: 0 $xs-size * 14;
       height: 100px;
@@ -100,9 +96,11 @@ body {
 
       #logo img {
         width: 149px;
-        position: relative;
-        top: 0;
-        left: 0;
+        // position: relative;
+        // top: 0;
+        // left: 0;
+        top: 25px;
+        left: 20px;
       }
 
       nav {

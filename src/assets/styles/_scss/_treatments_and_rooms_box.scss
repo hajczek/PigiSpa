@@ -31,6 +31,14 @@
   }
 }
 
+@media only screen and (min-width: 550px) {
+  .treatments-box,
+  .rooms-box {
+    width: 500px;
+    height: auto;
+  }
+}
+
 @media only screen and (min-width: 1550px) {
   .treatments-box,
   .rooms-box {

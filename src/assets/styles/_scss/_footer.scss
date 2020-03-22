@@ -18,18 +18,28 @@ footer {
     }
   }
 
+  a#basket-mobile img {
+    width: 30px;
+    margin-right: $s-size;
+  }
+
   .span-btn:hover {
     opacity: 0.7;
     cursor: pointer;
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   footer {
     padding: 0 70px;
 
     a img {
       width: 200px;
+    }
+
+    a#basket-mobile img {
+      // width: 50px;
+      display: none;
     }
   }
 }

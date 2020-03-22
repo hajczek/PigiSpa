@@ -1,4 +1,5 @@
 import $ from "jquery";
+import { basketMobile } from "./../views/index";
 import { logOut } from "./index";
 
 export function displayUserMenu() {
@@ -31,10 +32,14 @@ export function displayUserMenu() {
           $(`nav`).after(
             `<p id="welcome-text">Panel użytkownika: <span>${users[i].login}</span></p>`
           );
-          // Display logout button in footer
-          $(`footer`).append(
-            `<span class="span-btn" id="logout">Wyloguj</span>`
-          );
+
+          // Display logout button and basket for mobile version in footer
+          let loginBox = $(`<div id="login-box"></div>`);
+          $(`footer`).append(loginBox);
+
+          loginBox
+            .append(basketMobile)
+            .append(`<span class="span-btn" id="logout">Wyloguj</span>`);
 
           $(`#logout`).on("click", logOut);
         }

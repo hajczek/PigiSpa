@@ -1,5 +1,6 @@
 export * from "./home";
 export * from "./basket";
+export * from "./basket-mobile";
 export * from "./afterPurchase";
 export * from "./rooms";
 export * from "./treatments";

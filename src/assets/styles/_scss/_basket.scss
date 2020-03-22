@@ -1,7 +1,8 @@
 .basket-box {
   background-color: $font-color;
   color: #666;
-  display: flex;
+  // display: flex;
+  display: none;
   flex-direction: column;
   flex-wrap: wrap;
   height: calc(100% - 138px);

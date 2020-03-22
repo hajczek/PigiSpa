@@ -79,11 +79,19 @@ body {
   }
 }
 
-@media only screen and (min-width: 1550px) {
+@media only screen and (min-width: 1000px) {
   body {
     background: $bg-color url("../src/assets/img/pigispa-bg.jpg") no-repeat
       fixed;
     background-position: 0 -100px;
+  }
+}
+
+@media only screen and (min-width: 1550px) {
+  body {
+    // background: $bg-color url("../src/assets/img/pigispa-bg.jpg") no-repeat
+    //   fixed;
+    // background-position: 0 -100px;
 
     header {
       padding: 0 $xs-size * 14;

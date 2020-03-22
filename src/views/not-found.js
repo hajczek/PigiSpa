@@ -1,6 +1,9 @@
 import $ from "jquery";
 import { header, footer } from "./index";
 
+/**
+ * Define page for not found error
+ */
 export const notFound = () => {
   const fragment = $(new DocumentFragment());
 

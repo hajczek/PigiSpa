@@ -1,6 +1,9 @@
 import $ from "jquery";
 import { checkRegisterPass, sendRegisterForm } from "./../../common/index";
 
+/**
+ * Define registration form
+ */
 export const registrationForm = () => {
   const fragment = $(new DocumentFragment());
 

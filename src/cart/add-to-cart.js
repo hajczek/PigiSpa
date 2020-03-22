@@ -7,6 +7,9 @@ import {
   calculateNumberDaysForRoom
 } from "./../common/index";
 
+/**
+ * Add product to cart and cookie file
+ */
 export const addToCart = e => {
   // Define a new cart
   let cart = new Cart();

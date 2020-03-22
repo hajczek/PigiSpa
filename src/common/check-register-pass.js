@@ -1,5 +1,8 @@
 import $ from "jquery";
 
+/**
+ * Check register password
+ */
 export function checkRegisterPass() {
   // Check strength of password
   // Check if inputs are not empty

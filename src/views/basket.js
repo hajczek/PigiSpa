@@ -3,6 +3,9 @@ import { removeFromCart } from "./../cart/index";
 import { Cart } from "./../cart/index";
 import { afterPurchase } from "./index";
 
+/**
+ * Define basket
+ */
 export const basket = () => {
   const fragment = $(new DocumentFragment());
 

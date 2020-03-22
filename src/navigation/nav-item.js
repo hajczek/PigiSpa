@@ -1,15 +1,18 @@
 import $ from "jquery";
 
-// Complete information about route element
+/**
+ * Generate links for menu
+ * @param {Object} route Object with all details for link element
+ */
 export const navItem = route => {
-  // Check value of data/data-type of all elements
-
+  // Define li element for link
   const li = $(`<li></li>`);
   let styleKey;
   let styleVal;
 
   // Loop through route data to check the value
   for (let key in route.data) {
+    // Set key and value of route in styleKey and styleVal variables
     styleKey = key;
     styleVal = route.data[key];
   }

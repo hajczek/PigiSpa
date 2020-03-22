@@ -11,6 +11,12 @@
       "password": "koloratka",
       "active": "no",
       "id": 2
+    },
+    {
+      "login": "haja@op.pl",
+      "password": "kolorowo",
+      "active": "no",
+      "id": 3
     }
   ],
   "rooms": [

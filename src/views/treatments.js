@@ -3,6 +3,9 @@ import { header, basket, footer } from "./index";
 import { addToCart } from "./../cart/index";
 import { url } from "./../database/database-conntection";
 
+/**
+ * Define box with treatments
+ */
 export const treatments = () => {
   const fragment = $(new DocumentFragment());
 

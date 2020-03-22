@@ -1,5 +1,8 @@
 import $ from "jquery";
 
+/**
+ * Display information for user after log in
+ */
 export const afterLogin = () => {
   const fragment = $(new DocumentFragment());
   // Define needed html elements

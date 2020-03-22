@@ -3,6 +3,9 @@ import { logo } from "./logo";
 import { nav } from "./../navigation/index";
 import { displayUserMenu } from "./../common/index";
 
+/**
+ * Define footer
+ */
 export const header = () => {
   // Define all html elements
   const logoPigiSpa = logo;

@@ -5,6 +5,9 @@ export let roomFrom;
 export let roomTo;
 export let Difference_In_Days;
 
+/**
+ * Calculate number of days for room between two dates
+ */
 export function calculateNumberDaysForRoom() {
   // Define values of dates for room
   roomFrom = $(`#room-from`).val();
@@ -17,6 +20,6 @@ export function calculateNumberDaysForRoom() {
   // Calculate the time difference of two dates
   let Difference_In_Time = date2.getTime() - date1.getTime();
 
-  // Calculate the no. of days between two dates
+  // Calculate number of days between two dates
   Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 }

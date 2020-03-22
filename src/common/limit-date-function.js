@@ -1,6 +1,9 @@
 export let todayDate;
 export let yearFromTodayDate;
 
+/**
+ * Calculate the limit for dates in the reservation field
+ */
 export function limitDateFunction(e) {
   // Define dates elements for input with date type for set min and max date
   const today = new Date();

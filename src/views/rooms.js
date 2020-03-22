@@ -8,6 +8,9 @@ import {
 } from "./../common/index";
 import { url } from "./../database/database-conntection";
 
+/**
+ * Define box with rooms
+ */
 export const rooms = () => {
   const fragment = $(new DocumentFragment());
 

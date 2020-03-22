@@ -1,5 +1,8 @@
 import $ from "jquery";
 
+/**
+ * Display main menu
+ */
 export function displayMainMenu() {
   // Define which elements must be visible, which not
   $('.menu-link:contains("Zabiegi")').css("visibility", "hidden");

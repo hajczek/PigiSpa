@@ -1,5 +1,9 @@
 import $ from "jquery";
 
+/**
+ * Display info about error
+ * @param  {String} text Text with information about error
+ */
 export function errorFunc(text) {
   // Handle for element where error must be display
   $("#info-err").html(text);

@@ -2,6 +2,9 @@ import $ from "jquery";
 import { displayMainMenu } from "./index";
 import { url } from "./../database/database-conntection";
 
+/**
+ * Log out user
+ */
 export function logOut(e) {
   // Hide elements
   $(`.basket-box`).css("display", "none");
@@ -11,6 +14,7 @@ export function logOut(e) {
   $(`.room-box`).css("display", "none");
   $(`.thanks-box-after-payment`).css("display", "none");
 
+  // Connect with database users
   fetch(`${url}/users`)
     .then(response => response.json())
     .then(users => {

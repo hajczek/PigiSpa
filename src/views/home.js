@@ -1,6 +1,9 @@
 import $ from "jquery";
 import { header, footer } from "./index";
 
+/**
+ * Define home page
+ */
 export const home = () => {
   const fragment = $(new DocumentFragment());
 

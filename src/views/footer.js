@@ -1,6 +1,9 @@
 import $ from "jquery";
 import PigiLogoSmall from "./../assets/img/pigiSpa-logo-footer.png";
 
+/**
+ * Define foter
+ */
 export const footer = () => {
   // Define all needed html elements
   const footer = $(`<footer><a href="./" id="logo-small"></a></footer>`);

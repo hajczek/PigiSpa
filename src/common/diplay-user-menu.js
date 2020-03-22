@@ -1,9 +1,14 @@
 import $ from "jquery";
 import { basketMobile } from "./../views/index";
 import { logOut } from "./index";
+import { url } from "./../database/database-conntection";
 
+/**
+ * Display user menu
+ */
 export function displayUserMenu() {
-  fetch("http://localhost:3004/users")
+  // Connect with database users
+  fetch(`${url}/users`)
     .then(response => response.json())
     .then(users => {
       // Iterate on users

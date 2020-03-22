@@ -1,6 +1,9 @@
 import $ from "jquery";
 import PigiLogo from "./../assets/img/pigiSpaLogo.png";
 
+/**
+ * Define logo
+ */
 export const logo = () => {
   const fragment = $(new DocumentFragment());
 

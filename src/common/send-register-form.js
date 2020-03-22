@@ -3,6 +3,9 @@ import { afterRegister } from "./../views/index";
 import { errorFunc } from "./index";
 import { url } from "./../database/database-conntection";
 
+/**
+ * Send register form
+ */
 export function sendRegisterForm(e) {
   if (
     // Check if all input fields are empty
@@ -42,7 +45,7 @@ export function sendRegisterForm(e) {
           // Connect with database and create a new user
           fetch(`${url}/users`, {
             headers: { "Content-Type": "application/json; charset=utf-8" },
-            method: "PATCH",
+            method: "POST",
             // Save user login and password in database
             body: JSON.stringify({
               login: `${userEmail}`,

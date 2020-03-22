@@ -8,6 +8,7 @@ export const basket = () => {
 
   // Define needed elements
   const box = $(`<div class="basket-box"></div>`);
+  const closeBasket = $(`<span id="close-basket">x</span>`);
   const title = $(`<h2 id="cartTitle">TWÓJ KOSZYK</h2>`);
   const boxContent = $(`<div id="basket-content-box"></div>`);
   const text = $(`<p id="slogan-basket">Załaduj coś do koszyka!</p>`);
@@ -19,6 +20,11 @@ export const basket = () => {
   const cartButton = $(
     `<button id="pay" class="button-not-display">Kupuję i płacę</button>`
   );
+
+  closeBasket.on("click", function(e) {
+    $(`.basket-box`).css("display", "none");
+    e.preventDefault();
+  });
 
   // Add action to button on cart
   cartButton.on("click", function() {
@@ -106,6 +112,7 @@ export const basket = () => {
   // Display all elements on page
   fragment.append(box);
   box
+    .append(closeBasket)
     .append(title)
     .append(boxContent)
     .append(text)

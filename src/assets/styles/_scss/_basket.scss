@@ -13,6 +13,13 @@
   top: 70px;
   width: 100%;
 
+  #close-basket {
+    font-size: $l-size * 2;
+    color: $bg-color;
+    position: absolute;
+    right: 20px;
+  }
+
   h2 {
     color: $edit-color;
     font-size: $xs-size * 6;
@@ -147,13 +154,18 @@
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   .basket-box {
     background-color: $font-color;
     color: $input-text-color;
+    display: flex;
     height: calc(100% - 168px);
     top: 100px;
     width: 425px;
+
+    #close-basket {
+      display: none;
+    }
 
     .button-not-display {
       display: none;

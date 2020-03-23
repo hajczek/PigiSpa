@@ -1,35 +1,35 @@
 import {
+  // afterRegister,
+  // afterLogin,
+  // afterPurchase,
   home,
   rooms,
   treatments,
   login,
-  registration,
-  afterRegister,
-  afterLogin,
-  afterPurchase
+  registration
 } from "../views";
 
 // Routes in project
 export const routes = [
   { name: "Home", path: "/", component: home, data: { display: "none" } },
-  {
-    name: "After Register",
-    path: "/after-register",
-    component: afterRegister,
-    data: { display: "none" }
-  },
-  {
-    name: "After Login",
-    path: "/after-login",
-    component: afterLogin,
-    data: { display: "none" }
-  },
-  {
-    name: "After Purchase",
-    path: "/after-purchase",
-    component: afterPurchase,
-    data: { display: "none" }
-  },
+  // {
+  //   name: "After Register",
+  //   path: "/after-register",
+  //   component: afterRegister,
+  //   data: { display: "none" }
+  // },
+  // {
+  //   name: "After Login",
+  //   path: "/after-login",
+  //   component: afterLogin,
+  //   data: { display: "none" }
+  // },
+  // {
+  //   name: "After Purchase",
+  //   path: "/after-purchase",
+  //   component: afterPurchase,
+  //   data: { display: "none" }
+  // },
   {
     name: "Pokoje",
     path: "/rooms",

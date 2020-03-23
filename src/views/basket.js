@@ -1,6 +1,18 @@
 import $ from "jquery";
-import { removeFromCart } from "./../cart/index";
+// import { removeFromCart } from "./../cart/index";
 import { Cart } from "./../cart/index";
+import {
+  basketLiElements,
+  box,
+  closeBasket,
+  title,
+  boxContent,
+  text,
+  cartList,
+  cartSummary,
+  cartCost,
+  cartButton
+} from "./index";
 import { afterPurchase } from "./index";
 
 /**
@@ -9,35 +21,8 @@ import { afterPurchase } from "./index";
 export const basket = () => {
   const fragment = $(new DocumentFragment());
 
-  // Define needed elements
-  const box = $(`<div class="basket-box"></div>`);
-  const closeBasket = $(`<span id="close-basket">x</span>`);
-  const title = $(`<h2 id="cartTitle">TWÓJ KOSZYK</h2>`);
-  const boxContent = $(`<div id="basket-content-box"></div>`);
-  const text = $(`<p id="slogan-basket">Załaduj coś do koszyka!</p>`);
-  const cartList = $(`<ol id="basket-content"></ol>`);
-  const cartSummary = $(
-    `<p id="all-value" class="summary-text-not-display">Do zapłaty: </p>`
-  );
-  const cartCost = $('<span id="all-cost">0</span>');
-  const cartButton = $(
-    `<button id="pay" class="button-not-display">Kupuję i płacę</button>`
-  );
-
-  closeBasket.on("click", function(e) {
-    $(`.basket-box`).css("display", "none");
-    e.preventDefault();
-  });
-
-  // Add action to button on cart
-  cartButton.on("click", function() {
-    $("main")
-      .find("header")
-      .after(afterPurchase);
-  });
-
-  // Add action to remove buttons
-  cartList.on("click", removeFromCart);
+  // Define needed elements for basket
+  basketLiElements();
 
   // Display products from cookies in cart
   const cart = new Cart();

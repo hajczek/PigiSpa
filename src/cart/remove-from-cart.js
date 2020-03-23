@@ -37,7 +37,7 @@ export function removeFromCart(e) {
     // Handle for the whole value of the basket, after remove element
     let newAllCostInBasket = actuallCostInBasket - elemPrice;
     // Put the new value in basket (after remove element)
-    $(`#all-cost`).html(`${newAllCostInBasket} + ZŁ`);
+    $(`#all-cost`).html(`${newAllCostInBasket} ZŁ`);
 
     // Change display elements on basket if basket is empty
     if ($(`#all-cost`).html() === "0") {

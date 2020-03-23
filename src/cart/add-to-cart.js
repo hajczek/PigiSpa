@@ -1,10 +1,14 @@
 import $ from "jquery";
 import { Cart } from "./index";
+import { defineTreatmentLi } from "./index";
+import { defineRoomLi } from "./index";
+import { allRoomValue } from "./index";
+import { allTreatmentValue } from "./index";
 import {
   roomFrom,
   roomTo,
   Difference_In_Days,
-  calculateNumberDaysForRoom
+  calculateDaysNumberForRoom
 } from "./../common/index";
 
 /**
@@ -15,7 +19,7 @@ export const addToCart = e => {
   let cart = new Cart();
 
   // Calculate number of days for room
-  calculateNumberDaysForRoom();
+  calculateDaysNumberForRoom();
 
   // Define what must be display on basket
   $(`#slogan-basket`).css("display", "none");
@@ -33,28 +37,10 @@ export const addToCart = e => {
     });
 
     // Define 'li' element with details about added treatment to display in cart
-    let cartLi = $(`<li><span class="title">${$(
-      `#title`
-    ).html()}</span> x <span class="quant">
-      ${$(
-        `.num`
-      ).val()}</span><p class="value">Łączna wartość: <span class="price">${parseInt(
-      $(`.product-price`).html()
-    ) *
-      parseInt(
-        $(`.num`).val()
-      )}</span><br></p><span class="remove"></span></li>`);
+    defineTreatmentLi();
 
-    // Display cartLi element on page
-    $(`#basket-content`).append(cartLi);
-
-    // Define new whole value in cart after added element to cart
-    let allValue =
-      parseInt($(`#all-cost`).html()) +
-      parseInt($(`.product-price`).html()) * parseInt($(`.num`).val());
-
-    // Display new whole value of cart
-    $(`#all-cost`).html(allValue + " ZŁ");
+    // Define new whole value in cart after added treatment to cart
+    allTreatmentValue();
   } else {
     // Set details about added product to cart in cookies
     cart.add({
@@ -71,34 +57,10 @@ export const addToCart = e => {
     });
 
     // Define li element with details about added room to display in cart
-    let cartLi = $(
-      `<li><span class="title">${$(
-        `#title`
-      ).html()}</span> x <span class="quant">${$(
-        `.num`
-      ).val()}</span><br><span>od <span class="room-data" id="room-data-from">${roomFrom}</span> do <span class="room-data" id="room-data-to">${roomTo}</span></span><br><span>Łączna ilość dni: <b>${Difference_In_Days}</b></span><br><span class="room-price">Cena pokoju (${$(
-        `#room-price`
-      ).html()} zł) * il. pokoi * il. dni:<span><br></span></span><p class="value">Łączna wartość: <span class="price">${$(
-        `#room-price`
-      ).html() *
-        parseInt($(`.num`).val()) *
-        parseInt(
-          Difference_In_Days
-        )}</span></p><span class="remove"></span></li>`
-    );
+    defineRoomLi();
 
-    // Display cartLi element on page
-    $(`#basket-content`).append(cartLi);
-
-    // Define new whole value in cart after added element to cart
-    let allValue =
-      parseInt($(`#all-cost`).html()) +
-      $(`#room-price`).html() *
-        parseInt($(`.num`).val()) *
-        parseInt(Difference_In_Days);
-
-    // Display new whole value of cart
-    $(`#all-cost`).html(allValue + " ZŁ");
+    // Define new whole value in cart after added room to cart
+    allRoomValue();
   }
 
   e.preventDefault();

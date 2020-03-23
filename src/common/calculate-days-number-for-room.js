@@ -8,7 +8,7 @@ export let Difference_In_Days;
 /**
  * Calculate number of days for room between two dates
  */
-export function calculateNumberDaysForRoom() {
+export function calculateDaysNumberForRoom() {
   // Define values of dates for room
   roomFrom = $(`#room-from`).val();
   roomTo = $(`#room-to`).val();

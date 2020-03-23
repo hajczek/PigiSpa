@@ -95,14 +95,6 @@ export const basket = () => {
 
   // Display all elements on page
   fragment.append(box);
-  box
-    .append(closeBasket)
-    .append(title)
-    .append(boxContent)
-    .append(text)
-    .append(cartSummary)
-    .append(cartButton);
-
   cartSummary.append(cartCost);
   boxContent.append(cartList);
 

@@ -46,4 +46,13 @@ export const basketLiElements = () => {
 
   // Add action to remove buttons
   cartList.on("click", removeFromCart);
+
+  // Display all elements on page
+  box
+    .append(closeBasket)
+    .append(title)
+    .append(boxContent)
+    .append(text)
+    .append(cartSummary)
+    .append(cartButton);
 };

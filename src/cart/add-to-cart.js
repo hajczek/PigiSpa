@@ -1,5 +1,6 @@
 import $ from "jquery";
 import { Cart } from "./index";
+import { displayInBasket } from "./index";
 import { defineTreatmentLi } from "./index";
 import { defineRoomLi } from "./index";
 import { allRoomValue } from "./index";
@@ -22,10 +23,7 @@ export const addToCart = e => {
   calculateDaysNumberForRoom();
 
   // Define what must be display on basket
-  $(`#slogan-basket`).css("display", "none");
-  $(`#all-value`).removeClass("summary-text-not-display");
-  $(`#all-value`).addClass("summary-text");
-  $(`#pay`).removeClass("button-not-display");
+  displayInBasket();
 
   // Check if product added to cart is not a room
   if ($(`#room-from`).val() === undefined) {

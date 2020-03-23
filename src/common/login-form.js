@@ -4,7 +4,7 @@ import { errorFunc, displayUserMenu } from "./index";
 import { url } from "./../database/database-conntection";
 
 /**
- * Log in user
+ * @description Log in user
  */
 export function logIn(e) {
   // Check, if fields login and password are empty

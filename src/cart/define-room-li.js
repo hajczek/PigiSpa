@@ -2,7 +2,8 @@ import $ from "jquery";
 import { roomFrom, roomTo, Difference_In_Days } from "./../common/index";
 
 /**
- * Define 'li' element for room in basket
+ * @description Define 'li' element for room in basket
+ * @return {String}     Variable cartLi containing string with html code for 'li' element
  */
 export const defineRoomLi = e => {
   let cartLi = $(

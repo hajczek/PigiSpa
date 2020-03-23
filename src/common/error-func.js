@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 /**
- * Display info about error
+ * @description Display info about error
  * @param  {String} text Text with information about error
  */
 export function errorFunc(text) {

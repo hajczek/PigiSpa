@@ -3,7 +3,7 @@ import { routes } from "../router";
 import { navItem } from "./index";
 
 /**
- * Define navigation for page
+ * @description Define navigation for page
  */
 export const nav = () => {
   const fragment = $(new DocumentFragment());

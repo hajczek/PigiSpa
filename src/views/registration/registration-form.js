@@ -2,7 +2,7 @@ import $ from "jquery";
 import { checkRegisterPass, sendRegisterForm } from "./../../common/index";
 
 /**
- * Define registration form
+ * @description Define registration form
  */
 export const registrationForm = () => {
   const fragment = $(new DocumentFragment());

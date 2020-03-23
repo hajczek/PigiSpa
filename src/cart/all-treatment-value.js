@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 /**
- * Define all treatment value and add to all cart value
+ * @description Define all treatment value and add to all cart value
  */
 export const allTreatmentValue = e => {
   // Define new whole value in cart after added element to cart

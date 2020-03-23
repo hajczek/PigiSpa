@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 /**
- * Display information for user after log in
+ * @description Display information for user after log in
  */
 export const afterLogin = () => {
   const fragment = $(new DocumentFragment());

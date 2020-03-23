@@ -4,7 +4,7 @@ import { errorFunc } from "./index";
 import { url } from "./../database/database-conntection";
 
 /**
- * Send register form
+ * @description Send register form
  */
 export function sendRegisterForm(e) {
   if (

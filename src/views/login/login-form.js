@@ -2,7 +2,7 @@ import $ from "jquery";
 import { logIn } from "./../../common/index";
 
 /**
- * Define login form
+ * @description Define login form
  */
 export const loginForm = () => {
   const fragment = $(new DocumentFragment());

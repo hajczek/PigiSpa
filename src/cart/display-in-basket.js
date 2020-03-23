@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 /**
- * Define which elements display in basket
+ * @description Define which elements display in basket
  */
 export const displayInBasket = e => {
   $(`#slogan-basket`).css("display", "none");

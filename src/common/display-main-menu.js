@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 /**
- * Display main menu
+ * @description Display main menu
  */
 export function displayMainMenu() {
   // Define which elements must be visible, which not

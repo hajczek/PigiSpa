@@ -2,7 +2,7 @@ import $ from "jquery";
 import { Difference_In_Days } from "./../common/index";
 
 /**
- * Define all room value and add to all cart value
+ * @description Define all room value and add to all cart value
  */
 export const allRoomValue = e => {
   // Define new whole value in cart after added element to cart

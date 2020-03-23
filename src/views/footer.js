@@ -2,7 +2,7 @@ import $ from "jquery";
 import PigiLogoSmall from "./../assets/img/pigiSpa-logo-footer.png";
 
 /**
- * Define foter
+ * @description Define foter
  */
 export const footer = () => {
   // Define all needed html elements

@@ -4,7 +4,7 @@ import { Cart } from "./../cart/index";
 import { afterPurchase } from "./index";
 
 /**
- * Define basket
+ * @description Define basket
  */
 export const basket = () => {
   const fragment = $(new DocumentFragment());

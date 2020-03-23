@@ -2,7 +2,7 @@ import $ from "jquery";
 import { Cart } from "./index";
 
 /**
- * Remove element from basket after click trash button
+ * @description Remove element from basket after click trash button
  */
 export function removeFromCart(e) {
   e.preventDefault();

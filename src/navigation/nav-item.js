@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 /**
- * Generate links for menu
+ * @description Generate links for menu
  * @param {Object} route Object with all details for link element
  */
 export const navItem = route => {

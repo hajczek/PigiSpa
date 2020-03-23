@@ -3,7 +3,7 @@ import { displayMainMenu } from "./index";
 import { url } from "./../database/database-conntection";
 
 /**
- * Log out user
+ * @description Log out user
  */
 export function logOut(e) {
   // Hide elements

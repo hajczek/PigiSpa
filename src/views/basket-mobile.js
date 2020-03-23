@@ -2,7 +2,7 @@ import $ from "jquery";
 import basketImg from "./../assets/img/basket.png";
 
 /**
- * Define basket icon for mobile devices
+ * @description Define basket icon for mobile devices
  */
 export const basketMobile = () => {
   const fragment = $(new DocumentFragment());

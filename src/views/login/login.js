@@ -2,7 +2,7 @@ import $ from "jquery";
 import { header, footer, loginForm } from "../index";
 
 /**
- * Define page with login form
+ * @description Define page with login form
  */
 export const login = () => {
   const fragment = $(new DocumentFragment());

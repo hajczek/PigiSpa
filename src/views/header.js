@@ -4,7 +4,7 @@ import { nav } from "./../navigation/index";
 import { displayUserMenu } from "./../common/index";
 
 /**
- * Define footer
+ * @description Define header
  */
 export const header = () => {
   // Define all html elements

@@ -1,5 +1,5 @@
 /**
- * Remove all from cookie after clicked btn 'Kupuje i place' in basket
+ * @description Remove all from cookie after clicked btn 'Kupuje i place' in basket
  * @param  {String} name Name of key in cookie
  */
 export function removeFromCookie(name) {

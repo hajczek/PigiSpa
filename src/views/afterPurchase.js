@@ -3,7 +3,7 @@ import { basket, footer } from "./index";
 import { removeFromCookie } from "./../cart/index";
 
 /**
- * Display information for user after purchase
+ * @description Display information for user after purchase
  */
 export const afterPurchase = () => {
   const fragment = $(new DocumentFragment());

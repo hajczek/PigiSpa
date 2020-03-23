@@ -6,7 +6,7 @@ export let roomTo;
 export let Difference_In_Days;
 
 /**
- * Calculate number of days for room between two dates
+ * @description Calculate number of days for room between two dates
  */
 export function calculateDaysNumberForRoom() {
   // Define values of dates for room

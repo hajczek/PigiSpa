@@ -4,7 +4,7 @@ import { addToCart } from "./../cart/index";
 import { url } from "./../database/database-conntection";
 
 /**
- * Define box with treatments
+ * @description Define box with treatments
  */
 export const treatments = () => {
   const fragment = $(new DocumentFragment());

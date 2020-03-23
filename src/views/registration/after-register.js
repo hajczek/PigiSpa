@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 /**
- * Display information for user after register
+ * @description Display information for user after register
  */
 export const afterRegister = () => {
   const fragment = $(new DocumentFragment());

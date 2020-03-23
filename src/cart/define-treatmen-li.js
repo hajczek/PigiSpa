@@ -1,7 +1,8 @@
 import $ from "jquery";
 
 /**
- * Define 'li' element for treatment in basket
+ * @description Define 'li' element for treatment in basket
+ * @return {String}     Variable cartLi containing string with html code for 'li' element
  */
 export const defineTreatmentLi = e => {
   // Define 'li' element with details about added treatment to display in cart

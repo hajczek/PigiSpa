@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 /**
- * Check register password
+ * @description Check register password
  */
 export function checkRegisterPass() {
   // Check strength of password

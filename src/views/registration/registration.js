@@ -2,7 +2,7 @@ import $ from "jquery";
 import { header, footer, registrationForm } from "../index";
 
 /**
- * Define page with register form
+ * @description Define page with register form
  */
 export const registration = () => {
   const fragment = $(new DocumentFragment());

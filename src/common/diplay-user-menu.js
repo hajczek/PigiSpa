@@ -4,7 +4,7 @@ import { logOut } from "./index";
 import { url } from "./../database/database-conntection";
 
 /**
- * Display user menu
+ * @description Display user menu
  */
 export function displayUserMenu() {
   // Connect with database users

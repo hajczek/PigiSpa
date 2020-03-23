@@ -1,5 +1,6 @@
 export * from "./home";
 export * from "./basket";
+export * from "./basket-content-from-cookie";
 export * from "./basket-li-elements";
 export * from "./basket-mobile";
 export * from "./afterPurchase";

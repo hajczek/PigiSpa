@@ -1,5 +1,6 @@
 import $ from "jquery";
 import { removeFromCart } from "./../cart/index";
+import { afterPurchase } from "./index";
 
 export let box,
   closeBasket,

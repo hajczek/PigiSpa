@@ -13,7 +13,19 @@ import {
   cartCost,
   cartButton
 } from "./index";
-import { afterPurchase } from "./index";
+import {
+  basketContentFromCookie,
+  cartLi,
+  cartCount,
+  cartValueTreat,
+  cartPriceTreat,
+  cartRoomDetails,
+  cartRoomDays,
+  cartValueRoom,
+  cartTextPriceRoom,
+  cartPriceRoom,
+  cartRemoveBtn
+} from "./index";
 
 /**
  * @description Define basket
@@ -35,31 +47,14 @@ export const basket = () => {
     // Iterate after data from cookie
     for (let i = 0; i < cookies.length; i++) {
       // Define content to display details of added product in cart
-      let cartLi = $(
-        `<li><span class="title">${cookies[i].name}</span> x </li>`
-      );
-      let cartCount = $(`<span class="quant">${cookies[i].count}</span>`);
-      let cartValueTreat = $(`<p class="value">Łączna wartość: </p>`);
-      let cartPriceTreat = $(`<span class="price">
-      ${parseInt(cookies[i].price) * parseInt(cookies[i].count)}</span><br/>`);
-      let cartRoomDetails = $(`<br/><span>od <span class="room-data" id="room-data-from">${cookies[i].from}</span>
-      do <span class="room-data" id="room-data-to">${cookies[i].to}</span></span><br/>`);
-      let cartRoomDays = $(
-        `<span>Łączna ilość dni: <b>${cookies[i].days}</b></span><br/>`
-      );
-      let cartValueRoom = $(
-        `<span class="room-price">Cena pokoju (${cookies[i].price} zł) * il. pokoi * il. dni:<span><br/>`
-      );
-      let cartTextPriceRoom = $(`<p class="value">Łączna wartość: </p>`);
-      let cartPriceRoom = $(
-        `<span class="price">${cookies[i].valueAll}</span>`
-      );
-      let cartRemoveBtn = $(`<span class="remove"></span>`);
+      basketContentFromCookie();
 
       // Display all element on page
       cartList.append(cartLi);
 
+      // Check if item from cookie have parameter with date 'from'
       if (cookies[i].from) {
+        // If yes, display needed elements on cart
         cartLi
           .append(cartCount)
           .append(cartRoomDetails)
@@ -87,6 +82,7 @@ export const basket = () => {
         );
       }
 
+      // Check if cart object length is longer than 0
       if (cart.getItSpaCart().length > 0) {
         // Define what must be display on basket
         text.css("display", "none");

@@ -16,6 +16,7 @@ Single Page Application dla ośrodka SPA dedykowanego programistom.
 - HTML
 - CSS, Sass
 - JavaScript, jQuery
+- json server
 - fetch
 
 ### PROJEKT GRAFICZNY

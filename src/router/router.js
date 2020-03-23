@@ -1,6 +1,7 @@
 import $ from "jquery";
 import { notFound } from "./../views/not-found";
 
+/** Class representing Router. */
 export class Router {
   constructor(routes) {
     this.routes = routes;

@@ -1,3 +1,4 @@
+/** Class representing a Cart. */
 export class Cart {
   constructor() {
     // Unique key for cookies of our app

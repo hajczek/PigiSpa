@@ -2,7 +2,7 @@
 
 Single Page Application dla ośrodka SPA dedykowanego programistom.
 
-## Aplikacjau możliwia:
+## Aplikacja umożliwia:
 
 - Przeglądanie dostępnych zabiegów
 - Dodawanie wybranych zabiegów do koszyka

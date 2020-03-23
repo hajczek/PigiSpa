@@ -1,5 +1,5 @@
 import $ from "jquery";
-import basketImg from "./../assets/img/basket.png";
+import basketImg from "./../../assets/img/basket.png";
 
 /**
  * @description Define basket icon for mobile devices

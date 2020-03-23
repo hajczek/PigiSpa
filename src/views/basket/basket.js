@@ -1,6 +1,6 @@
 import $ from "jquery";
 // import { removeFromCart } from "./../cart/index";
-import { Cart } from "./../cart/index";
+import { Cart } from "../../cart/index";
 import {
   basketLiElements,
   box,
@@ -12,7 +12,7 @@ import {
   cartSummary,
   cartCost,
   cartButton
-} from "./index";
+} from "../index";
 import {
   basketContentFromCookie,
   cartLi,
@@ -25,7 +25,7 @@ import {
   cartTextPriceRoom,
   cartPriceRoom,
   cartRemoveBtn
-} from "./index";
+} from "../index";
 
 /**
  * @description Define basket

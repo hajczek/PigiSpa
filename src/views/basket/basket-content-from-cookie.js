@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { Cart } from "./../cart/index";
+import { Cart } from "../../cart/index";
 
 export let cartLi,
   cartCount,

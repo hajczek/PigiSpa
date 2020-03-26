@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "start:db": "json-server --watch database.json --port 3004",
     "start:app": "parcel ./index.html --open",
     "start:dev": "webpack-dev-server --mode-development",

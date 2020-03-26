@@ -4107,7 +4107,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       s,
       u = n(0),
       l = n.n(u),
-      c = "http://localhost:3004";
+      c = "https://database-pigispa.herokuapp.com";
 
   function p(e) {
     if (0 === l()("#email-login").val().length && 0 === l()("#pass-login").val().length) d("Nie wpisałeś loginu i hasła. Wprowadź poprawne dane.");else {
@@ -4299,7 +4299,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       key: "getItSpaCart",
       value: function value() {
         var e;
-        return e = "IT_SPA_CART" === this.get() ? this.get().slice(12) : this.get().slice(13), JSON.parse(e);
+        return e = "IT_SPA_CART" === this.get() ? this.get().slice(11) : this.get().slice(12), JSON.parse(e);
       }
     }, {
       key: "setItSpaCart",
@@ -4697,7 +4697,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64696" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63732" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

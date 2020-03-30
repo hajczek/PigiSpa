@@ -17,6 +17,12 @@
       "password": "kolorowo",
       "active": "no",
       "id": 3
+    },
+    {
+      "login": "kola@wp.pl",
+      "password": "filharmonia",
+      "active": "no",
+      "id": 4
     }
   ],
   "rooms": [

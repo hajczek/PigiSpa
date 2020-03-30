@@ -4127,7 +4127,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               password: e.password,
               active: "yes"
             })
-          }), l()(".login-box").css("display", "none"), l()("main").find("header").after(ee), g()) : d("Podane dane do logowania są nieprawidłowe.");
+          }), l()(".login-box").css("display", "none"), l()("main").find("header").after(I), g()) : d("Podane dane do logowania są nieprawidłowe.");
         });
       }).catch(function (e) {
         return console.log("Error ...", e);
@@ -4194,7 +4194,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             password: "".concat(n),
             active: "no"
           })
-        }), l()("#email").val(""), l()("#pass").val(""), l()("#pass-repeat").val(""), l()("span.weak").css("background-color", "#fff"), l()("span.average").css("background-color", "#fff"), l()("span.strong").css("background-color", "#fff"), l()(".registration-box").css("display", "none"), l()("main").find("header").after(ne)) : d("Ten użytkownik jest już w naszej bazie.");
+        }), l()("#email").val(""), l()("#pass").val(""), l()("#pass-repeat").val(""), l()("span.weak").css("background-color", "#fff"), l()("span.average").css("background-color", "#fff"), l()("span.strong").css("background-color", "#fff"), l()(".registration-box").css("display", "none"), l()("main").find("header").after(O)) : d("Ten użytkownik jest już w naszej bazie.");
       }).catch(function (e) {
         return console.log("Error ...", e);
       });
@@ -4210,7 +4210,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if ("yes" === e[t].active) {
           l()('.menu-link[style="visibility: hidden"]') && l()('.menu-link[style="visibility: hidden"]').css("visibility", "visible"), l()('.menu-link[style="visibility: visible"]') && l()('.menu-link[style="visibility: visible"]').css("visibility", "hidden"), l()('.menu-link:contains("Zabiegi")').css("position", "absolute"), l()('.menu-link:contains("Zabiegi")').css("right", "150px"), l()("nav").after('<p id="welcome-text">Panel użytkownika: <span>'.concat(e[t].login, "</span></p>"));
           var n = l()('<div id="login-box"></div>');
-          l()("footer").append(n), n.append(G).append('<span class="span-btn" id="logout">Wyloguj</span>'), l()("#logout").on("click", f);
+          l()("footer").append(n), n.append(N).append('<span class="span-btn" id="logout">Wyloguj</span>'), l()("#logout").on("click", f);
         }
       }
     });
@@ -4357,69 +4357,61 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     document.cookie = e + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
   }
 
-  var E,
-      A,
-      N,
-      q,
-      L,
-      I,
-      P,
-      O,
-      H,
-      z,
-      R,
-      M,
-      W,
-      F,
-      _,
-      $,
-      B,
-      U,
-      X,
-      Z = function Z() {
-    var e = l()(new DocumentFragment());
-    J();
-    var t = new k();
-    if (t.exists()) for (var n = t.getItSpaCart(), r = 0; r < n.length; r++) {
-      V(), $.append(E), n[r].from ? (E.append(A).append(L).append(I).append(P).append(O).append(z), O.append(H), U.html(parseInt(U.html()) + parseInt(H.html()) + " zł")) : (E.append(A).append(N).append(z), N.append(q), U.html(parseInt(U.html()) + parseInt(q.html()) + " zł")), t.getItSpaCart().length > 0 && (_.css("display", "none"), B.removeClass("summary-text-not-display"), B.addClass("summary-text"), X.removeClass("button-not-display"));
-    }
-    return e.append(R), B.append(U), F.append($), e;
-  },
-      V = function V() {
-    for (var e = new k().getItSpaCart(), t = 0; t < e.length; t++) {
-      E = l()('<li><span class="title">'.concat(e[t].name, "</span> x </li>")), A = l()('<span class="quant">'.concat(e[t].count, "</span>")), N = l()('<p class="value">Łączna wartość: </p>'), q = l()('<span class="price">'.concat(parseInt(e[t].price) * parseInt(e[t].count), "</span><br/>")), L = l()('<br/><span>od <span class="room-data" id="room-data-from">'.concat(e[t].from, '</span>\n  do <span class="room-data" id="room-data-to">').concat(e[t].to, "</span></span><br/>")), I = l()("<span>Łączna ilość dni: <b>".concat(e[t].days, "</b></span><br/>")), P = l()('<span class="room-price">Cena pokoju ('.concat(e[t].price, " zł) * il. pokoi * il. dni:<span><br/>")), O = l()('<p class="value">Łączna wartość: </p>'), H = l()('<span class="price">'.concat(e[t].valueAll, "</span>")), z = l()('<span class="remove"></span>');
-    }
-  },
-      J = function J() {
-    R = l()('<div class="basket-box"></div>'), M = l()('<span id="close-basket">x</span>'), W = l()('<h2 id="cartTitle">TWÓJ KOSZYK</h2>'), F = l()('<div id="basket-content-box"></div>'), _ = l()('<p id="slogan-basket">Załaduj coś do koszyka!</p>'), $ = l()('<ol id="basket-content"></ol>'), B = l()('<p id="all-value" class="summary-text-not-display">Do zapłaty: </p>'), U = l()('<span id="all-cost">0</span>'), X = l()('<button id="pay" class="button-not-display">Kupuję i płacę</button>'), M.on("click", function (e) {
+  var E = function E() {
+    var e = l()(new DocumentFragment()),
+        t = l()('<div class="basket-box"></div>'),
+        n = l()('<span id="close-basket">x</span>'),
+        r = l()('<h2 id="cartTitle">TWÓJ KOSZYK</h2>'),
+        o = l()('<div id="basket-content-box"></div>'),
+        i = l()('<p id="slogan-basket">Załaduj coś do koszyka!</p>'),
+        a = l()('<ol id="basket-content"></ol>'),
+        s = l()('<p id="all-value" class="summary-text-not-display">Do zapłaty: </p>'),
+        u = l()('<span id="all-cost">0</span>'),
+        c = l()('<button id="pay" class="button-not-display">Kupuję i płacę</button>');
+    n.on("click", function (e) {
       l()(".basket-box").css("display", "none"), e.preventDefault();
-    }), X.on("click", function () {
-      l()("main").find("header").after(K);
-    }), $.on("click", j), R.append(M).append(W).append(F).append(_).append(B).append(X);
+    }), c.on("click", function () {
+      l()("main").find("header").after(q);
+    }), a.on("click", j);
+    var p = new k();
+    if (p.exists()) for (var f = p.getItSpaCart(), d = 0; d < f.length; d++) {
+      var h = l()('<li><span class="title">'.concat(f[d].name, "</span> x </li>")),
+          m = l()('<span class="quant">'.concat(f[d].count, "</span>")),
+          g = l()('<p class="value">Łączna wartość: </p>'),
+          v = l()('<span class="price">\n      '.concat(parseInt(f[d].price) * parseInt(f[d].count), "</span><br/>")),
+          y = l()('<br/><span>od <span class="room-data" id="room-data-from">'.concat(f[d].from, '</span>\n      do <span class="room-data" id="room-data-to">').concat(f[d].to, "</span></span><br/>")),
+          b = l()("<span>Łączna ilość dni: <b>".concat(f[d].days, "</b></span><br/>")),
+          x = l()('<span class="room-price">Cena pokoju ('.concat(f[d].price, " zł) * il. pokoi * il. dni:<span><br/>")),
+          w = l()('<p class="value">Łączna wartość: </p>'),
+          T = l()('<span class="price">'.concat(f[d].valueAll, "</span>")),
+          C = l()('<span class="remove"></span>');
+      a.append(h), f[d].from ? (h.append(m).append(y).append(b).append(x).append(w).append(C), w.append(T), u.html(parseInt(u.html()) + parseInt(T.html()) + " zł")) : (h.append(m).append(g).append(C), g.append(v), u.html(parseInt(u.html()) + parseInt(v.html()) + " zł")), p.getItSpaCart().length > 0 && (i.css("display", "none"), s.removeClass("summary-text-not-display"), s.addClass("summary-text"), c.removeClass("button-not-display"));
+    }
+    return e.append(t), t.append(n).append(r).append(o).append(i).append(s).append(c), s.append(u), o.append(a), e;
   },
-      Y = n.p + "basket.png",
-      G = function G() {
+      A = n.p + "basket.png",
+      N = function N() {
     var e = l()(new DocumentFragment()),
         t = l()('<a href="./" id="basket-mobile"></a>'),
         n = new Image();
-    return n.src = Y, t.on("click", function (e) {
+    return n.src = A, t.on("click", function (e) {
       l()(".basket-box").css("display", "flex"), e.preventDefault();
     }), e.append(t), t.append(n), t;
   },
-      K = function K() {
+      q = function q() {
     var e = l()(new DocumentFragment());
     l()(".rooms-box").css("display", "none"), l()(".room-box").css("display", "none"), l()(".treatments-box").css("display", "none"), l()(".treatment-box").css("display", "none"), l()(".value").css("display", "none"), l()(".room-price").css("display", "none"), l()(".remove").css("display", "none"), l()("#pay").css("display", "none"), l()("#all-value").html('TO WSZYSTKO ZA JEDYNE<br/> \n    <span id="purchase-price">'.concat(l()("#all-cost").html(), "</span>")), l()("#purchase-price").css("font-size", "30px"), l()("#purchase-price").css("color", "#e654f6");
     var t = l()('<div class="thanks-box-after-payment"><h2>Dziękujemy za rezerwację!</h2>\n  <p>Czekamy na Ciebie w PigiSpa! Nie zapomnij kąpielówek ;)</p></div>');
-    return e.append(t).append(Z).append(le), D("IT_SPA_CART"), D(" IT_SPA_CART"), e;
+    return e.append(t).append(E).append(_), D("IT_SPA_CART"), D(" IT_SPA_CART"), e;
   },
-      Q = function Q() {
+      L = function L() {
     var e = l()(new DocumentFragment()),
         t = l()('<form class="form" id="login-form"></form>'),
         n = l()('<input type="email" name="email-login" id="email-login" placeholder="Wpisz email">\n  <input type="password" name="pass-login" id="pass-login" placeholder="Wpisz hasło">'),
         r = l()('<button id="login-btn">Zaloguj mnie</button>');
     return r.on("click", p), e.append(t), t.append(n).append(r), e;
   },
-      ee = function ee() {
+      I = function I() {
     var e = l()(new DocumentFragment()),
         t = l()('<div class="box-after-login"></div>'),
         n = l()('<div class="welcome-box-after-login"></div>'),
@@ -4427,7 +4419,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         o = l()("<p>Wybierz ulubione zabiegi i zarezerwuj pokój w dogodnym terminie.\n    Nasze świnki z PigiSpa już na Ciebie czekają ;)</p>\n</div>");
     return e.append(t), t.append(n), n.append(r).append(o), e;
   },
-      te = function te() {
+      P = function P() {
     var e = l()(new DocumentFragment()),
         t = l()('<form class="form" id="register-form"></form>'),
         n = l()('<input type="email" name="email" id="email" placeholder="Wpisz email" value="">'),
@@ -4438,28 +4430,28 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         s = l()('<button id="register-btn">Zarejestruj mnie</button>');
     return n.change(h), r.change(h), s.on("click", m), e.append(t), t.append(n).append(r).append(o).append(i).append(a).append(s), e;
   },
-      ne = function ne() {
+      O = function O() {
     var e = l()(new DocumentFragment()),
         t = l()('<div class="welcome-box-after-register"></div>'),
         n = l()("<p>Zostałeś zarejestrowany.<br>Logując się uzyskasz dostęp do usług <b>PigiSpa</b> :)</p>");
     return e.append(t), t.append(n), e;
   },
-      re = n.p + "pigiSpaLogo.png",
-      oe = function oe() {
+      H = n.p + "pigiSpaLogo.png",
+      z = function z() {
     var e = l()(new DocumentFragment()),
         t = l()('<a href="./" id="logo"></a>'),
         n = new Image();
-    return n.src = re, e.append(t), t.append(n), t;
+    return n.src = H, e.append(t), t.append(n), t;
   },
-      ie = function ie() {
+      R = function R() {
     var e = l()(new DocumentFragment()),
         t = l()('<ul id="menu-list"></ul>'),
-        n = de.map(function (e) {
-      return ae(e);
+        n = X.map(function (e) {
+      return M(e);
     });
     return t.append(n), e.append(t), e;
   },
-      ae = function ae(e) {
+      M = function M(e) {
     var t,
         n,
         r = l()("<li></li>");
@@ -4475,32 +4467,32 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
     }), r.append(i), r;
   },
-      se = function se() {
-    var e = oe,
+      W = function W() {
+    var e = z,
         t = l()("<header><nav></nav></header>");
-    return g(), t.append(e).find("nav").append(ie), t;
+    return g(), t.append(e).find("nav").append(R), t;
   },
-      ue = n.p + "pigiSpa-logo-footer.png",
-      le = function le() {
+      F = n.p + "pigiSpa-logo-footer.png",
+      _ = function _() {
     var e = l()('<footer><a href="./" id="logo-small"></a></footer>'),
         t = new Image();
-    return t.src = ue, e.find("a").append(t), e;
+    return t.src = F, e.find("a").append(t), e;
   },
-      ce = function ce() {
+      $ = function $() {
     var e = l()(new DocumentFragment()),
-        t = se(),
+        t = W(),
         n = l()('<p class="slogan">Strona z takim adresem nie istnieje :(</p>');
-    return e.append(t).append(n).append(le), e;
+    return e.append(t).append(n).append(_), e;
   };
 
-  function pe(e, t) {
+  function B(e, t) {
     for (var n = 0; n < t.length; n++) {
       var r = t[n];
       r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
     }
   }
 
-  var fe = function () {
+  var U = function () {
     function e(t) {
       !function (e, t) {
         if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
@@ -4546,22 +4538,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               o = r();
           this.outlet.empty().append(o);
         } else {
-          var i = ce();
+          var i = $();
           this.outlet.empty().append(i);
         }
 
         history.pushState(t, "", e);
       }
-    }]) && pe(t.prototype, n), r && pe(t, r), e;
+    }]) && B(t.prototype, n), r && B(t, r), e;
   }(),
-      de = [{
+      X = [{
     name: "Home",
     path: "/",
     component: function component() {
       var e = l()(new DocumentFragment()),
-          t = se(),
+          t = W(),
           n = l()('<p class="slogan"><span class="pink">PigiSpa</span> zaprasza przepracowanych Front-End Developerów na zabiegi SPA!</p>');
-      return e.append(t).append(n).append(le), e;
+      return e.append(t).append(n).append(_), e;
     },
     data: {
       display: "none"
@@ -4574,7 +4566,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           t = l()('<div class="rooms-box"></div>'),
           n = l()("<h2>Dostępne pokoje:</h2>"),
           i = l()('<ol id="rooms-list"></ol>');
-      return e.append(se).append(t).append(Z).append(le), t.append(n).append(i), fetch("".concat(c, "/rooms")).then(function (e) {
+      return e.append(W).append(t).append(E).append(_), t.append(n).append(i), fetch("".concat(c, "/rooms")).then(function (e) {
         return e.json();
       }).then(function (e) {
         e.map(function (e) {
@@ -4611,7 +4603,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           t = l()('<div class="treatments-box"></div>'),
           n = l()("<h2>Dostępne zabiegi:</h2>"),
           r = l()('<ol id="treatments-list"></ol>');
-      return e.append(se).append(t).append(Z).append(le), t.append(n).append(r), fetch("".concat(c, "/treatments")).then(function (e) {
+      return e.append(W).append(t).append(E).append(_), t.append(n).append(r), fetch("".concat(c, "/treatments")).then(function (e) {
         return e.json();
       }).then(function (e) {
         e.map(function (e) {
@@ -4643,8 +4635,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           t = l()('<div class="login-box"></div>'),
           n = l()("<h2>Zaloguj się</h2>"),
           r = l()('<div id="info-err"></div>'),
-          o = Q;
-      return e.append(se).append(t).append(le), t.append(n).append(r).append(o), e;
+          o = L;
+      return e.append(W).append(t).append(_), t.append(n).append(r).append(o), e;
     },
     data: {
       visibility: "visible"
@@ -4657,17 +4649,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           t = l()('<div class="registration-box"></div'),
           n = l()("<h2>Zarejestruj się</h2>"),
           r = l()('<div id="info-err"></div>'),
-          o = te;
-      return e.append(se).append(t).append(le), t.append(n).append(r).append(o), e;
+          o = P;
+      return e.append(W).append(t).append(_), t.append(n).append(r).append(o), e;
     },
     data: {
       visibility: "visible"
     }
   }],
-      he = l()("main"),
-      me = new fe(de);
+      Z = l()("main"),
+      V = new U(X);
 
-  me.mount(he), me.init();
+  V.mount(Z), V.init();
 }]);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -4697,7 +4689,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51528" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52275" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

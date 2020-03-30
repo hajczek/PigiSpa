@@ -26,6 +26,8 @@ Single Page Application dla ośrodka SPA dedykowanego programistom.
 - uruchom komendę: 'npm run start:app', aby uruchomić aplikację lokalnie
 - uruchom komendę: 'npm run start:db', aby uruchomić json-server z danymi dla tej aplikacji
 
+Aplikacja zostanie uruchomiona lokalnie, pod adresem http://localhost:1234
+
 ### Projekt graficzny
 
 Przygotowany w ramach realizacji projektu.

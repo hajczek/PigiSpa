@@ -24,6 +24,7 @@ export const basket = () => {
     `<button id="pay" class="button-not-display">Kupuję i płacę</button>`
   );
 
+  // Define action for hide basket on mobile device
   closeBasket.on("click", function(e) {
     $(`.basket-box`).css("display", "none");
     e.preventDefault();

@@ -12,6 +12,7 @@ export const basketMobile = () => {
   const basketImage = new Image();
   basketImage.src = basketImg;
 
+  // Define action for display basket on mobile device
   html.on("click", function(e) {
     $(`.basket-box`).css("display", "flex");
     e.preventDefault();

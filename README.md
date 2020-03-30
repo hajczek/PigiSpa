@@ -19,7 +19,14 @@ Single Page Application dla ośrodka SPA dedykowanego programistom.
 - json server
 - fetch
 
-### PROJEKT GRAFICZNY
+### Jak uruchomić tą aplikację
+
+- pobierz folder .zip z plikami aplikacji na swoj komputer
+- uruchom komendę: 'npm install', aby zainstalować wszystkie paczki npm niezbędne do uruchomienia tej aplikacji
+- uruchom komendę: 'npm run start:app', aby uruchomić aplikację lokalnie
+- uruchom komendę: 'npm run start:db', aby uruchomić json-server z danymi dla tej aplikacji
+
+### Projekt graficzny
 
 Przygotowany w ramach realizacji projektu.
 [Link do projektu &raquo;](https://xd.adobe.com/view/6a135f37-4cfd-407b-4024-50b342af33af-1c22/?fullscreen)

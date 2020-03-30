@@ -23,6 +23,12 @@
       "password": "filharmonia",
       "active": "no",
       "id": 4
+    },
+    {
+      "login": "wip@op.pl",
+      "password": "wieprz27",
+      "active": "no",
+      "id": 5
     }
   ],
   "rooms": [

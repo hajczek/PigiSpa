@@ -1,7 +1,7 @@
 import $ from "jquery";
-import { removeFromCart } from "./../cart/index";
-import { Cart } from "./../cart/index";
-import { afterPurchase } from "./index";
+import { removeFromCart } from "../../cart/index";
+import { Cart } from "../../cart/index";
+import { afterPurchase } from "../index";
 
 /**
  * Define basket

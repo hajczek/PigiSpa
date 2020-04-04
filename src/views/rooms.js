@@ -56,7 +56,7 @@ export const rooms = () => {
             const dataFrom = $(
               `<input id="room-from" type="date" min=${todayDate} max=${yearFromTodayDate}>`
             );
-            const details2 = $(`<span>Data wyjazdu: <input id="room-to" type="date" max=${yearFromTodayDate}><br>
+            const details2 = $(`<br><span class="thin">Data wyjazdu: <input id="room-to" type="date" max=${yearFromTodayDate}><br>
             Ilość pokoi: <input id="room-num" class="num" type="number" min="1" max="10"></span>`);
             const button = $(`<button id="add-room">Wrzuć do kosza!</button>`);
 

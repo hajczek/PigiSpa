@@ -5,12 +5,12 @@
   display: none;
   flex-direction: column;
   flex-wrap: wrap;
-  height: calc(100% - 138px);
+  height: calc(100% - 168px);
   margin: 0 auto;
   position: absolute;
   right: 0;
   text-align: center;
-  top: 70px;
+  top: 100px;
   width: 100%;
 
   #close-basket {
@@ -22,29 +22,31 @@
 
   h2 {
     color: $edit-color;
-    font-size: $xs-size * 6;
+    font-size: $xl-size;
     font-weight: bold;
     margin-bottom: 0;
     padding-bottom: $xs-size * 5;
     padding-top: $xs-size * 9;
+    width: 100%;
   }
 
   p {
-    font-size: $xs-size * 5;
+    font-size: $xl-size;
+  }
 
-    span {
-      font-size: $m-size;
-    }
+  span {
+    font-size: $xl-size;
   }
 
   #basket-content-box,
   #basket-bought-content-box {
-    max-height: 550px;
+    max-height: 300px;
     overflow-y: scroll;
 
     ol {
       margin-left: 10%;
       width: 85%;
+      padding-bottom: $xl-size * 3;
 
       li {
         border-bottom: 1px dotted $edit-color;
@@ -61,14 +63,14 @@
         }
 
         .title {
-          font-size: $l-size;
+          font-size: $xl-size;
           font-weight: bold;
         }
 
         .quant {
           color: $input-text-color;
           width: $xs-size * 8;
-          font-size: $l-size;
+          font-size: $xl-size;
           font-weight: bold;
         }
 
@@ -90,7 +92,7 @@
           background-size: cover;
           display: inline-block;
           flex-direction: row;
-          height: $l-size;
+          height: $xl-size;
           justify-content: flex-end;
           position: absolute;
           right: $xs-size;
@@ -119,10 +121,10 @@
   }
 
   .summary-text {
-    bottom: $l-size * 4;
+    bottom: $xl-size * 4;
     font-size: $l-size;
     font-weight: bold;
-    left: $l-size * 5;
+    right: $l-size;
     position: absolute;
     text-transform: uppercase;
 
@@ -154,6 +156,15 @@
   }
 }
 
+@media only screen and (min-width: 550px) {
+  .basket-box {
+    flex-direction: column;
+  }
+  .summary-text {
+    left: 35%;
+  }
+}
+
 @media only screen and (min-width: 1550px) {
   .basket-box {
     background-color: $font-color;
@@ -175,10 +186,10 @@
     }
 
     .summary-text {
-      bottom: $l-size * 4;
+      bottom: $xl-size * 4;
       font-size: $l-size;
       font-weight: bold;
-      left: $l-size * 5;
+      left: 0;
       position: absolute;
       text-transform: uppercase;
 

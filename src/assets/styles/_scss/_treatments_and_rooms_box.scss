@@ -31,28 +31,29 @@
   }
 }
 
-@media only screen and (min-width: 550px) {
-  .treatments-box,
-  .rooms-box {
-    width: 500px;
-    height: auto;
-  }
-}
+// @media only screen and (min-width: 550px) {
+//   .treatments-box,
+//   .rooms-box {
+//     width: auto;
+//     height: auto;
+//   }
+// }
 
 @media only screen and (min-width: 1550px) {
   .treatments-box,
   .rooms-box {
+    height: auto;
     left: $xs-size * 14;
     margin: 0;
-    padding: 50px 50px 50px 70px;
+    padding: $xl-size * 2;
     position: absolute;
-    top: 200px;
-    width: 500px;
-    min-height: 460px;
+    top: 150px;
+    width: 400px;
 
     h2 {
-      font-size: $xs-size * 8;
-      margin-bottom: $xs-size * 9;
+      font-size: $xl-size;
+      font-weight: bold;
+      margin-bottom: $xs-size * 4;
     }
 
     ol {

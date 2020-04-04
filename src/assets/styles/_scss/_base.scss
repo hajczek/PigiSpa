@@ -20,7 +20,7 @@ body {
     background-color: $bg-color;
     display: flex;
     flex-direction: column-reverse;
-    height: 70px;
+    height: 90px;
     justify-content: space-between;
     opacity: 0.9;
     padding: 0 $xs-size * 2;
@@ -50,7 +50,7 @@ body {
     }
 
     nav {
-      font-size: $xs-size * 4;
+      font-size: $xl-size;
       position: relative;
       top: -15px;
 
@@ -104,7 +104,7 @@ body {
       }
 
       nav {
-        font-size: $l-size;
+        font-size: $xl-size;
         top: 0;
 
         // Styles for user menu

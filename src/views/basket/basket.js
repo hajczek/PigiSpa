@@ -25,16 +25,14 @@ export const basket = () => {
   );
 
   // Define action for hide basket on mobile device
-  closeBasket.on("click", function(e) {
+  closeBasket.on("click", function (e) {
     $(`.basket-box`).css("display", "none");
     e.preventDefault();
   });
 
   // Add action to button on cart
-  cartButton.on("click", function() {
-    $("main")
-      .find("header")
-      .after(afterPurchase);
+  cartButton.on("click", function () {
+    $("main").find("header").after(afterPurchase);
   });
 
   // Add action to remove buttons
@@ -91,10 +89,7 @@ export const basket = () => {
           parseInt(cartCost.html()) + parseInt(cartPriceRoom.html()) + ` zł`
         );
       } else {
-        cartLi
-          .append(cartCount)
-          .append(cartValueTreat)
-          .append(cartRemoveBtn);
+        cartLi.append(cartCount).append(cartValueTreat).append(cartRemoveBtn);
 
         cartValueTreat.append(cartPriceTreat);
         // Add price of added treatment to cart to all price

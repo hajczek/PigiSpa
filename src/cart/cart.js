@@ -2,7 +2,7 @@
 export class Cart {
   constructor() {
     // Unique key for cookies of our app
-    this.key = "IT_SPA_CART";
+    this.key = "PIGI_SPA_CART";
 
     if (!this.exists()) {
       this.setItSpaCart([]);
@@ -12,11 +12,11 @@ export class Cart {
   get() {
     // Made array from string with cookies
     const cookies = document.cookie.split(";");
-    // Looking for our cookie - return string ("IT_SPA_CART=value") or undefined
-    // Define cookie with key 'IT_SPA_CART'
-    let cookieFirst = cookies.find(cookie => cookie.startsWith(this.key));
-    // Define cookie with key ' IT_SPA_CART'
-    let cookieSecond = cookies.find(cookie =>
+    // Looking for our cookie - return string ("PIGI_SPA_CART=value") or undefined
+    // Define cookie with key 'PIGI_SPA_CART'
+    let cookieFirst = cookies.find((cookie) => cookie.startsWith(this.key));
+    // Define cookie with key ' PIGI_SPA_CART'
+    let cookieSecond = cookies.find((cookie) =>
       cookie.startsWith(" " + this.key)
     );
 
@@ -28,25 +28,23 @@ export class Cart {
     }
   }
 
-  // Check if our cookie IT_SPA_CART is set
+  // Check if our cookie PIGI_SPA_CART is set
   exists() {
     return this.get() !== undefined;
   }
 
-  // Read value from our cookie IT_SPA_CART
+  // Read value from our cookie PIGI_SPA_CART
   getItSpaCart() {
     // Define variale for cookie value
     let cookieValue;
-    // If cookie with key 'IT_SPA_CART' exists
-    if (this.get() === "IT_SPA_CART") {
+    // If cookie with key 'PIGI_SPA_CART' exists
+    if (this.get() === "PIGI_SPA_CART") {
       // Remove key name from begining and set value of this cookie to cookieValue variable
-      cookieValue = this.get().slice(11);
+      cookieValue = this.get().slice(13);
     } else {
       // Remove key name with white space before from begining and set value of this cookie to cookieValue variable
-      cookieValue = this.get().slice(12);
+      cookieValue = this.get().slice(14);
     }
-    // const cookieValue = this.get().slice(12);
-    // "{foo: 1, bar:[1,2,3]}" --> {foo: 1, bar:[1,2,3]}
     const parsedValue = JSON.parse(cookieValue);
 
     return parsedValue;
@@ -68,7 +66,7 @@ export class Cart {
   remove(item) {
     // Remove produkct from basket
     const cartValue = this.getItSpaCart();
-    const itemInCart = cartValue.findIndex(val => val.name === item.name);
+    const itemInCart = cartValue.findIndex((val) => val.name === item.name);
 
     if (itemInCart !== -1) {
       cartValue.splice(itemInCart, 1);

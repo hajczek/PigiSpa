@@ -33,14 +33,11 @@ export const afterPurchase = () => {
   <p>Czekamy na Ciebie w PigiSpa! Nie zapomnij kąpielówek ;)</p></div>`);
 
   // Display all elements on page
-  fragment
-    .append(textAfterPurchase)
-    .append(basket)
-    .append(footer);
+  fragment.append(textAfterPurchase).append(basket).append(footer);
 
   // Remove all cookie
-  removeFromCookie("IT_SPA_CART");
-  removeFromCookie(" IT_SPA_CART");
+  removeFromCookie("PIGI_SPA_CART");
+  removeFromCookie(" PIGI_SPA_CART");
 
   return fragment;
 };

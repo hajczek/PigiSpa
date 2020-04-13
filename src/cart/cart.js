@@ -38,12 +38,13 @@ export class Cart {
     // Define variale for cookie value
     let cookieValue;
     // If cookie with key 'PIGI_SPA_CART' exists
-    if (this.get() === "PIGI_SPA_CART") {
+    if (this.get().startsWith("PIGI_SPA_CART=")) {
       // Remove key name from begining and set value of this cookie to cookieValue variable
-      cookieValue = this.get().slice(13);
-    } else {
-      // Remove key name with white space before from begining and set value of this cookie to cookieValue variable
       cookieValue = this.get().slice(14);
+      // If cookie with key ' PIGI_SPA_CART' exists
+    } else if (this.get().startsWith(" PIGI_SPA_CART=")) {
+      // Remove key name with white space before from begining and set value of this cookie to cookieValue variable
+      cookieValue = this.get().slice(15);
     }
     const parsedValue = JSON.parse(cookieValue);
 

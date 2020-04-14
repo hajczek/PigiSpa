@@ -7,11 +7,8 @@
     "start:db": "json-server --watch database.json --port 3004",
     "start:app": "parcel ./index.html --open",
     "start:dev": "webpack-dev-server --mode-development",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production",
-    "build:dev": "webpack --mode=development",
-    "watch": "webpack --watch",
-    "dev": "nodemon server.js"
+    "build:dev": "webpack --mode=development"
   },
   "keywords": [],
   "author": "Iwona Kolanowska",

@@ -178,6 +178,11 @@
       display: none;
     }
 
+    #basket-content-box,
+    #basket-bought-content-box {
+      max-height: 70%;
+    }
+
     .button-not-display {
       display: none;
     }

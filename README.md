@@ -23,8 +23,8 @@ Single Page Application dla ośrodka SPA dedykowanego programistom.
 
 - pobierz folder .zip z plikami aplikacji na swoj komputer
 - uruchom komendę: 'npm install', aby zainstalować wszystkie paczki npm niezbędne do uruchomienia tej aplikacji
-- uruchom komendę: 'npm run start:app', aby uruchomić aplikację lokalnie
 - uruchom komendę: 'npm run start:db', aby uruchomić json-server z danymi dla tej aplikacji
+- uruchom komendę: 'npm run start:app', aby uruchomić aplikację lokalnie
 
 Aplikacja zostanie uruchomiona lokalnie, pod adresem http://localhost:1234
 

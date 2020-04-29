@@ -55,7 +55,7 @@ export const addToCart = (e) => {
     ) {
       // Display info that all details about room are needed
       errorFunc(
-        "Uzupełnij wymagane pola: datę przyjazdu, datę wyjazudu i liczbę pokoi."
+        "Uzupełnij wymagane pola: datę przyjazdu i wyjazdu oraz liczbę pokoi."
       );
     } else {
       // Set details about added product to cart in cookies

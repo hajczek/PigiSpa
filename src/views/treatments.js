@@ -15,20 +15,16 @@ export const treatments = () => {
   const list = $(`<ol id="treatments-list"></ol>`);
 
   // Display all elements on page
-  fragment
-    .append(header)
-    .append(box)
-    .append(basket)
-    .append(footer);
+  fragment.append(header).append(box).append(basket).append(footer);
 
   box.append(title).append(list);
 
   // Connect with database
   fetch(`${url}/treatments`)
-    .then(response => response.json())
-    .then(treatments => {
+    .then((response) => response.json())
+    .then((treatments) => {
       // Prepare data with function map
-      treatments.map(treatment => {
+      treatments.map((treatment) => {
         // Define li element for each treatment
         let li = `<li id="treat_${treatment.id}">${treatment.name}<span> &raquo;</span></li>`;
         // Display list of treatments on page
@@ -42,11 +38,12 @@ export const treatments = () => {
           const boxDetails = $(`<div class="treatment-box"></div>`);
           // Define all details about treatment which was clicked
           if (treatment.id) {
+            const error = $(`<div id="info-err"></div>`);
             const title = $(`<h2 id="title">${treatment.name}</h2>`);
             const details = $(`<p>Zabieg obejmuje obszar: <span id="treat-area">${treatment.area}</span><br>
             Czas trwania zabiegu: <span id="treat-time">${treatment.time}</span> min.<br>
             Cena zabiegu: <span id="treat-price" class="product-price">${treatment.price}</span> zł<br>
-            Ilość zabiegów: <input id="treatment-num" class="num" type="number" min="1" max="10"></p>`);
+            Ilość zabiegów: <input id="treatment-num" class="num" type="number" min="1" max="10" required></p>`);
             const button = $(
               `<button id="add-treatment">Wrzuć do kosza!</button>`
             );
@@ -56,6 +53,7 @@ export const treatments = () => {
 
             // Display all elements on page
             boxDetails
+              .append(error)
               .append(title)
               .append(details)
               .append(button);
@@ -64,6 +62,6 @@ export const treatments = () => {
         });
       });
     })
-    .catch(error => console.log("Error ...", error));
+    .catch((error) => console.log("Error ...", error));
   return fragment;
 };

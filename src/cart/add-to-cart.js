@@ -1,5 +1,6 @@
 import $ from "jquery";
 import { Cart } from "./index";
+import { errorFunc } from "./../common/index";
 import { displayInBasket } from "./index";
 import { defineTreatmentLi } from "./index";
 import { defineRoomLi } from "./index";
@@ -9,13 +10,13 @@ import {
   roomFrom,
   roomTo,
   Difference_In_Days,
-  calculateDaysNumberForRoom
+  calculateDaysNumberForRoom,
 } from "./../common/index";
 
 /**
  * @description Add product to cart and cookie file
  */
-export const addToCart = e => {
+export const addToCart = (e) => {
   // Define a new cart
   let cart = new Cart();
 
@@ -27,38 +28,56 @@ export const addToCart = e => {
 
   // Check if product added to cart is not a room
   if ($(`#room-from`).val() === undefined) {
-    // Set details about added product to cart in cookies
-    cart.add({
-      name: $(`#title`).html(),
-      count: $(`.num`).val(),
-      price: parseInt($(`.product-price`).html()) * parseInt($(`.num`).val())
-    });
+    // Check if number of treatments is set
+    if ($(`.num`).val() === "") {
+      // Display info that number of treatments must be given
+      errorFunc("Podaj liczbę zabiegów.");
+    } else {
+      // Set details about added product to cart in cookies
+      cart.add({
+        name: $(`#title`).html(),
+        count: $(`.num`).val(),
+        price: parseInt($(`.product-price`).html()) * parseInt($(`.num`).val()),
+      });
 
-    // Define 'li' element with details about added treatment to display in cart
-    defineTreatmentLi();
+      // Define 'li' element with details about added treatment to display in cart
+      defineTreatmentLi();
 
-    // Define new whole value in cart after added treatment to cart
-    allTreatmentValue();
+      // Define new whole value in cart after added treatment to cart
+      allTreatmentValue();
+    }
   } else {
-    // Set details about added product to cart in cookies
-    cart.add({
-      name: $(`#title`).html(),
-      count: $(`.num`).val(),
-      from: roomFrom,
-      to: roomTo,
-      days: Difference_In_Days,
-      price: $(`#room-price`).html(),
-      valueAll:
-        $(`#room-price`).html() *
-        parseInt($(`.num`).val()) *
-        parseInt(Difference_In_Days)
-    });
+    // Check if all needed informations about room are set
+    if (
+      $(`#room-from`).val() === "" ||
+      $(`#room-to`).val() === "" ||
+      $(`.num`).val() === ""
+    ) {
+      // Display info that all details about room are needed
+      errorFunc(
+        "Uzupełnij wymagane pola: datę przyjazdu, datę wyjazudu i liczbę pokoi."
+      );
+    } else {
+      // Set details about added product to cart in cookies
+      cart.add({
+        name: $(`#title`).html(),
+        count: $(`.num`).val(),
+        from: roomFrom,
+        to: roomTo,
+        days: Difference_In_Days,
+        price: $(`#room-price`).html(),
+        valueAll:
+          $(`#room-price`).html() *
+          parseInt($(`.num`).val()) *
+          parseInt(Difference_In_Days),
+      });
 
-    // Define li element with details about added room to display in cart
-    defineRoomLi();
+      // Define li element with details about added room to display in cart
+      defineRoomLi();
 
-    // Define new whole value in cart after added room to cart
-    allRoomValue();
+      // Define new whole value in cart after added room to cart
+      allRoomValue();
+    }
   }
 
   e.preventDefault();

@@ -47,6 +47,7 @@ export const rooms = () => {
 
           // Define all details about room which was clicked
           if (room.id) {
+            const error = $(`<div id="info-err"></div>`);
             const title = $(`<h2 id="title">${room.name}</h2>`);
             const allText = $(`<p></p>`);
             const details = $(`<span class="thin">Ilość łóżek: <span id="beds-quantity">${room.beds}</span>, 
@@ -54,9 +55,9 @@ export const rooms = () => {
             Cena pokoju: <span id="room-price" class="product-price">${room.price}</span> zł<br>
             Data przyjazdu: </span>`);
             const dataFrom = $(
-              `<input id="room-from" type="date" min=${todayDate} max=${yearFromTodayDate}>`
+              `<input id="room-from" type="date" min=${todayDate} max=${yearFromTodayDate} required>`
             );
-            const details2 = $(`<br><span class="thin">Data wyjazdu: <input id="room-to" type="date" max=${yearFromTodayDate}><br>
+            const details2 = $(`<br><span class="thin">Data wyjazdu: <input id="room-to" type="date" max=${yearFromTodayDate} required><br>
             Ilość pokoi: <input id="room-num" class="num" type="number" min="1" max="10"></span>`);
             const button = $(`<button id="add-room">Wrzuć do kosza!</button>`);
 
@@ -70,7 +71,7 @@ export const rooms = () => {
             button.on("click", addToCart);
 
             // Display all elements on page
-            boxDetails.append(allText).append(button);
+            boxDetails.append(error).append(allText).append(button);
             allText
               .append(title)
               .append(details)

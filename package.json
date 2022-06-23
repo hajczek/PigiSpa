@@ -30,7 +30,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "jquery": "^3.4.1",
-    "jsdom": "^16.2.1",
+    "jsdom": "^16.5.0",
     "nodemon": "^2.0.2",
     "normalize.css": "^8.0.1"
   }
